@@ -1,7 +1,7 @@
 <?php
 
 function registerLoggedUser($user){
-    $_SESSION["password"] = $user["password"];
+    $_SESSION["user_img"] = $user["user_img"];
     $_SESSION["username"] = $user["username"];
 }
 
