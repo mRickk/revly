@@ -9,6 +9,12 @@ class DatabaseHelper {
             die("Connection failed: " . $this->db->connect_error);
         }
     }
+
+    public function checkLogin($username, $password) {
+        $qry = "SELECT username, img as user_img FROM users U WHERE U.username = " . mysqli_real_escape_string($this->db, $username) . " AND U.password = " . mysqli_real_escape_string($this->db, $password);
+        $res = $this->db->query($qry);
+        return $res->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
