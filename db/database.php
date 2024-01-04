@@ -15,6 +15,12 @@ class DatabaseHelper {
         return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function checkUniqueUserAttribute($username, $email) {
+        $qry = "SELECT username, email FROM users U WHERE U.username = '" . $this->db->real_escape_string($username) . "' AND U.email = '" . $this->db->real_escape_string($email) . "'";
+        $res = $this->db->query($qry);
+        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function registerUser($username, $password, $name, $email, $surname = '') {
         $qry = "INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
         VALUES ('$email', '$username', '$name', '$surname', '$password', '', '', 0, 1, 1, 1, 1)";
