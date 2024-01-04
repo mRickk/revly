@@ -1,4 +1,7 @@
 -- Inserisci utente 1
+
+use revly_db;
+
 INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
 VALUES ('mario.rossi@email.com', 'mario123', 'Mario', 'Rossi', 'password123', 'Appassionato di tecnologia e sport', 'mario.jpg', 0, 1, 1, 0, 1);
 
