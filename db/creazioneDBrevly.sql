@@ -17,7 +17,7 @@ USE revly_db;
 -- Tables Section
 -- _____________ 
 
-CREATE TABLE IF NOT EXISTS COMMENTS (
+CREATE TABLE COMMENTS (
      id INT UNSIGNED NOT NULL AUTO_INCREMENT,
      description TEXT NOT NULL,
      date_time DATETIME NOT NULL,
