@@ -1,14 +1,14 @@
 <form action="#" method="POST">
-    <h2>Login</h2>
+    <h2>LOGIN</h2>
     <ul>
         <li>
-            <label>Username: <input type="text" name="username"/></label>
+            <label>Username<input type="text" name="username" required/></label>
         </li>
         <li>
-            <label>Password: <input type="password" name="password"/></label>
+            <label>Password<input type="password" name="password" required/></label>
         </li>
         <li>
-            <input type="submit" name="submit" value="Submit"/>
+            <input type="submit" name="submit" value="LOGIN"/>
         </li>
     </ul>
     <?php if(isset($templateParams["loginError"])): ?>
