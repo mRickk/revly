@@ -12,7 +12,7 @@
         </li>
     </ul>
     <?php if(isset($templateParams["loginError"])): ?>
-    <p><?php echo $templateParams["loginError"]; ?></p>te 
+    <p><?php echo $templateParams["loginError"]; ?></p>
     <?php endif;?>
 </form>
 <section>
