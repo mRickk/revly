@@ -1,5 +1,5 @@
 <form action="#" method="POST">
-    <h2>LOGIN</h2>
+    <h1>LOGIN</h1>
     <ul>
         <li>
             <label>Username<input type="text" name="username" required/></label>

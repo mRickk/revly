@@ -1,5 +1,5 @@
 <form action="index.php" method="POST">
-    <h2>CREATE ACCOUNT</h2>
+    <h1>CREATE ACCOUNT</h1>
     <p>(All fields are required unless specified optional)</p>
     <ul>
         <li>

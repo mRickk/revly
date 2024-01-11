@@ -19,8 +19,10 @@ if(isset($_POST["username"]) && isset($_POST["password"])) {
         //Login effettuato
         registerLoggedUser($loginResult[0]);
         $templateParams["title"] = "Revly - Home";
-        $templateParams["top-template"] = "top-nav.php";
+        $templateParams["top-template"] = "page-top.php";
         $templateParams["main-template"] = "home-posts.php";
+        $_SESSION["back-page"] = __FILE__;
+
     } else {
         //Errore login
         $templateParams["loginError"] = "Error! Wrong username and/or password";
