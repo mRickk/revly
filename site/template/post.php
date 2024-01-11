@@ -1,0 +1,4 @@
+<?php 
+$qry = "SELECT   
+FROM ";
+?>
