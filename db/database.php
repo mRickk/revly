@@ -27,11 +27,12 @@ class DatabaseHelper {
         return $res;
     }
 
+    /*
     public function getEmail($username) {
         $qry = "SELECT email FROM users WHERE username = '$username';";
         $res = $this->db->query($qry);
         return $res;
-    }
+    }*/
 
     public function getUser($email) {
         $qry = "SELECT * FROM users WHERE email = '$email';";
@@ -39,15 +40,10 @@ class DatabaseHelper {
         return $res;
     }
     
-    public function post($username) {
-        $emailResult = $this->getEmail($username);
-        $emailRow = $emailResult->fetch_assoc();
-        if ($emailRow && isset($emailRow['email'])) {
-            $email = $emailRow['email'];
-            $qry = "SELECT * FROM follow, post WHERE follow.follower_email = '$email' AND post.author_email = follow.user_email;";
-        }
+    public function getHomePost($email) {
+        $qry = "SELECT username, description, likes, evaluation, users.img as user_img, post.img as post_img, subject, id_taggable, date_time FROM follow, post, users WHERE follow.follower_email = '" . $this->db->real_escape_string($email) . "' AND post.author_email = follow.user_email AND users.email = post.author_email;";
         $res = $this->db->query($qry);
-        return $res;    
+        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
     }
 
     public function getComments($idPost) {

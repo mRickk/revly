@@ -153,7 +153,7 @@ alter table POST add constraint FKPUBLISH_FK
      references USERS (email);
 	 
 alter table POST add constraint SUBJECT_POST
-     check(id_taggable is not null and subject is null);
+     check(id_taggable is not null and subject is null || id_taggable is null and subject is not null);
 
 alter table RECENT_SEARCHES add constraint FKSEARCHER
      foreign key (user_email)

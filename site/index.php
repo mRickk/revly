@@ -17,11 +17,9 @@ if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["name"
 if(isset($_POST["username"]) && isset($_POST["password"])) {
     $loginResult = $dbh->checkLogin($_POST["username"], $_POST["password"]);
     if (count($loginResult) != 0) {
-        $_SESSION["username"] = $_POST["username"];
         //Login effettuato
         registerLoggedUser($loginResult[0]);
         header("Location: home.php");
-
     } else {
         //Errore login
         $templateParams["loginError"] = "Error! Wrong username and/or password";
