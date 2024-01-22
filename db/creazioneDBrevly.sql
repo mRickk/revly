@@ -17,7 +17,7 @@ USE revly_db;
 -- Tables Section
 -- _____________ 
 
-CREATE TABLE COMMENTS (
+CREATE TABLE IF NOT EXISTS COMMENTS (
      id INT UNSIGNED NOT NULL AUTO_INCREMENT,
      description TEXT NOT NULL,
      date_time DATETIME NOT NULL,
@@ -34,6 +34,11 @@ create table FOLLOW (
      follower_email varchar(80) not null,
      user_email varchar(80) not null,
      constraint ID_FOLLOW_ID primary key (follower_email, user_email));
+	 
+create table LIKES (
+     user_email varchar(80) not null,
+     id_post int unsigned not null,
+     constraint ID_POST_ID primary key (id_post, user_email));
 
 create table NOTIFICATION (
      id INT UNSIGNED not null AUTO_INCREMENT,
@@ -78,7 +83,7 @@ create table TAGGABLE (
 
 create table USERS (
      email varchar(80) not null,
-     username varchar(64) not null unique,
+     username varchar(64) not null,
      name varchar(64) not null,
      surname varchar(64),
      password varchar(64) not null,
@@ -114,6 +119,14 @@ alter table FOLLOW add constraint FKFOLLOWING_FK
 alter table FOLLOW add constraint FKFOLLOWED
      foreign key (follower_email)
      references USERS (email);
+
+alter table LIKES add constraint FKLIKER
+     foreign key (user_email)
+     references USERS (email);
+
+alter table LIKES add constraint FKLIKED
+     foreign key (id_post)
+     references POST (id);
 
 alter table NOTIFICATION add constraint FKSHOW_FK
      foreign key (id_type)
