@@ -83,7 +83,7 @@ create table TAGGABLE (
 
 create table USERS (
      email varchar(80) not null,
-     username varchar(64) not null,
+     username varchar(64) not null unique,
      name varchar(64) not null,
      surname varchar(64),
      password varchar(64) not null,
