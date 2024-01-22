@@ -1,5 +1,5 @@
 <form action="#" method="POST">
-    <h1 class="text-primary d-flex align-items-center">LOGIN <i class="bi bi-house"></i></h1>
+    <h1 class="text-primary d-flex align-items-center">LOGIN</h1>
     <ul>
         <li>
             <label>Username<input type="text" name="username" required/></label>

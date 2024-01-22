@@ -1,6 +1,22 @@
-<?php
-if (isset($_POST["username"])) {
-    $qry = "SELECT F.img, F.username, P.id_taggable, P.subject, P.img, P.evaluation, P.likes, P.description, P.date_time FROM follow F, post P WHERE F.user_email = P.author_email AND F.follower_email = $_POST["username"] ORDER BY P.date_time DESC";
-}
+<!-- home-posts.php -->
 
+<?php
+$selectedUser = null;
+
+if ($templateParams["post"]->num_rows > 0) {
+    echo "1";
+    foreach ($templateParams["post"] as $post) {
+        echo "2";
+        foreach ($templateParams["users"] as $user) {
+            if ($user["email"] == $post["author_email"]) {
+                $selectedUser = $user;
+                break; // Esci dal ciclo una volta trovato l'utente desiderato
+            }
+        }
+        // Includi il template per il singolo post
+        include 'post.php';
+    }
+} else {
+    echo '<p>Nessun post trovato per l\'utente.</p>';
+}
 ?>
