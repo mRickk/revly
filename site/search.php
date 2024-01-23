@@ -1,7 +1,7 @@
 <?php
 require_once("bootstrap.php");
 
-$templateParams["title"] = "Search";
+$templateParams["title"] = "Revly - Search";
 $templateParams["top-template"] = "logo.php";
 $templateParams["main-template"] = "signup-form.php";
 
