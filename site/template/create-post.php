@@ -1,8 +1,9 @@
-<form action="create-post.php" method="POST">
+<form action="upload-Image.php" method="POST" enctype="multipart/form-data">
     <h1>NEW POST</h1>
-    <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupFile01">Upload</label>
-        <input type="file" class="form-control" name="file" required>
+    <div class="mt w-50 h-50 mb-2">
+        <h5 class="text-dark">Image</h5>
+        <input class="square" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg">
+        
     </div>
 
     <div class="dropdown">
@@ -30,5 +31,5 @@
             <button type="submit" class="btn btn-outline-secondary w-100 mb-1 rounded-5" value="Rate it!">Rate it!</button>
         </li>
     </ul>
+<script src="./js/newPost.js"></script>
 </form>
-
