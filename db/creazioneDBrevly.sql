@@ -46,7 +46,7 @@ create table NOTIFICATION (
      id_type int unsigned not null,
      notifier_email varchar(80) not null,
      notified_email varchar(80) not null,
-	 id_post int unsigned,
+	id_post int unsigned,
      constraint ID_NOTIFICATION_ID primary key (id));
 
 create table NOTIFICATION_TYPE (
@@ -144,6 +144,9 @@ alter table NOTIFICATION add constraint FKPOST_NOTIFICATION_FK
      foreign key (id_post)
      references POST (id);
 
+alter table NOTIFICATION add constraint POST_NOTIFICATION
+     check ((id_type = 1 and id_post is null) or (id_type > 1 and id_post is not null));
+
 alter table POST add constraint FKTAG_FK
      foreign key (id_taggable)
      references TAGGABLE (id);
@@ -153,7 +156,7 @@ alter table POST add constraint FKPUBLISH_FK
      references USERS (email);
 	 
 alter table POST add constraint SUBJECT_POST
-     check(id_taggable is not null and subject is null || id_taggable is null and subject is not null);
+     check((id_taggable is not null and subject is null) or (id_taggable is null and subject is not null));
 
 alter table RECENT_SEARCHES add constraint FKSEARCHER
      foreign key (user_email)

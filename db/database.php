@@ -45,7 +45,7 @@ class DatabaseHelper {
 2. SELECT address, users.name as company_name FROM users, taggable WHERE taggable.id = '" . $this->db->real_escape_string($idTaggable) . "' AND taggable.company_email = users.email;
 SOLO SE id_taggable è != NULL*/
     
-    public function getHomePost($email) {
+    public function getHomePosts($email) {
         $qry = "SELECT 
                 users.username,
                 p.description,
@@ -72,6 +72,12 @@ SOLO SE id_taggable è != NULL*/
                 follow.follower_email = '" . $this->db->real_escape_string($email) . "';";
         $res = $this->db->query($qry);
         return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getUserNotifications($email) {
+        $qry = "SELECT N.date_time, U.username, NT.message, post.img, N.id_post FROM notification N JOIN notification_type NT ON NT.id = N.id_type JOIN users U ON U.email = N.notifier_email LEFT OUTER JOIN post ON N.id_post = post.id WHERE N.notified_email = '" . $this->db->real_escape_string($email) . "';";
+        $res = $this->db->query($qry);
+        return $res;
     }
 
     public function getComments($idPost) {
