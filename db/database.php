@@ -93,11 +93,29 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function newPost($email, $img, $subject, $description, $evaluation, $taggable){
-        $time = time();
-        $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`)
-         VALUES ($img, $evaluation, '0', $subject, $description, $time, $taggable, $email);";
+        $time = date('Y-m-d H:i:s');
+        echo $evaluation;
+        $qry = NULL;
+        if(!isset($taggable)){
+            $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', '$subject', '$description', '$time', NULL, '$email');";
+            echo "dai";
+        }
+        else {
+            $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', NULL, '$description', '$time', NULL, '$email');";
+            echo "dioc";
+        }
         $res = $this->db->query($qry);
+        if (!$res) {
+            // Se la query fallisce, stampa l'errore
+            echo "Errore nella query: " . $this->db->error;
+        }
         return $res;
+    }
+
+    public function getTaggable() {
+        $qry = "SELECT * FROM taggable;";
+        $res = $this->db->query($qry);
+        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
     }
 
     public function newRequestCompany($email){
