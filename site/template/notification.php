@@ -1,14 +1,11 @@
 <div class="notification">
-    <?php /*CONTINUA DA QUA*/if ($notification['subject'] != null): ?>
-        <p><?php echo $notification['subject']; ?></p>
-        <?php else: ?>
-        <p><?php echo $notification['tag_name']; ?></p>
-        <p><?php echo $notification['company_name']; ?></p>
-        <?php if ($notification['tag_address'] != null): ?>
-            <p><?php echo $notification['tag_address']; ?></p>
-        <?php endif; ?>
-    <?php endif; ?>
-    <img src="./img/<?php echo $notification['post_img']; ?>" alt="Post picture of <?php echo $notification['username']?>"/>
-    <p><?php echo $notification['likes']; ?></p>
-    <p><?php echo $notification['description']; ?></p>
+    <p><?php echo str_replace("USER", $notification["notifier_username"], $notification["message"]); ?></p>
+    <?php if ($notification["id_post"] != null): 
+        savePostID($notification["id_post"]);?>
+        <a href="post-focus.php"><img src="./img/<?php echo $notification['post_img']; ?>" alt=""/></a>
+    <?php else: 
+        saveNotifier($notification["notifier_username"]);?>
+        <a href="profile.php"><img src="./img/<?php echo $notification['notifier_img']; ?>" alt=""/></a>
+    <?php endif; ?> 
+    <p><?php echo substr($notification["date_time"], 0, -3); ?></p>
 </div>

@@ -75,9 +75,9 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getUserNotifications($email) {
-        $qry = "SELECT N.date_time, U.username, NT.message, post.img, N.id_post FROM notification N JOIN notification_type NT ON NT.id = N.id_type JOIN users U ON U.email = N.notifier_email LEFT OUTER JOIN post ON N.id_post = post.id WHERE N.notified_email = '" . $this->db->real_escape_string($email) . "';";
+        $qry = "SELECT N.date_time, U.username as notifier_username, U.img as notifier_img, NT.message, post.img as post_img, N.id_post FROM notification N JOIN notification_type NT ON NT.id = N.id_type JOIN users U ON U.email = N.notifier_email LEFT OUTER JOIN post ON N.id_post = post.id WHERE N.notified_email = '" . $this->db->real_escape_string($email) . "' ORDER BY N.date_time DESC;";
         $res = $this->db->query($qry);
-        return $res;
+        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
     }
 
     public function getComments($idPost) {

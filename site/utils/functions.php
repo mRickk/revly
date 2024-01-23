@@ -10,4 +10,12 @@ function isUserLoggedIn() {
     return !empty($_SESSION["username"]) && !empty($_SESSION["email"]) && !empty($_SESSION["user_img"]);
 }
 
+function savePostID($post_id) {
+    $_SESSION["post_id"] = $post_id;
+}
+
+function saveNotifier($notifier_username) {
+    $_SESSION["notifier"] = $notifier_username;
+}
+
 ?>

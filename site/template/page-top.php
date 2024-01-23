@@ -22,17 +22,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="home.php">
                 <i class="bi bi-house" alt="Home"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="create-post.php">
+            <a class="nav-link active" aria-current="page" href="notifications.php">
                 <i class="bi bi-bell"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="create-post.php">
                 <i class="bi bi-plus-square"></i>
             </a>
         </li>
