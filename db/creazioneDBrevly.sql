@@ -94,6 +94,9 @@ create table USERS (
      notifyComments boolean not null,
      notifyTags boolean not null,
      notifyFollows boolean not null,
+	 numFollower int unsigned not null,
+	 numFollowing int unsigned not null,
+	 numPost int unsigned not null,
      constraint ID_USERS_ID primary key (email));
 
 
