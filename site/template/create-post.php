@@ -1,9 +1,13 @@
-<form action="upload-Image.php" method="POST" enctype="multipart/form-data">
+<form action="create-post.php" method="POST" enctype="multipart/form-data">
     <h1>NEW POST</h1>
     <div class="mt w-50 h-50 mb-2">
-        <h5 class="text-dark">Image</h5>
-        <input class="square" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg">
-        
+        <label for="imgPost" class="file-label">
+            <!-- Imposta un'immagine di anteprima predefinita -->
+            <img id="preview" src="./img/default-image.jpg" alt="Default Preview" style="max-width:100%; max-height:100%;">
+            <!-- Nascondi l'input del file finché non viene selezionato un'immagine -->
+            <input class="square visually-hidden" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg" onchange="previewImage()">
+            
+        </label>
     </div>
 
     <div class="dropdown">
