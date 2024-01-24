@@ -18,7 +18,10 @@
             <i class="bi bi-caret-right"></i>
         </div>
         <div class="logout">
-            <p>Logout from this account</p>
+            <p><a href="index.php">Logout from this account</a></p>
+        </div>
+        <div class="delete">
+            <p><a href="index.php">Delete this account</a></p><?php //TODO: implementare delete ?>
         </div>
     </div>
     <div class="notifications-settings">

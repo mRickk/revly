@@ -9,4 +9,16 @@ $profile = $templateParams["profile"];
     <p>Followers: <?php echo $profile["numFollower"]; ?></p>
     <p>Posts: <?php echo $profile["numPost"]; ?></p>
     <p>Followings: <?php echo $profile["numFollowing"]; ?></p>
+    <?php if (isset($templateParams["isFollowed"])):?>
+        <?php if ($templateParams["isFollowed"]):?>
+            <div class="following-btn">
+                <p>Following</p>
+            </div>
+        <?php else:?>
+            <div class="follow-btn">
+                <p>Follow</p>
+            </div>
+        <?php endif;?>
+    <?php endif;?>
+        
 </div>

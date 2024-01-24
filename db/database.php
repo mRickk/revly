@@ -29,7 +29,7 @@ class DatabaseHelper {
     public function getEmail($username) {
         $qry = "SELECT email FROM users WHERE username = '$username';";
         $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_column();
+        return is_bool($res) ? [] : $res->fetch_assoc()["email"];
     }
 
     public function getUser($email) {
@@ -143,8 +143,8 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
-    public function updatePasswd($email, $img) {
-        $qry = "UPDATE users SET img = '$img' WHERE email = '$email";
+    public function updatePassword($email, $password) {
+        $qry = "UPDATE users SET password = '$password' WHERE email = '$email";
         $res = $this->db->query($qry);
         return $res;
     }
@@ -172,13 +172,17 @@ SOLO SE id_taggable è != NULL*/
             LEFT JOIN
                 users AS company ON taggable.company_email = company.email
             WHERE 
-                p.author_email = '" . $this->db->real_escape_string($email) . "'
+                p.author_email = '" . $this->db->real_escape_string($email) . "' OR taggable.company_email = '" . $this->db->real_escape_string($email) . "'
             ORDER BY p.date_time DESC;";
         $res = $this->db->query($qry);
         return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
     }
 
-    
+    public function isFollowed($user_email, $follower_email) {
+        $qry = "SELECT * FROM follow WHERE user_email = '$user_email' AND follower_email = '$follower_email';";
+        $arr = $this->db->query($qry)->fetch_assoc();
+        return is_array($arr) && count($arr) > 0;
+    }
 
 }
 ?>

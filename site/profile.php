@@ -6,6 +6,7 @@ if (isUserLoggedIn() && !empty($_SESSION["profile"])) {
     $profile_email = $dbh->getEmail($_SESSION["profile"]);
     $templateParams["posts"] = $dbh->getProfilePosts($profile_email);
     $templateParams["profile"] = $dbh->getUser($profile_email);
+    $templateParams["isFollowed"] = $dbh->isFollowed($profile_email, $_SESSION["email"]);
 
     $templateParams["title"] = "Revly - Profile";
     $templateParams["top-template"] = "profile-top.php";
