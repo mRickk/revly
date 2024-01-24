@@ -26,19 +26,17 @@ class DatabaseHelper {
         $res = $this->db->query($qry);
         return $res;
     }
-
-    /*
     public function getEmail($username) {
         $qry = "SELECT email FROM users WHERE username = '$username';";
         $res = $this->db->query($qry);
-        return $res;
+        return is_bool($res) ? [] : $res->fetch_column();
     }
 
     public function getUser($email) {
         $qry = "SELECT * FROM users WHERE email = '$email';";
         $res = $this->db->query($qry);
-        return $res;
-    }*/
+        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
+    }
 
     /*
 1. SELECT username, description, likes, evaluation, users.img as user_img, post.img as post_img, subject, id_taggable, date_time FROM follow, post, users WHERE follow.follower_email = '" . $this->db->real_escape_string($email) . "' AND post.author_email = follow.user_email AND users.email = post.author_email;
@@ -48,6 +46,7 @@ SOLO SE id_taggable è != NULL*/
     public function getHomePosts($email) {
         $qry = "SELECT 
                 users.username,
+                p.id AS id_post,
                 p.description,
                 p.likes,
                 p.evaluation,
@@ -69,7 +68,8 @@ SOLO SE id_taggable è != NULL*/
             LEFT JOIN
                 users AS company ON taggable.company_email = company.email
             WHERE 
-                follow.follower_email = '" . $this->db->real_escape_string($email) . "';";
+                follow.follower_email = '" . $this->db->real_escape_string($email) . "'
+            ORDER BY p.date_time DESC;";
         $res = $this->db->query($qry);
         return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
     }
@@ -125,10 +125,10 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
-    public function getPostLiked($email , $idPost) {
+    public function isPostLiked($email , $idPost) {
         $qry = "SELECT * FROM LIKES WHERE likes.user_email = $email AND likes.id_post = $idPost";
         $res = $this->db->query($qry);
-        return $res;
+        return !is_bool($res);
     }
     
     public function getSettings($email) {
@@ -148,6 +148,37 @@ SOLO SE id_taggable è != NULL*/
         $res = $this->db->query($qry);
         return $res;
     }
+
+    public function getProfilePosts($email) {
+        $qry = "SELECT
+                users.username,
+                p.id AS id_post,
+                p.description,
+                p.likes,
+                p.evaluation,
+                users.img AS user_img,
+                p.img AS post_img,
+                p.subject,
+                p.date_time,
+                taggable.name AS tag_name,
+                taggable.address AS tag_address,
+                company.name AS company_name
+            FROM
+                post p
+            JOIN
+                users ON users.email = p.author_email
+            LEFT JOIN
+                taggable ON taggable.id = p.id_taggable
+            LEFT JOIN
+                users AS company ON taggable.company_email = company.email
+            WHERE 
+                p.author_email = '" . $this->db->real_escape_string($email) . "'
+            ORDER BY p.date_time DESC;";
+        $res = $this->db->query($qry);
+        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
+    }
+
+    
 
 }
 ?>

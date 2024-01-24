@@ -10,7 +10,7 @@ if (isUserLoggedIn()) {
 
     $templateParams["title"] = "Revly - Home";
     $templateParams["top-template"] = "page-top.php";
-    $templateParams["main-template"] = "home-posts.php";
+    $templateParams["main-template"] = "show-posts.php";
 
     require("template/base.php");
 } else {

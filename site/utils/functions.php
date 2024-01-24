@@ -14,8 +14,8 @@ function savePostID($post_id) {
     $_SESSION["post_id"] = $post_id;
 }
 
-function saveNotifier($notifier_username) {
-    $_SESSION["notifier"] = $notifier_username;
+function saveProfile($profile_username) {
+    $_SESSION["profile"] = $profile_username;
 }
 
 
