@@ -1,9 +1,10 @@
 <?php
 require_once("bootstrap.php");
+session_start();
 
 $templateParams["title"] = "Revly - Search";
-$templateParams["top-template"] = "logo.php";
-$templateParams["main-template"] = "signup-form.php";
+$templateParams["top-template"] = "";
+$templateParams["main-template"] = "";
 
 require("template/base.php");
 ?>

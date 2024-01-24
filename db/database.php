@@ -12,7 +12,7 @@ class DatabaseHelper {
     public function checkLogin($username, $password) {
         $qry = "SELECT username, img as user_img, email FROM users U WHERE U.username = '" . $this->db->real_escape_string($username) . "' AND U.password = '" . $this->db->real_escape_string($password) . "'";
         $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
+        return is_bool($res) ? [] : $res->fetch_assoc();
     }
 
     public function checkUniqueUserAttribute($username, $email) {
@@ -35,7 +35,7 @@ class DatabaseHelper {
     public function getUser($email) {
         $qry = "SELECT * FROM users WHERE email = '$email';";
         $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
+        return is_bool($res) ? [] : $res->fetch_assoc();
     }
 
     /*

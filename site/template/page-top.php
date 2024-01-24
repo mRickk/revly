@@ -3,10 +3,10 @@
   <div class="container-fluid">
     <a class="navbar-brand">REVLY</a>
     <form class="d-flex" role="search">
-        <a class="nav-link active" aria-current="page" href="#">
+        <a class="nav-link active" aria-current="page" href="search.php">
             <i class="bi bi-search"></i>
         </a>
-        <a class="nav-link active" aria-current="page" href="#">
+        <a class="nav-link active" aria-current="page" href="settings.php">
         <i class="bi bi-toggles"></i>
         </a>
         
