@@ -98,11 +98,9 @@ SOLO SE id_taggable è != NULL*/
         $qry = NULL;
         if(!isset($taggable)){
             $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', '$subject', '$description', '$time', NULL, '$email');";
-            echo "dai";
         }
         else {
             $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', NULL, '$description', '$time', NULL, '$email');";
-            echo "dioc";
         }
         $res = $this->db->query($qry);
         if (!$res) {
@@ -113,7 +111,7 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getTaggable() {
-        $qry = "SELECT * FROM taggable;";
+        $qry = "SELECT taggable.id, taggable.name, users.name AS company_name FROM taggable, users WHERE users.isCompany = 1 AND taggable.company_email = users.email;;";
         $res = $this->db->query($qry);
         return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
     }

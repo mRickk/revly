@@ -26,7 +26,11 @@
     </div>
     <ul>
         <li>
-            <input type="text" class="form-control mb-1" name="subject" placeholder="Subject" class="form-floating mb-3" required>
+        <input type="text" class="form-control mb-1" name="subject" placeholder="Subject" class="form-floating mb-3" required
+    id="subjectInput" list="tagSuggestions">
+<!-- Aggiungi l'elemento datalist per contenere i suggerimenti -->
+<datalist id="tagSuggestions"></datalist>
+
         </li>
         <li>
             <input type="text" class="form-control mb-1" name="description" placeholder="Description" class="form-floating mb-3" required>
