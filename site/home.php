@@ -12,7 +12,7 @@ if (isUserLoggedIn()) {
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "show-posts.php";
     //TODO: elimina!!
-    $_SESSION["profile"]="enoteca_galli";
+    $_SESSION["profile_username"]="enoteca_galli";
 
     require("template/base.php");
 } else {

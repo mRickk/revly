@@ -15,7 +15,7 @@ function savePostID($post_id) {
 }
 
 function saveProfile($profile_username) {
-    $_SESSION["profile"] = $profile_username;
+    $_SESSION["profile_username"] = $profile_username;
 }
 
 

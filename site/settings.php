@@ -7,7 +7,7 @@ if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Settings";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "main-settings.php";
-    $templateParams["user"] = $dbh->getUser($_SESSION["email"]);
+    $templateParams["user"] = $dbh->getUserWithEmail($_SESSION["email"]);
 
     require("template/base.php");
 } else {
