@@ -27,7 +27,7 @@
     <ul>
         <li>
             <label for="subjectInput">Subject:</label>
-            <input type="text" id="subjectInput" list="tagSuggestions">
+            <input type="text" name="subjectInput" id="subjectInput" list="tagSuggestions">
             <datalist id="tagSuggestions"></datalist>
         </li>
         <li>
