@@ -59,10 +59,13 @@ function uploadImage($path, $image){
 
 function getTaggableSuggestions($searchTerm, $dbh) {
     $tags = $dbh->getTaggable();
+    $filteredTags = [];
 
-    $filteredTags = array_filter($tags, function ($tag) use ($searchTerm) {
-        return stripos($tag['name'], $searchTerm) !== false || stripos($tag['company_name'], $searchTerm) !== false;
-    });
+    foreach ($tags as $tag) {
+        if (stripos($tag['name'], $searchTerm) !== false || stripos($tag['company_name'], $searchTerm) !== false) {
+            $filteredTags[] = $tag;
+        }
+    }
     
     return $filteredTags;
 }
