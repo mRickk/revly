@@ -111,7 +111,7 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getTaggable() {
-        $qry = "SELECT taggable.id, taggable.name, users.name AS company_name FROM taggable, users WHERE users.isCompany = 1 AND taggable.company_email = users.email;;";
+        $qry = "SELECT taggable.id, taggable.name, users.name AS company_name FROM taggable, users WHERE users.isCompany = 1 AND taggable.company_email = users.email;";
         $res = $this->db->query($qry);
         return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
     }

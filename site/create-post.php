@@ -1,3 +1,4 @@
+// create-post.php
 <?php
 require_once("bootstrap.php");
 session_start();
@@ -27,8 +28,8 @@ if (isUserLoggedIn()) {
         }
     }
 
-    // Se non c'è una richiesta AJAX, includi il template
-    if (!isset($_GET['ajax'])) {
+    // Se non c'è una richiesta AJAX o l'input è vuoto, includi il template
+    if (!isset($_GET['ajax']) || empty($_GET['q'])) {
         require("template/base.php");
     }
 } else {
