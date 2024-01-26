@@ -1,3 +1,4 @@
+// create-post.php
 <?php
 require_once("bootstrap.php");
 session_start();
@@ -7,13 +8,14 @@ if (isUserLoggedIn()) {
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "create-post.php";
 
+    $tag = $dbh->getTaggable();
+    $templateParams["tags"] = $tag;
+
     if(isset($_FILES["imgPost"])){
         list($result, $msg) = uploadImage(UPLOAD_DIR,  $_FILES["imgPost"]);
 
         if($result == 1) {
             if (isset($_POST["subject"]) && isset($_POST["description"]) && isset($_POST["selectedEvaluation"])) {
-                $tag = $dbh->getTaggable();
-                $templateParams["tags"] = $tag;
                 
                 if (in_array($_POST["subject"], array_column($tag, 'name'))) {
                     $dbh->newPost($_SESSION["email"], $msg, NULL, $_POST["description"], $_POST["selectedEvaluation"], NULL);
@@ -21,12 +23,15 @@ if (isUserLoggedIn()) {
                     $dbh->newPost($_SESSION["email"], $msg, $_POST["subject"], $_POST["description"], $_POST["selectedEvaluation"], NULL);
                 }
                 header("Location: home.php");
-                
+                exit(); // Assicurati di terminare lo script qui
             }
         }
     }
 
-    require("template/base.php");
+    // Se non c'è una richiesta AJAX o l'input è vuoto, includi il template
+    if (!isset($_GET['ajax']) || empty($_GET['q'])) {
+        require("template/base.php");
+    }
 } else {
     header("Location: index.php");
 }

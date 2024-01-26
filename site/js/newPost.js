@@ -1,17 +1,23 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Trova tutti gli elementi della dropdown
     var dropdownItems = document.querySelectorAll('.dropdown-item');
 
-    // Aggiungi un listener a ciascun elemento della dropdown
     dropdownItems.forEach(function (item) {
         item.addEventListener('click', function () {
-            // Imposta il valore del campo nascosto con il valore dell'elemento cliccato
             document.getElementById('selectedEvaluation').value = item.getAttribute('data-value');
-            // Cambia il testo del pulsante principale con il valore selezionato
             document.getElementById('evaluationBtn').innerText = item.innerText;
         });
+    });
+
+    var inputSubject = document.getElementById('subjectInput');
+    var datalist = document.getElementById('tagSuggestions');
+
+    inputSubject.addEventListener('input', function () {
+        var inputValue = inputSubject.value.trim().toLowerCase();
+        datalist.innerHTML = '';
+
+        if (inputValue !== '') {
+            getSuggestions(inputValue);
+        }
     });
 });
 
@@ -19,7 +25,7 @@ function previewImage() {
     var preview = document.getElementById('preview');
     var fileInput = document.getElementById('imgPost');
     var file = fileInput.files[0];
-    
+
     if (file) {
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -29,4 +35,38 @@ function previewImage() {
     }
 }
 
+function getSuggestions(searchTerm) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                var suggestions = JSON.parse(xhr.responseText);
+                updateSuggestionsList(suggestions);  // Corretto il nome della funzione qui
+            }
+        }
+    };
+
+    xhr.open('GET', 'search.php?q=' + encodeURIComponent(searchTerm), true);
+    xhr.send();
+}
+
+function updateSuggestionsList(suggestions) {
+    var datalist = document.getElementById('tagSuggestions');
+
+    suggestions.forEach(function (tagItem) {
+        var option = document.createElement('option');
+        option.value = tagItem.name + ' - ' + tagItem.company_name;
+        datalist.appendChild(option);
+    });
+}
+
+var inputSubject = document.getElementById('subjectInput');
+inputSubject.addEventListener('input', function () {
+    var inputValue = inputSubject.value.trim().toLowerCase();
+    datalist.innerHTML = '';
+
+    if (inputValue !== '') {
+        getSuggestions(inputValue);
+    }
+});
 

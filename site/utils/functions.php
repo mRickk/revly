@@ -57,4 +57,17 @@ function uploadImage($path, $image){
     return array($result,$msg);
 }
 
+function getTaggableSuggestions($searchTerm, $dbh) {
+    $tags = $dbh->getTaggable();
+    $filteredTags = [];
+
+    foreach ($tags as $tag) {
+        if (stripos($tag['name'], $searchTerm) !== false || stripos($tag['company_name'], $searchTerm) !== false) {
+            $filteredTags[] = $tag;
+        }
+    }
+    
+    return $filteredTags;
+}
+
 ?>
