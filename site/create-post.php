@@ -15,12 +15,23 @@ if (isUserLoggedIn()) {
         list($result, $msg) = uploadImage(UPLOAD_DIR,  $_FILES["imgPost"]);
 
         if($result == 1) {
-            if (isset($_POST["subject"]) && isset($_POST["description"]) && isset($_POST["selectedEvaluation"])) {
+            if (isset($_POST["subjectInput"]) && isset($_POST["description"]) && isset($_POST["selectedEvaluation"])) {
                 
-                if (in_array($_POST["subject"], array_column($tag, 'name'))) {
-                    $dbh->newPost($_SESSION["email"], $msg, NULL, $_POST["description"], $_POST["selectedEvaluation"], NULL);
-                } else{
-                    $dbh->newPost($_SESSION["email"], $msg, $_POST["subject"], $_POST["description"], $_POST["selectedEvaluation"], NULL);
+                $subject = $_POST["subjectInput"];
+    
+                // Creo un array con le stringhe composte da name e company_name
+                $combinedNames = array_map(function ($tag) {
+                    return $tag['name'] . ' - ' . $tag['company_name'];
+                }, $tag);
+
+                // Controllo se il subject è presente nell'array $combinedNames
+                $key = array_search($subject, $combinedNames);
+
+                if ($key !== false) {
+                    $tagId = $tag[$key]['id'];
+                    $dbh->newPost($_SESSION["email"], $msg, NULL, $_POST["description"], $_POST["selectedEvaluation"], $tagId);
+                } else {
+                    $dbh->newPost($_SESSION["email"], $msg, $subject, $_POST["description"], $_POST["selectedEvaluation"], NULL);
                 }
                 header("Location: home.php");
                 exit(); // Assicurati di terminare lo script qui

@@ -100,7 +100,7 @@ SOLO SE id_taggable è != NULL*/
             $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', '$subject', '$description', '$time', NULL, '$email');";
         }
         else {
-            $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', NULL, '$description', '$time', NULL, '$email');";
+            $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', NULL, '$description', '$time', $taggable, '$email');";
         }
         $res = $this->db->query($qry);
         if (!$res) {
