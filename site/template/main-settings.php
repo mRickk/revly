@@ -3,9 +3,11 @@
     <div class="account-settings">
         <h2>Account</h2>
         <div class="personal-details">
-            <i class="bi bi-person-fill-gear"></i>
-            <p>Change personal details</p>
-            <i class="bi bi-caret-right"></i>
+            <a href="change-personal-details.php">
+                <i class="bi bi-person-fill-gear"></i>
+                <p>Change personal details</p>
+                <i class="bi bi-caret-right"></i>
+            </a>
         </div>
         <div class="photo-bio">
             <i class="bi bi-image"></i>
@@ -13,9 +15,11 @@
             <i class="bi bi-caret-right"></i>
         </div>
         <div class="password">
-            <i class="bi bi-key"></i>
-            <p>Change password</p>
-            <i class="bi bi-caret-right"></i>
+            <a href="change-password.php">
+                <i class="bi bi-key"></i>
+                <p>Change password</p>
+                <i class="bi bi-caret-right"></i>
+            </a>
         </div>
         <div class="logout">
             <p><a href="index.php">Logout from this account</a></p>

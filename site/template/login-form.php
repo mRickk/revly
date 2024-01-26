@@ -11,9 +11,7 @@
             <input type="submit" name="submit" value="LOGIN"/>
         </li>
     </ul>
-    <?php if(isset($templateParams["loginError"])): ?>
-    <p><?php echo $templateParams["loginError"]; ?></p>
-    <?php endif;?>
+    <?php require("update-msg.php"); ?>
 </form>
 <section>
     <a href="sign-up.php">Register a new account</a>

@@ -2,8 +2,8 @@
 require_once("bootstrap.php");
 session_start();
 
-if (isUserLoggedIn() && !empty($_SESSION["profile_username"])) {
-    $profile = $dbh->getUserWithUsername($_SESSION["profile_username"]);
+if (isUserLoggedIn() && !empty($_SESSION["profile_email"])) {
+    $profile = $dbh->getUserWithEmail($_SESSION["profile_email"]);
     $templateParams["profile"] = $profile;
     $templateParams["posts"] = $dbh->getProfilePosts($profile["email"]);
     if (strcmp($profile["email"], $_SESSION["email"]) == 0) {

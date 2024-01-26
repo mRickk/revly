@@ -20,9 +20,10 @@ if(isset($_POST["username"]) && isset($_POST["password"])) {
         //Login effettuato
         registerLoggedUser($loginResult);
         header("Location: home.php");
+        $templateParams["success-msg"] = "Welcome back, " . $_POST["username"];
     } else {
         //Errore login
-        $templateParams["loginError"] = "Login failed! Wrong username and/or password";
+        $templateParams["failure-msg"] = "Login failed! Wrong username and/or password";
     }
 }
 

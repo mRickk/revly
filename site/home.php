@@ -11,8 +11,8 @@ if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Home";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "show-posts.php";
-    //TODO: elimina!!
-    $_SESSION["profile_username"]="enoteca_galli";
+
+    $_SESSION["profile_email"]="enoteca.galli@email.com"; //TODO:  ELIMINA !!!
 
     require("template/base.php");
 } else {

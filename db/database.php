@@ -126,7 +126,7 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getUserNotifications($email) {
-        $qry = "SELECT N.date_time, U.username as notifier_username, U.img as notifier_img, NT.message, post.img as post_img, N.id_post
+        $qry = "SELECT N.date_time, U.username as notifier_username, U.email as notifier_email, U.img as notifier_img, NT.message, post.img as post_img, N.id_post
             FROM notification N JOIN notification_type NT ON NT.id = N.id_type JOIN users U ON U.email = N.notifier_email
             LEFT OUTER JOIN post ON N.id_post = post.id WHERE N.notified_email = ?
             ORDER BY N.date_time DESC";
@@ -205,6 +205,15 @@ SOLO SE id_taggable è != NULL*/
         $stmt->execute();
         $res = $stmt->get_result();
         return $res->num_rows > 0;
+    }
+
+    public function updatePersonalDetails($username, $name, $surname, $email) {
+        $qry = "UPDATE users SET username = ?, name = ?, surname = ? WHERE email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ssss', $username, $name, $surname, $email);
+        $res = $stmt->execute();
+        echo $stmt->errno;
+        return $res;
     }
 
     public function updatePhoto($img, $email) {
