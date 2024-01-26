@@ -5,7 +5,7 @@
         <img src="<?php echo UPLOAD_DIR . $post['user_img']; ?>" alt="Profile picture of <?php echo $post['username']?>"/>
         <p><strong><?php echo $post['username']; ?></strong></p>
     <?php if (isUserLoggedIn() && strcmp($_SESSION["username"], $post["username"]) == 0): //TODO: aggiungere evento js click del bin ?>
-        <i class="bi bi-trash3">Delete</i>
+        <i class="bi bi-trash3"></i>
     <?php endif; ?>
     </div>
     <div class="post-body">
