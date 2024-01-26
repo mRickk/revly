@@ -182,7 +182,7 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getTaggable() {
-        $qry = "SELECT * FROM taggable";
+        $qry = "SELECT taggable.id, taggable.name, company.name AS company_name FROM taggable, users AS company WHERE company.email = taggable.company_email;";
         $stmt = $this->db->prepare($qry);
         $stmt->execute();
         $res = $stmt->get_result();
