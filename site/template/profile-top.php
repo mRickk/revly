@@ -5,6 +5,9 @@ $profile = $templateParams["profile"];
 
 <div class="profile-top">
     <p><?php echo $profile["username"]; ?></p>
+    <?php if ($profile["isCompany"]): ?>
+        <i class="bi bi-patch-check-fill"></i>
+    <?php endif; ?>
     <img src="./img/<?php echo $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
     <p>Followers: <?php echo $profile["numFollower"]; ?></p>
     <p>Posts: <?php echo $profile["numPost"]; ?></p>

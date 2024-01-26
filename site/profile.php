@@ -2,12 +2,13 @@
 require_once("bootstrap.php");
 session_start();
 
-if (isUserLoggedIn() && !empty($_SESSION["profile"])) {
-    $profile_email = $dbh->getEmail($_SESSION["profile"]);
-    $templateParams["posts"] = $dbh->getProfilePosts($profile_email);
-    $templateParams["profile"] = $dbh->getUser($profile_email);
-    $templateParams["isFollowed"] = $dbh->isFollowed($profile_email, $_SESSION["email"]);
-
+if (isUserLoggedIn() && !empty($_SESSION["profile_username"])) {
+    $profile = $dbh->getUserWithUsername($_SESSION["profile_username"]);
+    $templateParams["profile"] = $profile;
+    $templateParams["posts"] = $dbh->getProfilePosts($profile["email"]);
+    if (strcmp($profile["email"], $_SESSION["email"]) == 0) {
+        $templateParams["isFollowed"] = $dbh->isFollowed($profile["email"], $_SESSION["email"]);
+    }
     $templateParams["title"] = "Revly - Profile";
     $templateParams["top-template"] = "profile-top.php";
     $templateParams["main-template"] = "show-posts.php";

@@ -22,7 +22,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])) {
         header("Location: home.php");
     } else {
         //Errore login
-        $templateParams["loginError"] = "Error! Wrong username and/or password";
+        $templateParams["loginError"] = "Login failed! Wrong username and/or password";
     }
 }
 

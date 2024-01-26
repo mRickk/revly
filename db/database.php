@@ -9,33 +9,49 @@ class DatabaseHelper {
             die("Connection failed: " . $this->db->connect_error);
         }
     }
+
     public function checkLogin($username, $password) {
-        $qry = "SELECT username, img as user_img, email FROM users U WHERE U.username = '" . $this->db->real_escape_string($username) . "' AND U.password = '" . $this->db->real_escape_string($password) . "'";
-        $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_assoc();
+        $qry = "SELECT username, img as user_img, email FROM users U WHERE U.username = ? AND U.password = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ss', $username, $password);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->num_rows == 1 ? $res->fetch_assoc() : [];
     }
 
     public function checkUniqueUserAttribute($username, $email) {
-        $qry = "SELECT username, email FROM users U WHERE U.username = '" . $this->db->real_escape_string($username) . "' OR U.email = '" . $this->db->real_escape_string($email) . "'";
-        $res = $this->db->query($qry);
-        return is_bool($res) || $res->num_rows == 0;
+        $qry = "SELECT username, email FROM users U WHERE U.username = ? OR U.email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ss', $username, $email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->num_rows == 0;
     }
 
     public function registerUser($username, $password, $name, $email, $surname = '') {
-        $qry = "INSERT INTO USERS VALUES ('$email', '$username', '$name', '$surname', '$password', '', '', 0, 1, 1, 1, 1)";
-        $res = $this->db->query($qry);
+        $qry = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, '', '', 0, 1, 1, 1, 1)";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('sssss', $email, $username, $name, $surname, $password);
+        $res = $stmt->execute();
         return $res;
     }
-    public function getEmail($username) {
-        $qry = "SELECT email FROM users WHERE username = '$username';";
-        $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_assoc()["email"];
+
+    public function getUserWithUsername($username) {
+        $qry = "SELECT email, username, name, surname, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows, numFollower, numFollowing, numPost FROM users WHERE username = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $res = $stmt->get_result()->fetch_assoc();
+        return is_null($res) ? [] : $res;
     }
 
-    public function getUser($email) {
-        $qry = "SELECT * FROM users WHERE email = '$email';";
-        $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_assoc();
+    public function getUserWithEmail($email) {
+        $qry = "SELECT email, username, name, surname, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows, numFollower, numFollowing, numPost FROM users WHERE email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $res = $stmt->get_result()->fetch_assoc();
+        return is_null($res) ? [] : $res;
     }
 
     /*
@@ -44,7 +60,7 @@ class DatabaseHelper {
 SOLO SE id_taggable è != NULL*/
     
     public function getHomePosts($email) {
-        $qry = "SELECT 
+        $qry = "SELECT
                 users.username,
                 p.id AS id_post,
                 p.description,
@@ -67,84 +83,14 @@ SOLO SE id_taggable è != NULL*/
                 taggable ON taggable.id = p.id_taggable
             LEFT JOIN
                 users AS company ON taggable.company_email = company.email
-            WHERE 
-                follow.follower_email = '" . $this->db->real_escape_string($email) . "'
-            ORDER BY p.date_time DESC;";
-        $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function getUserNotifications($email) {
-        $qry = "SELECT N.date_time, U.username as notifier_username, U.img as notifier_img, NT.message, post.img as post_img, N.id_post FROM notification N JOIN notification_type NT ON NT.id = N.id_type JOIN users U ON U.email = N.notifier_email LEFT OUTER JOIN post ON N.id_post = post.id WHERE N.notified_email = '" . $this->db->real_escape_string($email) . "' ORDER BY N.date_time DESC;";
-        $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function getComments($idPost) {
-        $qry = "SELECT * FROM comments AS C, users AS U WHERE C.id_post = $idPost AND C.author_email = U.email;";
-        $res = $this->db->query($qry);
-        return $res;
-    }
-
-    public function getrecentSearches($email) {
-        $qry = "SELECT * FROM recent_searches AS RS WHERE RS.user_email = $email;";
-        $res = $this->db->query($qry);
-        return $res;
-    }
-
-    public function newPost($email, $img, $subject, $description, $evaluation, $taggable){
-        $time = date('Y-m-d H:i:s');
-        echo $evaluation;
-        $qry = NULL;
-        if(!isset($taggable)){
-            $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', '$subject', '$description', '$time', NULL, '$email');";
-        }
-        else {
-            $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES ('$img', '3', '1', NULL, '$description', '$time', $taggable, '$email');";
-        }
-        $res = $this->db->query($qry);
-        if (!$res) {
-            // Se la query fallisce, stampa l'errore
-            echo "Errore nella query: " . $this->db->error;
-        }
-        return $res;
-    }
-
-    public function getTaggable() {
-        $qry = "SELECT taggable.id, taggable.name, users.name AS company_name FROM taggable, users WHERE users.isCompany = 1 AND taggable.company_email = users.email;";
-        $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function newRequestCompany($email){
-        $time = time();
-        $qry = "INSERT INTO `company_account_request` (`company_email`, `date_time`) VALUES ($email, $time);";
-        $res = $this->db->query($qry);
-        return $res;
-    }
-
-    public function isPostLiked($email , $idPost) {
-        $qry = "SELECT * FROM LIKES WHERE likes.user_email = $email AND likes.id_post = $idPost";
-        $res = $this->db->query($qry);
-        return !is_bool($res);
-    }
-    
-    public function getSettings($email) {
-        $qry = "SELECT notifyLikes, notifyComments, notifyTags, notifyFollows FROM users AS U WHERE U.email = $email";
-        $res = $this->db->query($qry);
-        return $res;
-    }
-
-    public function updatePhoto($email, $img) {
-        $qry = "UPDATE users SET img = '$img' WHERE email = '$email";
-        $res = $this->db->query($qry);
-        return $res;
-    }
-
-    public function updatePassword($email, $password) {
-        $qry = "UPDATE users SET password = '$password' WHERE email = '$email";
-        $res = $this->db->query($qry);
-        return $res;
+            WHERE
+                follow.follower_email = ?
+            ORDER BY p.date_time DESC";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->fetch_all(MYSQLI_ASSOC);
     }
 
     public function getProfilePosts($email) {
@@ -169,17 +115,121 @@ SOLO SE id_taggable è != NULL*/
                 taggable ON taggable.id = p.id_taggable
             LEFT JOIN
                 users AS company ON taggable.company_email = company.email
-            WHERE 
-                p.author_email = '" . $this->db->real_escape_string($email) . "' OR taggable.company_email = '" . $this->db->real_escape_string($email) . "'
+            WHERE
+                p.author_email = ? OR taggable.company_email = ?
             ORDER BY p.date_time DESC;";
-        $res = $this->db->query($qry);
-        return is_bool($res) ? [] : $res->fetch_all(MYSQLI_ASSOC);
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ss', $email, $email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getUserNotifications($email) {
+        $qry = "SELECT N.date_time, U.username as notifier_username, U.img as notifier_img, NT.message, post.img as post_img, N.id_post
+            FROM notification N JOIN notification_type NT ON NT.id = N.id_type JOIN users U ON U.email = N.notifier_email
+            LEFT OUTER JOIN post ON N.id_post = post.id WHERE N.notified_email = ?
+            ORDER BY N.date_time DESC";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getComments($idPost) {
+        $qry = "SELECT * FROM comments AS C, users AS U WHERE C.id_post = ? AND C.author_email = U.email";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('i', $idPost);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getRecentSearches($email) {
+        $qry = "SELECT * FROM recent_searches WHERE user_email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function newPost($email, $img, $subject, $description, $evaluation, $taggable) {
+        $timestamp = date('Y-m-d H:i:s');
+        //TODO: remove metodo vecchio se nuovo funzia
+        /* 
+        $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES (?, ?, ?, ";
+        if(!isset($taggable)){
+            $qry = "?, ?, ?, NULL, ?);";
+        }
+        else {
+            $qry = "NULL, ?, ?, NULL, ?);";
+        }
+        $stmt = $this->db->prepare($qry);
+        if(!isset($taggable)){
+            
+        }
+        else {
+            $qry = "NULL, ?, ?, NULL, ?);";
+        }*/
+        $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('siisssis', $img, $evaluation, $likes, $subject, $description, $timestamp, $taggable, $email);
+        $res = $stmt->execute();
+        return $res;
+    }
+
+    public function getTaggable() {
+        $qry = "SELECT * FROM taggable";
+        $stmt = $this->db->prepare($qry);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function newRequestCompany($email) {
+        $timestamp = date('Y-m-d H:i:s');
+        $qry = "INSERT INTO `company_account_request` (`company_email`, `date_time`) VALUES (?, ?)";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ss', $email, $timestamp);
+        $res = $stmt->execute();
+        return $res;
+    }
+
+    public function isPostLiked($email , $idPost) {
+        $qry = "SELECT * FROM likes WHERE user_email = ? AND id_post = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('si', $email, $idPost);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->num_rows > 0;
+    }
+
+    public function updatePhoto($img, $email) {
+        $qry = "UPDATE users SET img = ? WHERE email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ss', $img, $email);
+        $res = $stmt->execute();
+        return $res;
+    }
+
+    public function updatePassword($email, $oldPassword, $newPassword) {
+        $qry = "UPDATE users SET password = ? WHERE email = ? AND password = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('sss', $newPassword, $email, $oldPassword);
+        $res = $stmt->execute();
+        return $res;
     }
 
     public function isFollowed($user_email, $follower_email) {
-        $qry = "SELECT * FROM follow WHERE user_email = '$user_email' AND follower_email = '$follower_email';";
-        $arr = $this->db->query($qry)->fetch_assoc();
-        return is_array($arr) && count($arr) > 0;
+        $qry = "SELECT * FROM follow WHERE user_email = ? AND follower_email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ss', $user_email, $follower_email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->num_rows > 0;
     }
 
 }
