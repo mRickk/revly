@@ -1,11 +1,9 @@
 <?php
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'])) {
     // Imposta la variabile di sessione
-    $_SESSION["profile_email"] = $email;
+    $_SESSION["profile_email"] = $_POST['email'];
 
     // Invia una risposta (puoi personalizzarla a seconda delle tue esigenze)
     echo json_encode(["success" => true, "message" => "Variabile di sessione impostata con successo"]);

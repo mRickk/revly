@@ -4,15 +4,16 @@ session_start();
 
 if (isUserLoggedIn()) {
     //$currentPage = 'Home';
-    $templateParams["posts"] = array();
-    $postsResult = $dbh->getHomePosts($_SESSION["email"]);
-    $templateParams["posts"] = $postsResult;
+    $posts = $dbh->getHomePosts($_SESSION["email"]);
+    foreach ($posts as &$p) {
+        $p["liked"] = $dbh->isPostLiked($_SESSION["email"], $p["id_post"]);
+    }
+    unset($p);
+    $templateParams["posts"] = $posts;
 
     $templateParams["title"] = "Revly - Home";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "show-posts.php";
-
-    $_SESSION["profile_email"]="enoteca.galli@email.com"; //TODO:  ELIMINA !!!
 
     require("template/base.php");
 } else {

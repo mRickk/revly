@@ -19,7 +19,15 @@
         <?php endif; ?>
     <?php endif; ?>
     <img src="<?php echo UPLOAD_DIR . $post['post_img']; ?>" alt="Post picture of <?php echo $post['username']?>"/>
+    <p><?php echo $post['evaluation']; ?><i class="bi bi-star-fill"></i></p>
+    <?php if ($post['liked']): ?><?php //TODO: aggiungere evento js click del like ?>
+        <i class="bi bi-heart-fill"></i>
+    <?php else: ?>
+        <i class="bi bi-heart"></i>
+    <?php endif; ?>
     <p><?php echo $post['likes']; ?></p>
+    <i class="bi bi-chat-left-text"></i><?php //TODO: aggiungere evento js click del comment ?>
     <p><?php echo $post['description']; ?></p>
+    <p><?php echo $post['date_time']; ?></p>
     </div>
 </div>
