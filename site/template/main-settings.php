@@ -10,9 +10,11 @@
             </a>
         </div>
         <div class="photo-bio">
+        <a href="change-photo-bio.php">
             <i class="bi bi-image"></i>
             <p>Change photo & bio</p>
             <i class="bi bi-caret-right"></i>
+        </a>
         </div>
         <div class="password">
             <a href="change-password.php">

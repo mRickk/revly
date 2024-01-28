@@ -8,7 +8,7 @@ $profile = $templateParams["profile"];
     <?php if ($profile["isCompany"]): ?>
         <i class="bi bi-patch-check-fill"></i>
     <?php endif; ?>
-    <img src="./img/<?php echo $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
+    <img src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
     <p>Followers: <?php echo $profile["numFollower"]; ?></p>
     <p>Posts: <?php echo $profile["numPost"]; ?></p>
     <p>Followings: <?php echo $profile["numFollowing"]; ?></p>

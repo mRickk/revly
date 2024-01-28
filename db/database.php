@@ -226,10 +226,10 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
-    public function updatePhoto($img, $email) {
-        $qry = "UPDATE users SET img = ? WHERE email = ?";
+    public function updatePhoto($img, $biography, $email) {
+        $qry = "UPDATE users SET img = ?, biography = ? WHERE email = ?";
         $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('ss', $img, $email);
+        $stmt->bind_param('sss', $img, $biography, $email);
         $res = $stmt->execute();
         return $res;
     }
