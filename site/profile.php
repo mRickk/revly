@@ -22,8 +22,8 @@ if (isUserLoggedIn() && $_SESSION["profile_email"]) {
     $templateParams["posts"] = $posts;
     
     $templateParams["title"] = "Revly - " . $profile["username"] . "'s profile";
-    $templateParams["top-template"] = "profile-top.php";
-    $templateParams["main-template"] = "show-posts.php";
+    $templateParams["top-template"] = "page-top.php";
+    $templateParams["main-template"] = "main-profile.php";
 
     require("template/base.php");
 } else {

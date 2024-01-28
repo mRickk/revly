@@ -1,8 +1,3 @@
-<?php
-require_once("page-top.php");
-$profile = $templateParams["profile"];
-?>
-
 <div class="profile-top">
     <p><?php echo $profile["username"]; ?></p>
     <?php if ($profile["isCompany"]): ?>
@@ -23,5 +18,6 @@ $profile = $templateParams["profile"];
             </div>
         <?php endif;?>
     <?php endif;?>
-        
 </div>
+
+<?php require_once("show-posts.php");?>
