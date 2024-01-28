@@ -37,7 +37,7 @@ class DatabaseHelper {
     }
 
     public function getUsers($username) {
-        $qry = "SELECT username FROM users WHERE username LIKE ?";
+        $qry = "SELECT username, email FROM users WHERE username LIKE ?";
         $stmt = $this->db->prepare($qry);
         $tmp = '%' . $username . '%';
         $stmt->bind_param('s', $tmp);
