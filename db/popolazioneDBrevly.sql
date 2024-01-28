@@ -2,64 +2,64 @@
 
 use revly_db;
 
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('mario.rossi@email.com', 'mario123', 'Mario', 'Rossi', 'password123', 'Appassionato di tecnologia e sport', 'mario.jpg', 0, 1, 1, 0, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('mario.rossi@email.com', 'mario123', 'Mario', 'Rossi', 'password123', 'Appassionato di tecnologia e sport', 0, 1, 1, 0, 1);
 
 -- Inserisci utente 2
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('trattoriaSalvatore@email.com', 'TrattoriaDaSalvatore', 'Trattoria da Salvatore', '', 'securepass', 'Siamo una trattoria nel mezzo di un paesaggio mozzafiato', 'trattoria.jpg', 1, 1, 0, 1, 0);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('trattoriaSalvatore@email.com', 'TrattoriaDaSalvatore', 'Trattoria da Salvatore', '', 'securepass', 'Siamo una trattoria nel mezzo di un paesaggio mozzafiato', 1, 1, 0, 1, 0);
 
 -- Inserisci utente 3
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('giuseppe.verdi@email.com', 'peppev', 'Giuseppe', 'Verdi', 'hashedpass', 'Musicista e appassionato di opera', 'giuseppe.jpg', 0, 0, 1, 1, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('giuseppe.verdi@email.com', 'peppev', 'Giuseppe', 'Verdi', 'hashedpass', 'Musicista e appassionato di opera', 0, 0, 1, 1, 1);
 
 -- Inserisci utente 4
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('anna.monti@email.com', 'anna.monti', 'Anna', 'Monti', 'password456', 'Ingegnere software appassionata di viaggi', 'anna.jpg', 0, 1, 0, 1, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('anna.monti@email.com', 'anna.monti', 'Anna', 'Monti', 'password456', 'Ingegnere software appassionata di viaggi', 0, 1, 0, 1, 1);
 
 -- Inserisci utente 5
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('enoteca.galli@email.com', 'enoteca_galli', 'Enoteca Galli', '', 'strongpass', 'Passione in ogni bottiglia, esperienza in ogni sorso', 'enoteca_galli.jpg', 1, 1, 1, 0, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('enoteca.galli@email.com', 'enoteca_galli', 'Enoteca Galli', '', 'strongpass', 'Passione in ogni bottiglia, esperienza in ogni sorso', 1, 1, 1, 0, 1);
 
 -- Inserisci utente 6
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('eleonora.rossi@email.com', 'eleo_rossi', 'Eleonora', 'Rossi', 'securepwd', 'Studiosa di letteratura e appassionata di cinema', 'eleonora.jpg', 0, 0, 1, 1, 0);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('eleonora.rossi@email.com', 'eleo_rossi', 'Eleonora', 'Rossi', 'securepwd', 'Studiosa di letteratura e appassionata di cinema', 0, 0, 1, 1, 0);
 
 -- Inserisci utente 7
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('marco.guidi@email.com', 'marco_guidi_parrucchieri', 'Marco Guidi Parrucchieri', '', 'mypassword', 'Tagliamo il passato, coloriamo il presente, stiliamo il futuro', 'marco_guidi.jpg', 1, 0, 1, 1, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('marco.guidi@email.com', 'marco_guidi_parrucchieri', 'Marco Guidi Parrucchieri', '', 'mypassword', 'Tagliamo il passato, coloriamo il presente, stiliamo il futuro', 1, 0, 1, 1, 1);
 
 -- Inserisci utente 8
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('sara.verdi@email.com', 'sara.v', 'Sara', 'Verdi', 'secure123', 'Appassionata di moda e arte contemporanea', 'sara.jpg', 0, 1, 0, 0, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('sara.verdi@email.com', 'sara.v', 'Sara', 'Verdi', 'secure123', 'Appassionata di moda e arte contemporanea', 0, 1, 0, 0, 1);
 
 -- Inserisci utente 9
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('from.gamer@email.com', 'fromGamer', 'FromGamer', '', 'mypassword123', 'Negozio di videogiochi e giochi da tavolo', 'from_gamer.jpg', 1, 1, 1, 0, 0);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('from.gamer@email.com', 'fromGamer', 'FromGamer', '', 'mypassword123', 'Negozio di videogiochi e giochi da tavolo', 1, 1, 1, 0, 0);
 
 -- Inserisci utente 10
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('elena.monti@email.com', 'elena.m', 'Elena', 'Monti', 'pass1234', 'Insegnante di lingue straniere e appassionata di yoga', 'elena.jpg', 0, 1, 1, 1, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('elena.monti@email.com', 'elena.m', 'Elena', 'Monti', 'pass1234', 'Insegnante di lingue straniere e appassionata di yoga', 0, 1, 1, 1, 1);
 
 -- Inserisci utente 11
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('giovanni.baldi@email.com', 'giovanni.b', 'Giovanni', 'Baldi', 'securepass', 'Appassionato di musica classica e tecnologia', 'giovanni.jpg', 0, 0, 1, 1, 0);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('giovanni.baldi@email.com', 'giovanni.b', 'Giovanni', 'Baldi', 'securepass', 'Appassionato di musica classica e tecnologia', 0, 0, 1, 1, 0);
 
 -- Inserisci utente 12
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('silvia.moro@email.com', 'silvia_m', 'Silvia', 'Moro', 'password5678', 'Designer di moda e amante degli animali', 'silvia.jpg', 0, 0, 0, 1, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('silvia.moro@email.com', 'silvia_m', 'Silvia', 'Moro', 'password5678', 'Designer di moda e amante degli animali', 0, 0, 0, 1, 1);
 
 -- Inserisci utente 13
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('andrea.cavalli@email.com', 'andrea.c', 'Andrea', 'Cavalli', 'myp@ssword', 'Ingegnere civile appassionato di trekking', 'andrea.jpg', 0, 1, 0, 1, 0);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('andrea.cavalli@email.com', 'andrea.c', 'Andrea', 'Cavalli', 'myp@ssword', 'Ingegnere civile appassionato di trekking', 0, 1, 0, 1, 0);
 
 -- Inserisci utente 14
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('simona.rossi@email.com', 'simona_r', 'Simona', 'Rossi', 'secure_pwd', 'Appassionata di letteratura russa e scienze politiche', 'simona.jpg', 0, 1, 1, 0, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('simona.rossi@email.com', 'simona_r', 'Simona', 'Rossi', 'secure_pwd', 'Appassionata di letteratura russa e scienze politiche', 0, 1, 1, 0, 1);
 
 -- Inserisci utente 15
-INSERT INTO USERS (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('kebab.station@email.com', 'Kebab_Stazione', 'Kebab la Stazione', '', 'kebabONE', 'Negozio di veri kebab e falafel alla stazione', 'kabab_stazione.jpg', 1, 1, 1, 1, 1);
+INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
+VALUES ('kebab.station@email.com', 'Kebab_Stazione', 'Kebab la Stazione', '', 'kebabONE', 'Negozio di veri kebab e falafel alla stazione', 1, 1, 1, 1, 1);
 
 
 -- Ricerche

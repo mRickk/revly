@@ -88,15 +88,15 @@ create table USERS (
      surname varchar(64),
      password varchar(64) not null,
      biography text not null,
-     img varchar(128) not null default 'user_default_img.jpg',
+     img varchar(128) not null default 'default-image.png',
      isCompany boolean not null,
      notifyLikes boolean not null,
      notifyComments boolean not null,
      notifyTags boolean not null,
      notifyFollows boolean not null,
-	 numFollower int unsigned not null,
-	 numFollowing int unsigned not null,
-	 numPost int unsigned not null,
+	numFollower int unsigned not null,
+	numFollowing int unsigned not null,
+	numPost int unsigned not null,
      constraint ID_USERS_ID primary key (email));
 
 
