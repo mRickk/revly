@@ -2,12 +2,12 @@
 require_once("bootstrap.php");
 session_start();
 
-if (isUserLoggedIn() && $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["id_post"])) {
-    $post = $dbh->getPost($_POST["id_post"]);
+if (isUserLoggedIn() && $_SESSION["id_post"]) {
+    $post = $dbh->getPost($_SESSION["id_post"]);
     if (count($post) == 0) {
-        $templateParams["title"] = "Revly - No post found";
+        $templateParams["title"] = "Revly - Post not found";
         $templateParams["top-template"] = "page-top.php";
-        $templateParams["main-template"] = "no-user-found.php";
+        $templateParams["main-template"] = "not-found.php";
         $templateParams["not-found"] = "post";
     }
     $post["liked"] = $dbh->isPostLiked($_SESSION["email"], $post["id_post"]);
