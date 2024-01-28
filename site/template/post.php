@@ -28,5 +28,6 @@
     <p><?php echo $post['likes']; ?></p>
     <i class="bi bi-chat-left-text"></i><?php //TODO: aggiungere evento js click del comment ?>
     <p><?php echo $post['description']; ?></p>
+    <p><?php echo $post['date_time']; ?></p>
     </div>
 </div>
