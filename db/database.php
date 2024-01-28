@@ -148,7 +148,7 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getComments($idPost) {
-        $qry = "SELECT * FROM comments AS C, users AS U WHERE C.id_post = ? AND C.author_email = U.email";
+        $qry = "SELECT description, date_time, username, img FROM comments C, users U WHERE C.id_post = ? AND C.author_email = U.email";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('i', $idPost);
         $stmt->execute();
@@ -208,7 +208,7 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
-    public function isPostLiked($email , $idPost) {
+    public function isPostLiked($email, $idPost) {
         $qry = "SELECT * FROM likes WHERE user_email = ? AND id_post = ?";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('si', $email, $idPost);
@@ -249,6 +249,38 @@ SOLO SE id_taggable è != NULL*/
         $stmt->execute();
         $res = $stmt->get_result();
         return $res->num_rows > 0;
+    }
+
+    public function getPost($id_post) {
+        $qry = "SELECT
+                users.username,
+                p.id AS id_post,
+                p.description,
+                p.likes,
+                p.evaluation,
+                users.img AS user_img,
+                p.img AS post_img,
+                p.subject,
+                p.date_time,
+                taggable.name AS tag_name,
+                taggable.address AS tag_address,
+                company.name AS company_name
+            FROM
+                post p
+            JOIN
+                users ON users.email = p.author_email
+            LEFT JOIN
+                taggable ON taggable.id = p.id_taggable
+            LEFT JOIN
+                users AS company ON taggable.company_email = company.email
+            WHERE
+                p.id = ?
+            ORDER BY p.date_time DESC";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('i', $id_post);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->num_rows == 1 ? $res->fetch_assoc() : [];
     }
 
 }

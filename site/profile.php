@@ -2,14 +2,26 @@
 require_once("bootstrap.php");
 session_start();
 
-if (isUserLoggedIn() && !empty($_SESSION["profile_email"])) {
-    $profile = $dbh->getUserWithEmail($_SESSION["profile_email"]);
-    $templateParams["profile"] = $profile;
-    $templateParams["posts"] = $dbh->getProfilePosts($profile["email"]);
-    if (strcmp($profile["email"], $_SESSION["email"]) == 0) {
-        $templateParams["isFollowed"] = $dbh->isFollowed($profile["email"], $_SESSION["email"]);
+if (isUserLoggedIn() && $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["profile_email"])) {
+    if (strcmp($_POST["profile_email"], $_SESSION["email"]) == 0) {
+        header("Location: myprofile.php");
     }
-    $templateParams["title"] = "Revly - Profile";
+    $profile = $dbh->getUserWithEmail($_POST["profile_email"]);
+    if (count($profile) == 0) {
+        $templateParams["title"] = "Revly - No user found";
+        $templateParams["top-template"] = "page-top.php";
+        $templateParams["main-template"] = "not-found.php";
+        $templateParams["not-found"] = "user";
+    }
+    $templateParams["profile"] = $profile;
+    $posts = $dbh->getProfilePosts($profile["email"]);
+    foreach($posts as &$p) {
+        $p["liked"] = $dbh->isPostLiked($_SESSION["email"], $p["id_post"]);
+    }
+    unset($p);
+    $templateParams["posts"] = $posts;
+    
+    $templateParams["title"] = "Revly - " . $profile["username"] . "'s profile";
     $templateParams["top-template"] = "profile-top.php";
     $templateParams["main-template"] = "show-posts.php";
 
