@@ -36,6 +36,16 @@ class DatabaseHelper {
         return $res;
     }
 
+    public function getUsers($username) {
+        $qry = "SELECT username FROM users WHERE username LIKE ?";
+        $stmt = $this->db->prepare($qry);
+        $tmp = '%' . $username . '%';
+        $stmt->bind_param('s', $tmp);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        return $res->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getUserWithUsername($username) {
         $qry = "SELECT email, username, name, surname, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows, numFollower, numFollowing, numPost FROM users WHERE username = ?";
         $stmt = $this->db->prepare($qry);
