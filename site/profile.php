@@ -20,9 +20,9 @@ if (isUserLoggedIn() && $_SESSION["profile_email"]) {
     }
     unset($p);
     $templateParams["posts"] = $posts;
-    $templateParams["numFollowing"] = $dbh->getNumberFollows($profile["email"]);
-    $templateParams["numFollower"] = $dbh->getNumberFollowers($profile["email"]);
-    $templateParams["numPost"] = $dbh->getNumberPost($profile["email"]);
+    $profile["numFollowing"] = $dbh->getNumberFollows($profile["email"]);
+    $profile["numFollower"] = $dbh->getNumberFollowers($profile["email"]);
+    $profile["numPost"] = $dbh->getNumberPost($profile["email"]);
     
     $templateParams["title"] = "Revly - " . $profile["username"] . "'s profile";
     $templateParams["top-template"] = "page-top.php";

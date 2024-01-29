@@ -47,7 +47,7 @@ class DatabaseHelper {
     }
 
     public function getUserWithUsername($username) {
-        $qry = "SELECT email, username, name, surname, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows, numFollower, numFollowing, numPost FROM users WHERE username = ?";
+        $qry = "SELECT email, username, name, surname, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows FROM users WHERE username = ?";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('s', $username);
         $stmt->execute();
@@ -74,7 +74,7 @@ SOLO SE id_taggable è != NULL*/
                 users.username,
                 p.id AS id_post,
                 p.description,
-                p.likes,
+                (SELECT COUNT(*) FROM likes WHERE id_post = p.id) as likes,
                 p.evaluation,
                 users.img AS user_img,
                 p.img AS post_img,
@@ -103,12 +103,13 @@ SOLO SE id_taggable è != NULL*/
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
+
     public function getProfilePosts($email) {
         $qry = "SELECT
                 users.username,
                 p.id AS id_post,
                 p.description,
-                p.likes,
+                (SELECT COUNT(*) FROM likes WHERE id_post = p.id) as likes,
                 p.evaluation,
                 users.img AS user_img,
                 p.img AS post_img,
@@ -134,6 +135,7 @@ SOLO SE id_taggable è != NULL*/
         $res = $stmt->get_result();
         return $res->fetch_all(MYSQLI_ASSOC);
     }
+    
 
     public function getUserNotifications($email) {
         $qry = "SELECT N.date_time, U.username as notifier_username, U.email as notifier_email, U.img as notifier_img, NT.message, post.img as post_img, N.id_post
@@ -278,14 +280,14 @@ SOLO SE id_taggable è != NULL*/
             LEFT JOIN
                 users AS company ON taggable.company_email = company.email
             WHERE
-                p.id = ?
-            ORDER BY p.date_time DESC";
+                p.id = ?";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('i', $id_post);
         $stmt->execute();
         $res = $stmt->get_result();
         return $res->num_rows == 1 ? $res->fetch_assoc() : [];
     }
+    
 
     public function getNumberPost($user_email) {
         $qry = "SELECT COUNT(*) as post_count FROM post WHERE author_email = ?";
@@ -316,9 +318,5 @@ SOLO SE id_taggable è != NULL*/
         $row = $res->fetch_assoc();
         return $row['follower_count'];
     }
-    
-    
-
-
 }
 ?>

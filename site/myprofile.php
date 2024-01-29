@@ -15,12 +15,9 @@ if (isUserLoggedIn()) {
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "main-profile.php";
     
-    $templateParams["numFollowing"] = $dbh->getNumberFollows($profile["email"]);
-    echo $templateParams["numFollowing"];
-    $templateParams["numFollower"] = $dbh->getNumberFollowers($profile["email"]);
-    echo $templateParams["numFollower"];
-    $templateParams["numPost"] = $dbh->getNumberPost($profile["email"]);
-    echo $templateParams["numPost"];
+    $profile["numFollowing"] = $dbh->getNumberFollows($profile["email"]);
+    $profile["numFollower"] = $dbh->getNumberFollowers($profile["email"]);
+    $profile["numPost"] = $dbh->getNumberPost($profile["email"]);
 
     require("template/base.php");
 } else {

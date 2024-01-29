@@ -16,10 +16,7 @@ $(document).ready(function() {
                 url: "search-user.php",
                 type: "POST",
                 data: { q: data },
-                success: function(data){
-                    console.log("AAA");
-                    showResult(data);
-                }
+                success: showResult
             });
         }
     });
@@ -29,11 +26,7 @@ $(document).ready(function() {
         $.ajax({
             url: "recent-searches.php",
             type: "GET",
-            success: function(data) {
-                console.log(data); // Aggiunto per debug
-                showResult(data);
-            }
-        
+            success: showResult
         });
     }
 
