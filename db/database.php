@@ -19,17 +19,10 @@ class DatabaseHelper {
         return $res->num_rows == 1 ? $res->fetch_assoc() : [];
     }
 
-    public function checkUniqueUserAttribute($username, $email) {
-        $qry = "SELECT username, email FROM users U WHERE U.username = ? OR U.email = ?";
-        $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('ss', $username, $email);
-        $stmt->execute();
-        $res = $stmt->get_result();
-        return $res->num_rows == 0;
-    }
-
     public function registerUser($username, $password, $name, $email, $surname = '') {
-        $qry = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, '', '', 0, 1, 1, 1, 1)";
+        $qry = "INSERT INTO `users` (`email`, `username`, `name`, `surname`, `password`, `biography`,
+            `isCompany`, `notifyLikes`, `notifyComments`, `notifyTags`, `notifyFollows`)
+            VALUES (?, ?, ?, ?, ?, '', 0, 1, 1, 1, 1)";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('sssss', $email, $username, $name, $surname, $password);
         $res = $stmt->execute();
