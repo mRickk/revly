@@ -37,5 +37,4 @@
             <button type="submit" class="btn btn-outline-secondary w-100 mb-1 rounded-5" value="Rate it!">Rate it!</button>
         </li>
     </ul>
-<script src="./js/newPost.js"></script>
 </form>

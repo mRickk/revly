@@ -184,9 +184,9 @@ SOLO SE id_taggable è != NULL*/
             $qry = "NULL, ?, ?, NULL, ?);";
         }*/
         $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            VALUES (?, ?, 0, ?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('siisssis', $img, $evaluation, $likes, $subject, $description, $timestamp, $taggable, $email);
+        $stmt->bind_param('sisssis', $img, $evaluation, $subject, $description, $timestamp, $taggable, $email);
         $res = $stmt->execute();
         return $res;
     }

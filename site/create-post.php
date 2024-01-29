@@ -6,6 +6,7 @@ if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Create post";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "create-post-form.php";
+    $templateParams["js"] = ["js/newPost.js"];
 
     $tag = $dbh->getTaggable();
     $templateParams["tags"] = $tag;
@@ -25,15 +26,17 @@ if (isUserLoggedIn()) {
 
                 // Controllo se il subject è presente nell'array $combinedNames
                 $key = array_search($subject, $combinedNames);
-
+                echo "AAAA";
                 if ($key !== false) {
+                    echo "". $key ."". $subject ."";
                     $tagId = $tag[$key]['id'];
                     $dbh->newPost($_SESSION["email"], $msg, NULL, $_POST["description"], $_POST["selectedEvaluation"], $tagId);
                 } else {
+                    echo "CCC";
                     $dbh->newPost($_SESSION["email"], $msg, $subject, $_POST["description"], $_POST["selectedEvaluation"], NULL);
                 }
-                header("Location: home.php");
-                exit(); // Assicurati di terminare lo script qui
+                //header("Location: home.php");
+                //exit(); // Assicurati di terminare lo script qui
             }
         }
     }
