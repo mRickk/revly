@@ -12,8 +12,8 @@ if (isUserLoggedIn()) {
     $templateParams["posts"] = $posts;
 
     $templateParams["title"] = "Revly - Your profile";
-    $templateParams["top-template"] = "profile-top.php";
-    $templateParams["main-template"] = "show-posts.php";
+    $templateParams["top-template"] = "page-top.php";
+    $templateParams["main-template"] = "main-profile.php";
 
     require("template/base.php");
 } else {

@@ -1,8 +1,3 @@
-<?php
-require_once("page-top.php");
-$profile = $templateParams["profile"];
-?>
-
 <div class="profile-top">
     <p><?php echo $profile["username"]; ?></p>
     <?php if ($profile["isCompany"]): ?>
@@ -11,9 +6,9 @@ $profile = $templateParams["profile"];
     <img src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
     <p>Followers: <?php echo $profile["numFollower"]; ?></p>
     <p>Posts: <?php echo $profile["numPost"]; ?></p>
-    <p>Followings: <?php echo $profile["numFollowing"]; ?></p>
+    <p>Followings: <?php echo $profile["numFollowing"]; //TODO: calcola e aggiorna il num di followers?></p>
     <?php if (isset($templateParams["isFollowed"])):?>
-        <?php if ($templateParams["isFollowed"]):?>
+        <?php if ($templateParams["isFollowed"]): //TODO: pulsante following con js?>
             <div class="following-btn">
                 <p>Following</p>
             </div>
@@ -23,5 +18,6 @@ $profile = $templateParams["profile"];
             </div>
         <?php endif;?>
     <?php endif;?>
-        
 </div>
+
+<?php require_once("show-posts.php");?>
