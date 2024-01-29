@@ -320,5 +320,15 @@ SOLO SE id_taggable è != NULL*/
         $row = $res->fetch_assoc();
         return $row['follower_count'];
     }
+
+    public function updateRecentSearches($user_email, $searched_user) {
+        $qry = 'INSERT INTO recent_searches (user_email, searched_email, date_time)
+        VALUES (?, ?, CURRENT_TIMESTAMP)
+        ON DUPLICATE KEY UPDATE date_time = CURRENT_TIMESTAMP;';
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ss', $user_email, $searched_user );
+        $res = $stmt->execute();
+        return $res;
+    }
 }
 ?>
