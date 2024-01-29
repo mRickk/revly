@@ -2,3 +2,8 @@ img[src="./img/logoRevlySlogan.png"] {
     width: 100%;
     max-width: 500px;
 }
+
+body {
+    background-color: white;
+    background: linear-gradient(rgba(126,191,167,1), rgba(224,126,96,1)) fixed;
+}

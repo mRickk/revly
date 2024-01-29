@@ -2,7 +2,7 @@
 require_once("bootstrap.php");
 session_start();
 
-if (isUserLoggedIn() && $_SESSION["id_post"]) {
+if (isUserLoggedIn() && isset($_SESSION["id_post"])) {
     $post = $dbh->getPost($_SESSION["id_post"]);
     if (count($post) == 0) {
         $templateParams["title"] = "Revly - Post not found";
@@ -17,6 +17,10 @@ if (isUserLoggedIn() && $_SESSION["id_post"]) {
     $templateParams["title"] = "Revly - " . $post["username"] . "'s post";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "main-post-focus.php";
+
+    if (isset($_POST["comment"]) && $_POST["comment"] != '') {
+        $dbh->newComment($_POST["comment"], $post["id_post"], $_SESSION["email"]);
+    }
 
     require("template/base.php");
 } else {
