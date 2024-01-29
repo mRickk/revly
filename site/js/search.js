@@ -15,7 +15,7 @@ $(document).ready(function() {
             $.ajax({
                 url: "search-user.php",
                 type: "POST",
-                data: { q: data },
+                data: { q: data},
                 success: showResult
             });
         }

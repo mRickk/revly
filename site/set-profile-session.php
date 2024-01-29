@@ -2,6 +2,8 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'])) {
+
+    //$recentSearches = $dbh->updateRecentSearches($_SESSION["profile_email"], $_POST['email']);
     // Imposta la variabile di sessione
     $_SESSION["profile_email"] = $_POST['email'];
 
