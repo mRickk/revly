@@ -6,7 +6,6 @@
             <img id="preview" src="./img/default-image.jpg" alt="Default Preview" style="max-width:100%; max-height:100%;">
             <!-- Nascondi l'input del file finché non viene selezionato un'immagine -->
             <input class="square visually-hidden" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg" onchange="previewImage()">
-            
         </label>
     </div>
 
