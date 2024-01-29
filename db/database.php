@@ -157,12 +157,16 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getRecentSearches($email) {
-        $qry = "SELECT * FROM recent_searches WHERE user_email = ?";
+        $qry = "SELECT searched_email as email, username FROM recent_searches, users WHERE user_email = ? AND searched_email = email;";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $res = $stmt->get_result();
-        return $res->fetch_all(MYSQLI_ASSOC);
+        if ($res->num_rows > 0) {
+            return $res->fetch_all(MYSQLI_ASSOC);
+        } else {
+            return array();
+        }
     }
 
     public function newPost($email, $img, $subject, $description, $evaluation, $taggable) {
@@ -282,6 +286,39 @@ SOLO SE id_taggable è != NULL*/
         $res = $stmt->get_result();
         return $res->num_rows == 1 ? $res->fetch_assoc() : [];
     }
+
+    public function getNumberPost($user_email) {
+        $qry = "SELECT COUNT(*) as post_count FROM post WHERE author_email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $user_email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $res->fetch_assoc();
+        return $row['post_count'];
+    }
+
+    public function getNumberFollows($user_email) {
+        $qry = "SELECT COUNT(*) as follows_count FROM follow WHERE follower_email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $user_email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $res->fetch_assoc();
+        return $row['follows_count'];
+    }
+    
+    public function getNumberFollowers($user_email) {
+        $qry = "SELECT COUNT(*) as follower_count FROM follow WHERE user_email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $user_email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $res->fetch_assoc();
+        return $row['follower_count'];
+    }
+    
+    
+
 
 }
 ?>

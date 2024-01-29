@@ -4,9 +4,9 @@
         <i class="bi bi-patch-check-fill"></i>
     <?php endif; ?>
     <img src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
-    <p>Followers: <?php echo $profile["numFollower"]; ?></p>
-    <p>Posts: <?php echo $profile["numPost"]; ?></p>
-    <p>Followings: <?php echo $profile["numFollowing"]; //TODO: calcola e aggiorna il num di followers?></p>
+    <p>Followers: <?php echo $templateParams["numFollower"]; ?></p>
+    <p>Posts: <?php echo $templateParams["numPost"]; ?></p>
+    <p>Followings: <?php echo $templateParams["numFollowing"]; //TODO: calcola e aggiorna il num di followers?></p>
     <?php if (isset($templateParams["isFollowed"])):?>
         <?php if ($templateParams["isFollowed"]): //TODO: pulsante following con js?>
             <div class="following-btn">

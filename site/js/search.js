@@ -1,17 +1,41 @@
 $(document).ready(function() {
     let searchBar = document.querySelector("#searchBar");
 
+    // Aggiungi un evento alla search bar all'avvio della pagina
+    showRecentSearches();
+
     searchBar.addEventListener("input", function() {
         let data = searchBar.value.trim();
-        if (data === "") return showResult("[]"); // Se l'input è vuoto, mostra un array JSON vuoto
 
-        $.ajax({
-            url: "search-user.php",
-            type: "POST",
-            data: { q: data },
-            success: showResult
-        });
+        // Se l'input è vuoto, mostra le ricerche recenti
+        if (data === "") {
+            showRecentSearches();
+        } else {
+            // Altrimenti, mostra i suggerimenti in tempo reale
+            $.ajax({
+                url: "search-user.php",
+                type: "POST",
+                data: { q: data },
+                success: function(data){
+                    console.log("AAA");
+                    showResult(data);
+                }
+            });
+        }
     });
+
+    function showRecentSearches() {
+        // Esegui una chiamata AJAX per ottenere le ricerche recenti dal database
+        $.ajax({
+            url: "recent-searches.php",
+            type: "GET",
+            success: function(data) {
+                console.log(data); // Aggiunto per debug
+                showResult(data);
+            }
+        
+        });
+    }
 
     function showResult(data) {
         let resultContainer = document.querySelector("#searchResult");
