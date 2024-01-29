@@ -58,7 +58,6 @@ create table POST (
      id int unsigned not null AUTO_INCREMENT,
      img varchar(128) not null,
      evaluation tinyint not null,
-     likes int unsigned not null,
      subject varchar(100),
      description text not null,
      date_time datetime not null,
@@ -94,9 +93,6 @@ create table USERS (
      notifyComments boolean not null,
      notifyTags boolean not null,
      notifyFollows boolean not null,
-	numFollower int unsigned not null,
-	numFollowing int unsigned not null,
-	numPost int unsigned not null,
      constraint ID_USERS_ID primary key (email));
 
 

@@ -19,17 +19,10 @@ class DatabaseHelper {
         return $res->num_rows == 1 ? $res->fetch_assoc() : [];
     }
 
-    public function checkUniqueUserAttribute($username, $email) {
-        $qry = "SELECT username, email FROM users U WHERE U.username = ? OR U.email = ?";
-        $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('ss', $username, $email);
-        $stmt->execute();
-        $res = $stmt->get_result();
-        return $res->num_rows == 0;
-    }
-
     public function registerUser($username, $password, $name, $email, $surname = '') {
-        $qry = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, '', '', 0, 1, 1, 1, 1)";
+        $qry = "INSERT INTO `users` (`email`, `username`, `name`, `surname`, `password`, `biography`,
+            `isCompany`, `notifyLikes`, `notifyComments`, `notifyTags`, `notifyFollows`)
+            VALUES (?, ?, ?, ?, ?, '', 0, 1, 1, 1, 1)";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('sssss', $email, $username, $name, $surname, $password);
         $res = $stmt->execute();
@@ -56,7 +49,7 @@ class DatabaseHelper {
     }
 
     public function getUserWithEmail($email) {
-        $qry = "SELECT email, username, name, surname, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows, numFollower, numFollowing, numPost FROM users WHERE email = ?";
+        $qry = "SELECT email, username, name, surname, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows FROM users WHERE email = ?";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -65,7 +58,7 @@ class DatabaseHelper {
     }
 
     /*
-1. SELECT username, description, likes, evaluation, users.img as user_img, post.img as post_img, subject, id_taggable, date_time FROM follow, post, users WHERE follow.follower_email = '" . $this->db->real_escape_string($email) . "' AND post.author_email = follow.user_email AND users.email = post.author_email;
+1. SELECT username, description, evaluation, users.img as user_img, post.img as post_img, subject, id_taggable, date_time FROM follow, post, users WHERE follow.follower_email = '" . $this->db->real_escape_string($email) . "' AND post.author_email = follow.user_email AND users.email = post.author_email;
 2. SELECT address, users.name as company_name FROM users, taggable WHERE taggable.id = '" . $this->db->real_escape_string($idTaggable) . "' AND taggable.company_email = users.email;
 SOLO SE id_taggable è != NULL*/
     
@@ -175,7 +168,7 @@ SOLO SE id_taggable è != NULL*/
         $timestamp = date('Y-m-d H:i:s');
         //TODO: remove metodo vecchio se nuovo funzia
         /* 
-        $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES (?, ?, ?, ";
+        $qry = "INSERT INTO `post` (`img`, `evaluation`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES (?, ?, ?, ";
         if(!isset($taggable)){
             $qry = "?, ?, ?, NULL, ?);";
         }
@@ -189,7 +182,7 @@ SOLO SE id_taggable è != NULL*/
         else {
             $qry = "NULL, ?, ?, NULL, ?);";
         }*/
-        $qry = "INSERT INTO `post` (`img`, `evaluation`, `likes`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`)
+        $qry = "INSERT INTO `post` (`img`, `evaluation`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`)
             VALUES (?, ?, 0, ?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('sisssis', $img, $evaluation, $subject, $description, $timestamp, $taggable, $email);
@@ -262,7 +255,7 @@ SOLO SE id_taggable è != NULL*/
                 users.username,
                 p.id AS id_post,
                 p.description,
-                p.likes,
+                (SELECT COUNT(*) FROM likes WHERE id_post = p.id) as likes,
                 p.evaluation,
                 users.img AS user_img,
                 p.img AS post_img,
