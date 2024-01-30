@@ -21,7 +21,7 @@ if (isUserLoggedIn() && isset($_GET['username'])) {
         $templateParams["profile"] = $profile;
         $posts = $dbh->getProfilePosts($profile["email"]);
         for ($i = 0; $i < count($posts); $i++){
-            $posts[$i]["liked"] = $dbh->isPostLiked($_SESSION, $posts[$i]["idPost"]);   
+            $posts[$i]["liked"] = $dbh->isPostLiked($_SESSION["email"], $posts[$i]["id_post"]);  
         }
         $templateParams["posts"] = $posts;
         $profile["numFollowing"] = $dbh->getNumberFollows($profile["email"]);
@@ -31,6 +31,7 @@ if (isUserLoggedIn() && isset($_GET['username'])) {
         $templateParams["title"] = "Revly - " . $profile["username"] . "'s profile";
         $templateParams["top-template"] = "page-top.php";
         $templateParams["main-template"] = "main-profile.php";
+        $templateParams["js"] = ["js/like.js"];
 
         require("template/base.php");
     } else {

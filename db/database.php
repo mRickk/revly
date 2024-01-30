@@ -319,6 +319,16 @@ SOLO SE id_taggable è != NULL*/
         $row = $res->fetch_assoc();
         return $row['follows_count'];
     }
+
+    public function getNumberLike($idPost) {
+        $qry = "SELECT COUNT(*) as num_likes FROM likes WHERE id_post = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('i', $idPost);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $res->fetch_assoc();
+        return $row['num_likes'];
+    }
     
     public function getNumberFollowers($user_email) {
         $qry = "SELECT COUNT(*) as follower_count FROM follow WHERE user_email = ?";
@@ -348,17 +358,17 @@ SOLO SE id_taggable è != NULL*/
 
         if ($liked) {
             // Rimuovi il like
-            $query = "DELETE FROM likes WHERE user_email = ? AND post_id = ?";
+            $query = "DELETE FROM likes WHERE user_email = ? AND id_post = ?";
         } else {
             // Aggiungi il like
-            $query = "INSERT INTO likes (user_email, post_id) VALUES (?, ?)";
+            $query = "INSERT INTO likes (user_email, id_post) VALUES (?, ?)";
         }
 
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si', $userEmail, $postId);
         $success = $stmt->execute();
 
-        return $success;
+        return !$liked;
     }
 
 }

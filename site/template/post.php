@@ -22,12 +22,12 @@
     <p><?php echo $post['evaluation']; ?><i class="bi bi-star-fill"></i></p>
     <div class="like-icon" data-post-id="<?php echo $post['id_post']; ?>">
         <?php if ($post['liked']): ?>
-            <i class="bi bi-heart-fill liked"></i>
+            <i class="bi bi-heart-fill"></i>
         <?php else: ?>
             <i class="bi bi-heart"></i>
         <?php endif; ?>
+        <p><?php echo $post['likes']; ?></p>
     </div>
-    <p><?php echo $post['likes']; ?></p>
     <i class="bi bi-chat-left-text"></i><?php //TODO: aggiungere evento js click del comment ?>
     <p><?php echo $post['description']; ?></p>
     <p><?php echo $post['date_time']; ?></p>
