@@ -43,24 +43,14 @@ $(document).ready(function() {
     }
 
     // Funzione per gestire il clic su un link utente
+    // Funzione per gestire il clic su un link utente
     function handleUserClick(event) {
         event.preventDefault();
 
-        // Ottieni l'email dal dataset dell'elemento cliccato
-        let userEmail = event.target.dataset.email;
+        let username = event.target.innerText;
 
-        // Effettua la richiesta per impostare la variabile di sessione
-        $.ajax({
-            url: "set-profile-session.php",
-            type: "POST",
-            data: { email: userEmail },
-            success: function(response) {
-                // Puoi fare qualcosa con la risposta, se necessario
-                console.log(response);
-
-                // Ora puoi reindirizzare l'utente a profile.php
-                window.location.href = "profile.php";
-            }
-        });
+        // Modifica l'URL per includere l'email e lo username
+        window.location.href = "profile.php?username=" + username;
     }
+
 });

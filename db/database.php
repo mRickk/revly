@@ -48,6 +48,15 @@ class DatabaseHelper {
         return is_null($res) ? [] : $res;
     }
 
+    public function getEmailByUsername($username) {
+        $qry = "SELECT email FROM users WHERE username = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $res = $stmt->get_result()->fetch_assoc();
+        return is_null($res) ? [] : $res;
+    }
+
     public function getUserWithEmail($email) {
         $qry = "SELECT email, username, name, surname, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows FROM users WHERE email = ?";
         $stmt = $this->db->prepare($qry);
