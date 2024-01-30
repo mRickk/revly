@@ -43,14 +43,20 @@ $(document).ready(function() {
     }
 
     // Funzione per gestire il clic su un link utente
-    // Funzione per gestire il clic su un link utente
     function handleUserClick(event) {
         event.preventDefault();
-
+    
         let username = event.target.innerText;
-
-        // Modifica l'URL per includere l'email e lo username
-        window.location.href = "profile.php?username=" + username;
+        $.ajax({
+            url: "recent-search-update.php",
+            type: "POST",
+            data: { "username": username },
+            success: function(response){ 
+                // Modifica l'URL per includere l'email e lo username
+                window.location.href = "profile.php?username=" + username;
+            }
+        });
     }
+    
 
 });

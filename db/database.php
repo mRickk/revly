@@ -54,7 +54,7 @@ class DatabaseHelper {
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $res = $stmt->get_result()->fetch_assoc();
-        return is_null($res) ? [] : $res;
+        return is_null($res) ? [] : $res["email"];
     }
 
     public function getUserWithEmail($email) {
@@ -331,11 +331,12 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function updateRecentSearches($user_email, $searched_user) {
-        $qry = 'INSERT INTO recent_searches (user_email, searched_email, date_time)
-        VALUES (?, ?, CURRENT_TIMESTAMP)
+        $qry = 'INSERT INTO recent_searches (user_email, searched_email)
+        VALUES (?, ?)
         ON DUPLICATE KEY UPDATE date_time = CURRENT_TIMESTAMP;';
         $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('ss', $user_email, $searched_user );
+        $stmt->bind_param('ss', $user_email, $searched_user);
+        var_dump($searched_user);
         $res = $stmt->execute();
         return $res;
     }

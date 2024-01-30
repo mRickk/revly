@@ -4,17 +4,15 @@ session_start();
 
 
 if (isUserLoggedIn() && isset($_GET['username'])) {
-    $profile_data = $dbh->getEmailByUsername($_GET['username']);
+    $email = $dbh->getEmailByUsername($_GET['username']);
     
-    if (array_key_exists('email', $profile_data)) {
-        $profile_email = $profile_data['email'];
-    
+    if (isset($email)) {
         // Verifica se l'email ottenuta è uguale all'email dell'utente autenticato
-        if (strcmp($profile_email, $_SESSION["email"]) == 0) {
+        if (strcmp($email, $_SESSION["email"]) == 0) {
             header("Location: myprofile.php");
         }
         
-        $profile = $dbh->getUserWithEmail($profile_email);
+        $profile = $dbh->getUserWithEmail($email);
         if (count($profile) == 0) {
             $templateParams["title"] = "Revly - User not found";
             $templateParams["top-template"] = "page-top.php";
