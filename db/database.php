@@ -161,7 +161,7 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getRecentSearches($email) {
-        $qry = "SELECT searched_email as email, username FROM recent_searches, users WHERE user_email = ? AND searched_email = email;";
+        $qry = "SELECT searched_email as email, username FROM recent_searches, users WHERE user_email = ? AND searched_email = email ORDER BY date_time DESC;";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -331,8 +331,8 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function updateRecentSearches($user_email, $searched_user) {
-        $qry = 'INSERT INTO recent_searches (user_email, searched_email)
-        VALUES (?, ?)
+        $qry = 'INSERT INTO recent_searches (user_email, searched_email, date_time)
+        VALUES (?, ?, CURRENT_TIMESTAMP)
         ON DUPLICATE KEY UPDATE date_time = CURRENT_TIMESTAMP;';
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('ss', $user_email, $searched_user);
@@ -340,5 +340,26 @@ SOLO SE id_taggable è != NULL*/
         $res = $stmt->execute();
         return $res;
     }
+
+    // All'interno della classe DatabaseHandler
+    public function handleLike($userEmail, $postId) {
+        // Verifica se l'utente ha già messo like a questo post
+        $liked = $this->isPostLiked($userEmail, $postId);
+
+        if ($liked) {
+            // Rimuovi il like
+            $query = "DELETE FROM likes WHERE user_email = ? AND post_id = ?";
+        } else {
+            // Aggiungi il like
+            $query = "INSERT INTO likes (user_email, post_id) VALUES (?, ?)";
+        }
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $userEmail, $postId);
+        $success = $stmt->execute();
+
+        return $success;
+    }
+
 }
 ?>

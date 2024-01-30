@@ -6,9 +6,10 @@ if (isUserLoggedIn()) {
     $profile = $dbh->getUserWithEmail($_SESSION["email"]);
     $templateParams["profile"] = $profile;
     $posts = $dbh->getProfilePosts($profile["email"]);
-    foreach($posts as $p) {
-        $p["liked"] = $dbh->isPostLiked($_SESSION["email"], $p["id_post"]);
+    for ($i = 0; $i < count($posts); $i++){
+        $posts[$i]["liked"] = $dbh->isPostLiked($_SESSION, $posts[$i]["idPost"]);   
     }
+    
     $templateParams["posts"] = $posts;
 
     $templateParams["title"] = "Revly - Your profile";
