@@ -192,10 +192,11 @@ SOLO SE id_taggable è != NULL*/
             $qry = "NULL, ?, ?, NULL, ?);";
         }*/
         $qry = "INSERT INTO `post` (`img`, `evaluation`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`)
-            VALUES (?, ?, 0, ?, ?, ?, ?, ?)";
+        VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('sisssis', $img, $evaluation, $subject, $description, $timestamp, $taggable, $email);
         $res = $stmt->execute();
+
         return $res;
     }
 
@@ -370,6 +371,5 @@ SOLO SE id_taggable è != NULL*/
 
         return !$liked;
     }
-
 }
 ?>
