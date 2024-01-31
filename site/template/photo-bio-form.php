@@ -6,7 +6,7 @@
         <li>
             <div class="mt w-50 h-50 mb-2">
                 <label for="imgPost" class="file-label">
-                    <img id="preview" src="<?php echo UPLOAD_DIR . $user["img"]; ?>" alt="User Preview" style="max-width:100%; max-height:100%;">
+                    <img id="preview" src="<?php echo UPLOAD_DIR . $user["img"]; ?>" alt="User Preview">
                     <input class="square visually-hidden" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg">
                 </label>
             </div>

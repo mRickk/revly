@@ -5,7 +5,7 @@
         </div>
         <div class="col-11">
             <a href='profile.php?username=<?php echo $notification["notifier_username"]; ?>'>
-                <h2 style="cursor: pointer;">
+                <h2>
                     <?php echo $notification["notifier_username"]; 
                     if ($notification["isCompany"]): ?>
                     <i class="bi bi-patch-check-fill"></i>

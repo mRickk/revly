@@ -28,6 +28,10 @@ ul li {
     list-style: none;
 }
 
-article {
+article, form[action="create-post.php"] {
     border-radius: 15px;
+}
+
+.like-icon {
+    cursor: pointer;
 }
