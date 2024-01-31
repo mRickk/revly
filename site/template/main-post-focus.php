@@ -4,7 +4,7 @@ foreach($templateParams["comments"] as $comment) {
     require("comment.php");
 }
 if (isUserLoggedIn()):?>
-    <form action="#" method="POST">
+    <form id="commentForm" method="POST">
         <div class="d-flex">
             <div class="form-group mb-3">
                 <label class="d-none" for="inputComment">Comment</label>

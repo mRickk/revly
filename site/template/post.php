@@ -5,7 +5,11 @@
             <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $post['user_img']; ?>" alt="Profile picture of <?php echo $post['username']?>"/>
         </div>
         <div class="col-10">
-            <h2><?php echo $post['username']; ?></h2>
+            <a href='profile.php?username=<?php echo $post['username']; ?>'>
+                <h2 style="cursor: pointer;">
+                    <?php echo $post['username']; ?>
+                </h2>
+            </a>
         </div>
         <div class="col-1">
             <?php if (isUserLoggedIn() && strcmp($_SESSION["username"], $post["username"]) == 0): //TODO: aggiungere evento js click del bin ?>
@@ -60,7 +64,7 @@
         <?php endfor; ?>
         <div class="col-3"></div>
         <div class="col-1">
-            <div class="like-icon" data-post-id="<?php echo $post['id_post']; ?>">
+            <div style="cursor: pointer;" class="like-icon" data-post-id="<?php echo $post['id_post']; ?>">
             <?php if ($post['liked']): //TODO: aggiungere evento js click del like ?>
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
@@ -72,11 +76,13 @@
             <?php endif; ?>
             </div>
         </div>
-        <div class="col-1"><?php //TODO: aggiungere evento js click del comment ?>
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
-                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
-            </svg>
+        <div style="cursor: pointer;" class="col-1">
+            <a href='post-focus.php?idPost=<?php echo $post['id_post']; ?>'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </a>
         </div>
         <div class="col-1"></div>
     </div>

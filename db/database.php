@@ -218,10 +218,9 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function newComment($comment, $id_post, $author_email) {
-        $timestamp = date('Y-m-d H:i:s');
-        $qry = "INSERT INTO `commments` (`description`, `date_time`, `author_email`, `id_post`) VALUES (?, ?, ?, ?)";
+        $qry = "INSERT INTO comments (description, date_time, author_email, id_post) VALUES (?, CURRENT_TIMESTAMP, ?, ?)";
         $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('sssi', $comment, $timestamp, $email, $id_post);
+        $stmt->bind_param('ssi', $comment, $author_email, $id_post);
         $res = $stmt->execute();
         return $res;
     }

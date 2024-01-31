@@ -2,8 +2,9 @@
 require_once("bootstrap.php");
 session_start();
 
-if (isUserLoggedIn() && isset($_SESSION["id_post"])) {
-    $post = $dbh->getPost($_SESSION["id_post"]);
+if (isUserLoggedIn() && isset($_GET['idPost'])) {
+    $post = $dbh->getPost($_GET["idPost"]);
+    $_SESSION["id_post"] = $_GET["idPost"];
     if (count($post) == 0) {
         $templateParams["title"] = "Revly - Post not found";
         $templateParams["top-template"] = "page-top.php";
@@ -17,6 +18,7 @@ if (isUserLoggedIn() && isset($_SESSION["id_post"])) {
     $templateParams["title"] = "Revly - " . $post["username"] . "'s post";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "main-post-focus.php";
+    $templateParams["js"] = ["js/comment.js"];
 
     if (isset($_POST["comment"]) && $_POST["comment"] != '') {
         $dbh->newComment($_POST["comment"], $post["id_post"], $_SESSION["email"]);
