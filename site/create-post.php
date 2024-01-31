@@ -6,7 +6,7 @@ if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Create post";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "create-post-form.php";
-    $templateParams["js"] = ["js/newPost.js"];
+    $templateParams["js"] = array("js/newPost.js", "js/change-photo.js");
 
     $tag = $dbh->getTaggable();
     $templateParams["tags"] = $tag;

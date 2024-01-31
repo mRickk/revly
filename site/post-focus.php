@@ -19,6 +19,7 @@ if (isUserLoggedIn() && isset($_GET['idPost'])) {
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "main-post-focus.php";
     $templateParams["js"] = ["js/comment.js"];
+    $templateParams["js"] = ["js/like.js"];
 
     if (isset($_POST["comment"]) && $_POST["comment"] != '') {
         $dbh->newComment($_POST["comment"], $post["id_post"], $_SESSION["email"]);

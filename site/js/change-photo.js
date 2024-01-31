@@ -13,6 +13,8 @@ function previewImage() {
     }
 }
 
+document.getElementById('imgPost').addEventListener('change', previewImage);
+
 function removePhoto() {
     document.getElementById('removePhotoInput').value = 'true';
     document.getElementById('preview').src = './upload/default.png';  // Aggiungi il percorso corretto per default.png
