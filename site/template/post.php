@@ -1,5 +1,5 @@
 <!-- single-post.php -->
-<article>
+<article class="bg-dark-subtle bg-opacity-50 mb-3">
     <div class="row gx-1">
         <div class="col-1">
             <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $post['user_img']; ?>" alt="Profile picture of <?php echo $post['username']?>"/>
@@ -39,7 +39,7 @@
             <div class="col-1"></div>
         </div>
     <?php endif; ?>
-    <div class="row gx-1">
+    <div class="row gx-1 mb-1">
         <div class="col-1"></div>
         <div class="col-10">
             <img class="rounded" src="<?php echo UPLOAD_DIR . $post['post_img']; ?>" alt="Post picture of <?php echo $post['username']?>"/>

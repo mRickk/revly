@@ -30,7 +30,7 @@
         <div class="col-1"></div>
         <div class="col-10">
             <div class="row">
-                <nav class="navbar bg-body-tertiary rounded-pill text-center">
+                <nav class="navbar bg-dark-subtle bg-opacity-50 rounded-pill text-center">
                     <div class="col-3">
                         <a class="nav-link active" href="home.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30%" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
