@@ -74,6 +74,7 @@ SOLO SE id_taggable è != NULL*/
     public function getHomePosts($email) {
         $qry = "SELECT
                 users.username,
+                users.isCompany,
                 p.id AS id_post,
                 p.description,
                 (SELECT COUNT(*) FROM likes WHERE id_post = p.id) as likes,
@@ -109,6 +110,7 @@ SOLO SE id_taggable è != NULL*/
     public function getProfilePosts($email) {
         $qry = "SELECT
                 users.username,
+                users.isCompany,
                 p.id AS id_post,
                 p.description,
                 (SELECT COUNT(*) FROM likes WHERE id_post = p.id) as likes,
@@ -140,7 +142,7 @@ SOLO SE id_taggable è != NULL*/
     
 
     public function getUserNotifications($email) {
-        $qry = "SELECT N.date_time, U.username as notifier_username, U.email as notifier_email, U.img as notifier_img, NT.message, post.img as post_img, N.id_post
+        $qry = "SELECT N.date_time, U.username as notifier_username, U.email as notifier_email, U.img as notifier_img, U.isCompany, NT.message, post.img as post_img, N.id_post
             FROM notification N JOIN notification_type NT ON NT.id = N.id_type JOIN users U ON U.email = N.notifier_email
             LEFT OUTER JOIN post ON N.id_post = post.id WHERE N.notified_email = ?
             ORDER BY N.date_time DESC";
@@ -271,6 +273,7 @@ SOLO SE id_taggable è != NULL*/
     public function getPost($id_post) {
         $qry = "SELECT
                 users.username,
+                users.isCompany,
                 p.id AS id_post,
                 p.description,
                 (SELECT COUNT(*) FROM likes WHERE id_post = p.id) as likes,

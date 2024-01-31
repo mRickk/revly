@@ -4,7 +4,5 @@ if (isset($templateParams["notifications"]) && count($templateParams["notificati
     foreach ($templateParams["notifications"] as $notification) {
         include 'notification.php';
     }
-} else {
-    echo '<p>No notifications found</p>';
 }
 ?>
