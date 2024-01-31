@@ -352,6 +352,39 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
+
+
+    public function getEmailFromPost($postId){
+        $qry = "SELECT author_email FROM post WHERE id = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('i', $postId);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $res->fetch_assoc();
+        return $row['author_email'];
+    }
+    
+
+    public function addNotify($postId, $email, $type){
+        $qry = 'INSERT INTO notification (date_time, id_type, notifier_email, notified_email, id_post)
+        VALUES (CURRENT_TIMESTAMP, ?, ?, ?, ?)';
+        $stmt = $this->db->prepare($qry);
+        $a = $this->getEmailFromPost($postId);
+        $stmt->bind_param('issi', $type, $email, $a, $postId);
+        $res = $stmt->execute();
+        return $res;
+    }
+
+    public function deleteNotify($postId, $email, $type){
+        $qry = 'DELETE FROM notification WHERE id_type = ? AND notifier_email = ? AND notified_email = ? AND  id_post = ?';
+        $stmt = $this->db->prepare($qry);
+        $a = $this->getEmailFromPost($postId);
+        $stmt->bind_param('issi', $type, $email, $a, $postId);
+        $res = $stmt->execute();
+        return $res;
+    }
+
+
     // All'interno della classe DatabaseHandler
     public function handleLike($userEmail, $postId) {
         // Verifica se l'utente ha già messo like a questo post
