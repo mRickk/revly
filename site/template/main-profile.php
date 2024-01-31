@@ -1,23 +1,40 @@
-<div class="profile-top">
-    <p><?php echo $profile["username"]; ?></p>
-    <?php if ($profile["isCompany"]): ?>
-        <i class="bi bi-patch-check-fill"></i>
-    <?php endif; ?>
-    <img src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
-    <p>Followers: <?php echo $profile["numFollower"]; ?></p>
-    <p>Posts: <?php echo $profile["numPost"]; ?></p>
-    <p>Followings: <?php echo $profile["numFollowing"]; //TODO: calcola e aggiorna il num di followers?></p>
-    <?php if (isset($templateParams["isFollowed"])):?>
-        <?php if ($templateParams["isFollowed"]): //TODO: pulsante following con js?>
-            <div class="following-btn">
-                <p>Following</p>
+<div class="row gx-1">
+    <div class="col-3">
+        <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
+    </div>
+    <div class="col-9">
+        <div class="row gx-1">
+            <h2>
+                <?php echo $profile["username"];
+                if ($profile["isCompany"]): ?>
+                <i class="bi bi-patch-check-fill"></i>
+                <?php endif; ?>
+            </h2>
+        </div>
+        <div class="row gx-1">
+            <div class="col-4 text-center">
+                <h3 class="fs-6">FOLLOWERS </br> <?php echo $profile["numFollower"]; ?></h3>
             </div>
-        <?php else:?>
-            <div class="follow-btn">
-                <p>Follow</p>
+            <div class="col-4 text-center">
+                <h3 class="fs-6">POSTS </br> <?php echo $profile["numPost"]; ?></h3>
             </div>
-        <?php endif;?>
-    <?php endif;?>
+            <div class="col-4 text-center">
+                <h3 class="fs-6">FOLLOWING </br> <?php echo $profile["numFollowing"]; ?></h3>
+            </div>
+        </div>
+        <div class="row gx-1 mb-5">
+            <div class="col-1"></div>
+            <div class="col-10 text-center">
+            <?php if (isset($templateParams["isFollowed"])):?>
+                <?php if ($templateParams["isFollowed"]): //TODO: pulsante following con js?>
+                    <button type="button" class="btn btn-outline-dark w-100 rounded-pill">Following</button>
+                <?php else:?>
+                    <button type="button" class="btn btn-primary w-100 rounded-pill">Follow me</button>
+                <?php endif;?>
+            <?php endif;?>
+            <div class="col-1"></div>
+        </div>
+    </div>
 </div>
 
 <?php require_once("show-posts.php");?>

@@ -351,8 +351,6 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
-
-
     public function getEmailFromPost($postId){
         $qry = "SELECT author_email FROM post WHERE id = ?";
         $stmt = $this->db->prepare($qry);

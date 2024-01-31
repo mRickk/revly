@@ -27,6 +27,7 @@ if (isUserLoggedIn() && isset($_GET['username'])) {
         $profile["numFollowing"] = $dbh->getNumberFollows($profile["email"]);
         $profile["numFollower"] = $dbh->getNumberFollowers($profile["email"]);
         $profile["numPost"] = $dbh->getNumberPost($profile["email"]);
+        $templateParams["isFollowed"] = $dbh->isFollowed($profile["email"], $_SESSION["email"]);
         
         $templateParams["title"] = "Revly - " . $profile["username"] . "'s profile";
         $templateParams["top-template"] = "page-top.php";
