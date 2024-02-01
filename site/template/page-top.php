@@ -1,9 +1,9 @@
 <header>
     <div class="container">
         <div class="row">
-            <nav class="navbar">
+            <nav class="navbar pb-0">
                 <div class="col-10">
-                    <a class="navbar-brand" href="home.php"><h1>REVLY</h1></a>
+                    <a class="navbar-brand m-0" href="home.php"><h1 class="m-0">REVLY</h1></a>
                 </div>
                 <div class="col-1">
                     <a class="nav-link active" href="research-user.php">
@@ -24,6 +24,15 @@
         </div>
     </div>
 </header>
+
+<div class="row gx-1">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <hr class="mt-1 mb-3"/>
+    </div>
+    <div class="col-1"></div>
+</div>
+
 
 <div class="container">
     <div class="row">
