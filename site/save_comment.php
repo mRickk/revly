@@ -7,9 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $queryResult = $dbh->newComment($data, $_SESSION["id_post"],$_SESSION["email"]);
     $notifyResult = $dbh->addNotify($_SESSION["id_post"],$_SESSION["email"], 3, NULL);
 
-    // Verifica se ci sono risultati
-    if (!empty($notifyResult)) {
-        echo json_encode($notifyResult);
+    $queryResult["img"] = UPLOAD_DIR . $queryResult["img"];
+
+    if (!empty($queryResult)) {
+         echo json_encode($queryResult);
     } else {
         echo json_encode(["error" => "Nessun utente trovato"]);
     }

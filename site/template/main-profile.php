@@ -27,7 +27,7 @@
             <div class="col-10 text-center">
             <?php if (isset($templateParams["isFollowed"])):?>
                 <?php if ($templateParams["isFollowed"]): //TODO: pulsante following con js?>
-                    <button type="button" id="followBtn" class="btn btn-outline-dark w-100 rounded-pill">Following</button>
+                    <button type="button" id="followBtn" class="btn btn-secondary w-100 rounded-pill">Following</button>
                 <?php else:?>
                     <button type="button" id="followBtn" class="btn btn-primary w-100 rounded-pill">Follow me</button>
                 <?php endif;?>

@@ -2,18 +2,24 @@ $(document).ready(function() {
     $('#commentForm').submit(function(e) {
         e.preventDefault();
 
-        // Ottieni il testo del commento dal campo di input
         var commentText = $('#inputComment').val();
 
-        // Esegui una richiesta AJAX per salvare il commento
         $.ajax({
             type: 'POST',
             url: 'save_comment.php',
             data: { "comment": commentText },
             success: function(response) {
-                // Ricarica la pagina dopo aver salvato il commento
-                console.log(response);
-                //location.reload();
+                var data = JSON.parse(response);
+
+                var commentContainer = $('#commentContainer');
+                var newComment = '<div class="comment">' +
+                    '<p>' + data.description + '</p>' +
+                    '<p>' + data.date_time + ' by ' + data.username + '</p>' +
+                    '<img src="' + data.img + '" alt="Profile Picture">' +
+                    '</div>';
+
+                commentContainer.append(newComment);
+                $('#inputComment').val('');
             }
         });
     });

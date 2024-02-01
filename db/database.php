@@ -154,7 +154,7 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getComments($idPost) {
-        $qry = "SELECT description, date_time, username, img FROM comments C, users U WHERE C.id_post = ? AND C.author_email = U.email";
+        $qry = "SELECT description, date_time, username, img FROM comments C, users U WHERE C.id_post = ? AND C.author_email = U.email ORDER BY date_time";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('i', $idPost);
         $stmt->execute();
@@ -177,22 +177,6 @@ SOLO SE id_taggable è != NULL*/
 
     public function newPost($email, $img, $subject, $description, $evaluation, $taggable) {
         $timestamp = date('Y-m-d H:i:s');
-        //TODO: remove metodo vecchio se nuovo funzia
-        /* 
-        $qry = "INSERT INTO `post` (`img`, `evaluation`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`) VALUES (?, ?, ?, ";
-        if(!isset($taggable)){
-            $qry = "?, ?, ?, NULL, ?);";
-        }
-        else {
-            $qry = "NULL, ?, ?, NULL, ?);";
-        }
-        $stmt = $this->db->prepare($qry);
-        if(!isset($taggable)){
-            
-        }
-        else {
-            $qry = "NULL, ?, ?, NULL, ?);";
-        }*/
         $qry = "INSERT INTO `post` (`img`, `evaluation`, `subject`, `description`, `date_time`, `id_taggable`, `author_email`)
         VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($qry);
@@ -224,7 +208,8 @@ SOLO SE id_taggable è != NULL*/
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('ssi', $comment, $author_email, $id_post);
         $res = $stmt->execute();
-        return $res;
+        $comment = $this->getComments($id_post);
+        return $comment[count($comment) -1];
     }
 
     public function isPostLiked($email, $idPost) {
