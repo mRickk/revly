@@ -365,12 +365,14 @@ SOLO SE id_taggable è != NULL*/
     }
     
 
-    public function addNotify($postId, $email, $type){
+    public function addNotify($postId, $email, $type, $notified){
         $qry = 'INSERT INTO notification (date_time, id_type, notifier_email, notified_email, id_post)
         VALUES (CURRENT_TIMESTAMP, ?, ?, ?, ?)';
         $stmt = $this->db->prepare($qry);
-        $a = $this->getEmailFromPost($postId);
-        $stmt->bind_param('issi', $type, $email, $a, $postId);
+        if($notified == NULL){
+            $notified = $this->getEmailFromPost($postId);
+        }
+        $stmt->bind_param('issi', $type, $email, $notified, $postId);
         $res = $stmt->execute();
         return $res;
     }
@@ -384,24 +386,16 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
-
-    // All'interno della classe DatabaseHandler
     public function handleLike($userEmail, $postId) {
-        // Verifica se l'utente ha già messo like a questo post
         $liked = $this->isPostLiked($userEmail, $postId);
-
         if ($liked) {
-            // Rimuovi il like
             $query = "DELETE FROM likes WHERE user_email = ? AND id_post = ?";
         } else {
-            // Aggiungi il like
             $query = "INSERT INTO likes (user_email, id_post) VALUES (?, ?)";
         }
-
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si', $userEmail, $postId);
         $success = $stmt->execute();
-
         return !$liked;
     }
 
