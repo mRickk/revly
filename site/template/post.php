@@ -98,14 +98,14 @@
     <div class="row gx-1 my-2">
         <div class="col-1"></div>
         <div class="col-10">
-            <p><?php echo $post['description']; ?></p>
+            <p class="text-break"><?php echo $post['description']; ?></p>
         </div>
         <div class="col-1"></div>
     </div>
     <div class="row gx-1">
         <div class="col-1"></div>
         <div class="col-10 text-end">
-            <p><?php echo substr($post['date_time'], 0, -3); ?></p>
+            <p class="text-break"><?php echo substr($post['date_time'], 0, -3); ?></p>
         </div>
         <div class="col-1"></div>
     </div>

@@ -17,7 +17,7 @@
     <div class="row gx-1">
         <div class="col-1"></div>
         <div class="col-7">
-            <p><?php echo str_replace("USER", $notification["notifier_username"], $notification["message"]); ?></p>
+            <p class="text-break"><?php echo str_replace("USER", $notification["notifier_username"], $notification["message"]); ?></p>
         </div>
         <div class="col-3">            
         <?php if ($notification["id_post"] != null): //TODO: gestire con js il click dell'immagine post e il redirect ?>
@@ -33,7 +33,7 @@
     <div class="row gx-1">
         <div class="col-1"></div>
         <div class="col-10 text-end">
-            <p><?php echo substr($notification['date_time'], 0, -3); ?></p>
+            <p class="text-break"><?php echo substr($notification['date_time'], 0, -3); ?></p>
         </div>
         <div class="col-1"></div>
     </div>

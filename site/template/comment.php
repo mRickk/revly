@@ -1,7 +1,7 @@
-<div class="comment bg-dark-subtle bg-opacity-75 mb-3">
+<div class="comment bg-dark-subtle bg-opacity-75 mb-2">
    <div class="row gx-1">
         <div class="col-1">
-            <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $comment["img"]; ?>" alt="Profile picture of <?php echo $comment["username"]?>"/>
+            <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $comment["img"]; ?>" alt="Profile picture of <?php echo $comment["username"];?>"/>
         </div>
         <div class="col-10">
             <a href='profile.php?username=<?php echo $post['username']; ?>'>
@@ -18,14 +18,14 @@
     <div class="row gx-1">
         <div class="col-1"></div>
         <div class="col-10">
-            <p><?php echo $comment["description"]?></p>
+            <p class="text-break"><?php echo $comment["description"];?></p>
         </div>
         <div class="col-1"></div>
     </div>
     <div class="row gx-1">
         <div class="col-1"></div>
         <div class="col-10 text-end">
-            <p><?php echo $comment["date_time"]?></p>
+            <p class="text-break"><?php echo substr($comment["date_time"], 0, -3);?></p>
         </div>
         <div class="col-1"></div>
     </div>
