@@ -154,7 +154,7 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getComments($idPost) {
-        $qry = "SELECT description, date_time, username, img FROM comments C, users U WHERE C.id_post = ? AND C.author_email = U.email";
+        $qry = "SELECT description, date_time, username, img, isCompany FROM comments C, users U WHERE C.id_post = ? AND C.author_email = U.email";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('i', $idPost);
         $stmt->execute();

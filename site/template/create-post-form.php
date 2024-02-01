@@ -5,7 +5,7 @@
     <div class="row gx-1 mb-1">
         <div class="col-1"></div>
         <div class="col-10">
-            <div class="border rounded mb-2">
+            <div class="border rounded mb-2 text-center">
                 <label for="imgPost" class="file-label">
                     <!-- Imposta un'immagine di anteprima predefinita -->
                     <img class="rounded" id="preview" src="./img/default_preview.png" alt="Preview">

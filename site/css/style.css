@@ -28,7 +28,7 @@ ul li {
     list-style: none;
 }
 
-article, form[action="create-post.php"] {
+article, form[action="create-post.php"], .comment {
     border-radius: 15px;
 }
 
