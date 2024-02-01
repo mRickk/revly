@@ -8,9 +8,9 @@ $(document).ready(function() {
             success: function(response) {
                 data = JSON.parse(response);
               
-                followBtn.removeClass('btn-primary btn-outline-dark');
+                followBtn.removeClass('btn-primary btn-secondary');
 
-                followBtn.addClass(data.follow ? 'btn-outline-dark' : 'btn-primary');
+                followBtn.addClass(data.follow ? 'btn-secondary' : 'btn-primary');
                 followBtn.text(data.follow ? 'Following' : 'Follow me');
 
                 var followerCount = $('#followerCount');

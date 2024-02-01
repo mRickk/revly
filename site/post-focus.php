@@ -18,13 +18,7 @@ if (isUserLoggedIn() && isset($_GET['idPost'])) {
     $templateParams["title"] = "Revly - " . $post["username"] . "'s post";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "main-post-focus.php";
-    $templateParams["js"] = ["js/comment.js"];
-    $templateParams["js"] = ["js/like.js"];
-
-    if (isset($_POST["comment"]) && $_POST["comment"] != '') {
-        $dbh->newComment($_POST["comment"], $post["id_post"], $_SESSION["email"]);
-    }
-
+    $templateParams["js"] = array("js/comment.js", "js/like.js");
     require("template/base.php");
 } else {
     header("Location: index.php");
