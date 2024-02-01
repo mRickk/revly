@@ -404,5 +404,21 @@ SOLO SE id_taggable è != NULL*/
 
         return !$liked;
     }
+
+    public function follow($follower_email, $followed_email){
+        if(!$this->isFollowed($followed_email, $follower_email)){
+            $qry = 'INSERT INTO follow ( follower_email, user_email)
+            VALUES (?, ?)';
+            $stmt = $this->db->prepare($qry);
+            $stmt->bind_param('ss',  $follower_email, $followed_email);
+            $res = $stmt->execute();
+            return $res;
+        }
+        $qry = 'DELETE FROM follow WHERE follower_email = ? AND user_email = ?';
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('ss', $follower_email, $followed_email);
+        $res = $stmt->execute();
+        return $res;
+    }
 }
 ?>

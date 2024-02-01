@@ -4,7 +4,7 @@ session_start();
 
 if (isUserLoggedIn() && isset($_GET['username'])) {
     $email = $dbh->getEmailByUsername($_GET['username']);
-    
+    $_SESSION["profile_email"] = $email;
     if (isset($email)) {
         // Verifica se l'email ottenuta è uguale all'email dell'utente autenticato
         if (strcmp($email, $_SESSION["email"]) == 0) {
@@ -32,7 +32,7 @@ if (isUserLoggedIn() && isset($_GET['username'])) {
         $templateParams["title"] = "Revly - " . $profile["username"] . "'s profile";
         $templateParams["top-template"] = "page-top.php";
         $templateParams["main-template"] = "main-profile.php";
-        $templateParams["js"] = ["js/like.js"];
+        $templateParams["js"] = array("js/like.js", "js/follow.js");
 
         require("template/base.php");
     } else {

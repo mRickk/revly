@@ -12,9 +12,9 @@
             </h2>
         </div>
         <div class="row gx-1">
-            <div class="col-4 text-center">
-                <h3 class="fs-6">FOLLOWERS </br> <?php echo $profile["numFollower"]; ?></h3>
-            </div>
+        <div class="col-4 text-center">
+            <h3 class="fs-6">FOLLOWERS </br> <span id="followerCount"><?php echo $profile["numFollower"]; ?></span></h3>
+        </div>
             <div class="col-4 text-center">
                 <h3 class="fs-6">POSTS </br> <?php echo $profile["numPost"]; ?></h3>
             </div>
@@ -27,9 +27,9 @@
             <div class="col-10 text-center">
             <?php if (isset($templateParams["isFollowed"])):?>
                 <?php if ($templateParams["isFollowed"]): //TODO: pulsante following con js?>
-                    <button type="button" class="btn btn-outline-dark w-100 rounded-pill">Following</button>
+                    <button type="button" id="followBtn" class="btn btn-outline-dark w-100 rounded-pill">Following</button>
                 <?php else:?>
-                    <button type="button" class="btn btn-primary w-100 rounded-pill">Follow me</button>
+                    <button type="button" id="followBtn" class="btn btn-primary w-100 rounded-pill">Follow me</button>
                 <?php endif;?>
             <?php endif;?>
             <div class="col-1"></div>
