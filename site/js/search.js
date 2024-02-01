@@ -39,7 +39,10 @@ $(document).ready(function() {
                         <img class="rounded-circle" src="<?php echo UPLOAD_DIR . ${user.img}; ?>" alt="Profile picture of <?php echo ${user.username}; ?>"/>
                     </div>
                     <div class="col-10">
-                        <p>${user.username}</p>
+                        <p>${user.username}
+                        <?php if (${user.idCompany}): ?>
+                        <i class="bi bi-patch-check-fill"></i>
+                        <?php endif; ?></p>
                     </div>
                     <div class="col-1"></div>
                 </a>
