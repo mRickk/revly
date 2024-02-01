@@ -32,6 +32,10 @@ article, form[action="create-post.php"], .comment {
     border-radius: 15px;
 }
 
+.recent-searches {
+    border-radius: 15px 15px 0 0;
+}
+
 .like-icon {
     cursor: pointer;
 }

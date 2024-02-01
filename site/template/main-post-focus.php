@@ -12,11 +12,11 @@
             <div class="col-10">
                 <div class="form-group">
                     <label class="d-none" for="inputComment">Comment</label>
-                    <input type="text" class="form-control rounded" id="inputComment" name="comment" placeholder="Write a comment..." required/>
+                    <input type="text" class="form-control rounded-pill" id="inputComment" name="comment" placeholder="Write a comment..." required/>
                 </div>
             </div>
             <div class="col-2 p-0 text-end">
-                <button class="btn btn-primary bi bi-send" type="submit" name="submit" value="SUBMIT"></button>
+                <button class="btn btn-outline-dark bi bi-send rounded-4" type="submit" name="submit" value="SUBMIT"></button>
             </div>
         </div>
     </form>

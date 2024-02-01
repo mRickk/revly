@@ -1,16 +1,18 @@
-<form action="#" method="POST" enctype="multipart/form-data">
-    <div class="d-flex vh-100">
-        <div class="ms-5 ms-md-6 pt-3 h-100">
+<form action="#" method="POST">
+    <div class="row gx-1">
+        <input type="search" id="searchBar" class="form-control rounded-pill" placeholder="Search"/>
+        <label class="form-label d-none" for="searchBar">Search</label>
+    </div>
+</form>
+
+<section class="d-flex flex-column min-vh-100">
+    <div class="recent-searches flex-grow-1 bg-body-tertiary bg-opacity-25 mt-3 p-2">
+        <div class="row gx-1">
+            <h2>Recent searches</h2><?php //TODO: modificare il titolo con Search result ogni volta che si cerca ?>
         </div>
-        <div class="flex-grow-1 text-nowrap w-100 pt-3">
-            <div class="ms-n40 me-40">
-                <div class="form-outline">
-                    <input type="search" id="searchBar" class="form-control rounded-5" placeholder="Search" />
-                    <label class="form-label" for="searchBar" hidden>Search</label>
-                </div>
-            </div>
-            <div id="searchResult">
-            </div>
+        <div id="searchResult">
+            
+
         </div>
     </div>
-</form> 
+</section>

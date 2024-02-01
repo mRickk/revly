@@ -33,9 +33,17 @@ $(document).ready(function() {
     function showResult(data) {
         let resultContainer = document.querySelector("#searchResult");
         resultContainer.innerHTML = JSON.parse(data).map(user => `
-            <section class="w-100 ms-n40 ms-md-n3 mt-2">
-                <a href="#" class="d-inline-block user-link" data-email="${user.email}">${user.username}</a>
-            </section>
+            <div class="row gx-1">
+                <a href="#" class="d-inline-block user-link" data-email="${user.email}">
+                    <div class="col-1">
+                        <img class="rounded-circle" src="<?php echo UPLOAD_DIR . ${user.img}; ?>" alt="Profile picture of <?php echo ${user.username}; ?>"/>
+                    </div>
+                    <div class="col-10">
+                        <p>${user.username}</p>
+                    </div>
+                    <div class="col-1"></div>
+                </a>
+            </div>
         `).join("");
 
         // Aggiungi un gestore di eventi per i clic sui link degli utenti

@@ -1,4 +1,4 @@
-<div class="comment bg-dark-subtle bg-opacity-75 mb-2">
+<div class="comment bg-body-secondary bg-opacity-75 mb-2">
    <div class="row gx-1">
         <div class="col-1">
             <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $comment["img"]; ?>" alt="Profile picture of <?php echo $comment["username"];?>"/>
