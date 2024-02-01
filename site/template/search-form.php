@@ -11,8 +11,6 @@
             <h2>Recent searches</h2><?php //TODO: modificare il titolo con Search result ogni volta che si cerca ?>
         </div>
         <div id="searchResult">
-            
-
         </div>
     </div>
 </section>

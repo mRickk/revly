@@ -22,7 +22,6 @@ $(document).ready(function() {
     });
 
     function showRecentSearches() {
-        // Esegui una chiamata AJAX per ottenere le ricerche recenti dal database
         $.ajax({
             url: "recent-searches.php",
             type: "GET",
@@ -36,7 +35,7 @@ $(document).ready(function() {
             <div class="row gx-1">
                 <a href="#" class="d-inline-block user-link" data-email="${user.email}">
                     <div class="col-1">
-                        <img class="rounded-circle" src="<?php echo UPLOAD_DIR . ${user.img}; ?>" alt="Profile picture of <?php echo ${user.username}; ?>"/>
+                        <img class="rounded-circle" src="${user.img}" alt="Profile picture of <?php echo ${user.username}; ?>"/>
                     </div>
                     <div class="col-10">
                         <p>${user.username}
@@ -68,6 +67,4 @@ $(document).ready(function() {
             }
         });
     }
-    
-
 });

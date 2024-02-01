@@ -30,13 +30,19 @@ class DatabaseHelper {
     }
 
     public function getUsers($username) {
-        $qry = "SELECT username, email FROM users WHERE username LIKE ?";
+        $qry = "SELECT username, email, img, isCompany FROM users WHERE username LIKE ?";
         $stmt = $this->db->prepare($qry);
         $tmp = '%' . $username . '%';
         $stmt->bind_param('s', $tmp);
         $stmt->execute();
         $res = $stmt->get_result();
-        return $res->fetch_all(MYSQLI_ASSOC);
+        $results = $res->fetch_all(MYSQLI_ASSOC);
+
+        foreach ($results as &$user) {
+            $user['img'] = UPLOAD_DIR . $user['img'];
+        }
+
+        return $results;
     }
 
     public function getUserWithUsername($username) {
@@ -106,7 +112,6 @@ SOLO SE id_taggable è != NULL*/
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
-
     public function getProfilePosts($email) {
         $qry = "SELECT
                 users.username,
@@ -163,16 +168,40 @@ SOLO SE id_taggable è != NULL*/
     }
 
     public function getRecentSearches($email) {
-        $qry = "SELECT searched_email as email, username FROM recent_searches, users WHERE user_email = ? AND searched_email = email ORDER BY date_time DESC;";
+        $qry = "SELECT searched_email as email, username, img, isCompany FROM recent_searches, users WHERE user_email = ? AND searched_email = email ORDER BY date_time DESC;";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('s', $email);
-        $stmt->execute();
+        $stmt->execute(); 
         $res = $stmt->get_result();
+        $results = $res->fetch_all(MYSQLI_ASSOC);
         if ($res->num_rows > 0) {
-            return $res->fetch_all(MYSQLI_ASSOC);
+            foreach ($results as &$user) {
+                $user['img'] = UPLOAD_DIR . $user['img'];
+            }
+            return $results;
         } else {
             return array();
         }
+    }
+
+    private function getlastUserPost($email) {
+        $lastPostQuery = "SELECT id FROM post WHERE author_email = ? ORDER BY date_time DESC LIMIT 1";
+        $stmt = $this->db->prepare($lastPostQuery);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $lastPost = $result->fetch_assoc()['id'];
+        return $lastPost;
+    }
+
+    private function getEmailFromTaggable($idTag) {
+        $notifiedQuery = "SELECT company_email FROM taggable WHERE id = ?";
+        $stmt = $this->db->prepare($notifiedQuery);
+        $stmt->bind_param('i', $idTag);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $emailNotified = $result->fetch_assoc()['company_email'];
+        return $emailNotified;
     }
 
     public function newPost($email, $img, $subject, $description, $evaluation, $taggable) {
@@ -182,6 +211,10 @@ SOLO SE id_taggable è != NULL*/
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('sisssis', $img, $evaluation, $subject, $description, $timestamp, $taggable, $email);
         $res = $stmt->execute();
+
+        if($taggable != NULL){
+            $this->addNotify($this->getlastUserPost($email), $email, 4, $this->getEmailFromTaggable($taggable));
+        }
 
         return $res;
     }
@@ -348,7 +381,6 @@ SOLO SE id_taggable è != NULL*/
         $row = $res->fetch_assoc();
         return $row['author_email'];
     }
-    
 
     public function addNotify($postId, $email, $type, $notified){
         $qry = 'INSERT INTO notification (date_time, id_type, notifier_email, notified_email, id_post)
@@ -388,12 +420,10 @@ SOLO SE id_taggable è != NULL*/
         if(!$this->isFollowed($followed_email, $follower_email)){
             $qry = 'INSERT INTO follow ( follower_email, user_email)
             VALUES (?, ?)';
-            $stmt = $this->db->prepare($qry);
-            $stmt->bind_param('ss',  $follower_email, $followed_email);
-            $res = $stmt->execute();
-            return $res;
         }
-        $qry = 'DELETE FROM follow WHERE follower_email = ? AND user_email = ?';
+        else{
+            $qry = 'DELETE FROM follow WHERE follower_email = ? AND user_email = ?';
+        }
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('ss', $follower_email, $followed_email);
         $res = $stmt->execute();
