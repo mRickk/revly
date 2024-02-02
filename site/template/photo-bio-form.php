@@ -1,5 +1,4 @@
 <?php $user = $templateParams["user"]; ?>
-<a href="settings.php"><i class="bi bi-arrow-left-circle"></i></a>
 <form action="#" method="POST" enctype="multipart/form-data">
     <h2 class="text-primary d-flex align-items-center">Change your information</h2>
     <ul>

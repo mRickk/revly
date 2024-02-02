@@ -1,5 +1,4 @@
 <?php $user = $templateParams["user"]; ?>
-<a href="#" onclick="history.go(-1)"><i class="bi bi-arrow-left-circle"></i></a>
 <form action="#" method="POST">
     <h2 class="text-primary d-flex align-items-center">Change your password</h2>
     <ul>
