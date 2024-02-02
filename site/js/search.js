@@ -32,20 +32,20 @@ $(document).ready(function() {
     function showResult(data) {
         let resultContainer = document.querySelector("#searchResult");
         resultContainer.innerHTML = JSON.parse(data).map(user => `
-            <div class="row gx-1">
-                <a href="#" class="d-inline-block user-link" data-email="${user.email}">
+        <a href="#" class="d-inline-block user-link" data-email="${user.email}">
+            <div class="row gx-2">                
                     <div class="col-1">
                         <img class="rounded-circle" src="${user.img}" alt="Profile picture of <?php echo ${user.username}; ?>"/>
                     </div>
-                    <div class="col-10">
+                    <div class="col-9">
                         <p>${user.username}
-                        <?php if (${user.idCompany}): ?>
+                        <?php if (${user.isCompany}): ?>
                         <i class="bi bi-patch-check-fill"></i>
                         <?php endif; ?></p>
                     </div>
-                    <div class="col-1"></div>
-                </a>
+                
             </div>
+            </a>
         `).join("");
 
         // Aggiungi un gestore di eventi per i clic sui link degli utenti
