@@ -5,7 +5,7 @@
         </div>
         <div id="searchResult">
             <?php foreach ($templateParams["users"] as $user): ?>
-                <a href="#" class="d-inline-block user-link" data-email="<?php echo $user['email']; ?>">
+                <a href="profile.php?username=<?php echo $user['username']; ?>" class="d-inline-block user-link">
                     <div class="row gx-2">                
                         <div class="col-1">
                             <img class="rounded-circle" src="<?php echo $user['img']; ?>" alt="Profile picture of <?php echo $user['username']; ?>"/>
