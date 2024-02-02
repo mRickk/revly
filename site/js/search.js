@@ -30,6 +30,7 @@ $(document).ready(function() {
     }
 
     function showResult(data) {
+        console.log(data);
         let resultContainer = document.querySelector("#searchResult");
         resultContainer.innerHTML = JSON.parse(data).map(user => `
         <a href="#" class="d-inline-block user-link" data-email="${user.email}">
@@ -38,10 +39,10 @@ $(document).ready(function() {
                         <img class="rounded-circle" src="${user.img}" alt="Profile picture of <?php echo ${user.username}; ?>"/>
                     </div>
                     <div class="col-9">
-                        <p>${user.username}
-                        <?php if (${user.isCompany}): ?>
-                        <i class="bi bi-patch-check-fill fs-5"></i>
-                        <?php endif; ?></p>
+                        <p>
+                            ${user.username}
+                            ${user.isCompany ? '<i class="bi bi-patch-check-fill fs-5"></i>' : ''}
+                        </p>
                     </div>
             </div>
         </a>
