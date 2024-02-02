@@ -13,13 +13,17 @@
         </div>
         <div class="row gx-1">
         <div class="col-4 text-center">
-            <h3 class="fs-6">FOLLOWERS </br> <span id="followerCount"><?php echo $profile["numFollower"]; ?></span></h3>
-        </div>
+                <a href="follower.php?email=<?php echo $profile['email']; ?>">
+                    <h3 class="fs-6">FOLLOWERS </br> <span id="followerCount"><?php echo $profile["numFollower"]; ?></span></h3>
+                </a>
+            </div>
             <div class="col-4 text-center">
                 <h3 class="fs-6">POSTS </br> <?php echo $profile["numPost"]; ?></h3>
             </div>
             <div class="col-4 text-center">
-                <h3 class="fs-6">FOLLOWING </br> <?php echo $profile["numFollowing"]; ?></h3>
+                <a href="follows.php?email=<?php echo $profile['email']; ?>">
+                    <h3 class="fs-6">FOLLOWING </br> <?php echo $profile["numFollowing"]; ?></h3>
+                </a>
             </div>
         </div>
         <div class="row gx-1 mb-5">

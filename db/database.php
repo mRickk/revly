@@ -432,5 +432,53 @@ SOLO SE id_taggable è != NULL*/
         $res = $stmt->execute();
         return $res;
     }
+
+    public function getFollower($email) {
+        $qry = "SELECT U.username, U.email, U.img, U.isCompany FROM users U, follow F WHERE U.email = F.follower_email AND F.user_email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s',$email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $results = $res->fetch_all(MYSQLI_ASSOC);
+
+        foreach ($results as &$user) {
+            $user['img'] = UPLOAD_DIR . $user['img'];
+        }
+
+        return $results;
+    }
+
+    public function getFollows($email) {
+        $qry = "SELECT U.username, U.email, U.img, U.isCompany FROM users U, follow F WHERE U.email = F.user_email AND F.follower_email = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $results = $res->fetch_all(MYSQLI_ASSOC);
+
+        foreach ($results as &$user) {
+            $user['img'] = UPLOAD_DIR . $user['img'];
+        }
+
+        return $results;
+    }
+
+    public function getListLike($idPost) {
+        $qry = "SELECT U.username, U.email, U.img, U.isCompany FROM users U, likes L WHERE U.email = L.user_email AND L.id_post = ?";
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('i',$idPost);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $results = $res->fetch_all(MYSQLI_ASSOC);
+
+        foreach ($results as &$user) {
+            $user['img'] = UPLOAD_DIR . $user['img'];
+        }
+
+        return $results;
+    }
+
+
+
 }
 ?>
