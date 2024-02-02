@@ -40,16 +40,17 @@ article, form[action="create-post.php"], .comment {
     cursor: pointer;
 }
 
-a, a:link, a:visited:active {
+a, a:visited, a:link, a:visited:active {
     color: inherit;
     text-decoration: none;
 }
 
 a:hover {
     color: #EE9D9B;
-    transition-delay: 1s;
+    transition: color 0.2s ease;
 }
 
 a:active, a:link:active {
     color: #F28380;
+    transition: color 0.1s linear;
 }

@@ -21,7 +21,7 @@ $(document).ready(function() {
                             <a href='profile.php?username=${data.username}'>
                                 <h2>
                                     ${data.username} 
-                                    ${data.isCompany ? '<i class="bi bi-patch-check-fill"></i>' : ''}
+                                    ${data.isCompany ? '<i class="bi bi-patch-check-fill fs-5"></i>' : ''}
                                 </h2>
                             </a>
                         </div>

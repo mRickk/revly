@@ -8,7 +8,7 @@
                 <h2>
                     <?php echo $comment["username"]; 
                     if ($comment["isCompany"]): ?>
-                    <i class="bi bi-patch-check-fill"></i>
+                    <i class="bi bi-patch-check-fill fs-5"></i>
                     <?php endif; ?>
                 </h2>
             </a>

@@ -7,7 +7,7 @@
             <h2>
                 <?php echo $profile["username"];
                 if ($profile["isCompany"]): ?>
-                <i class="bi bi-patch-check-fill"></i>
+                <i class="bi bi-patch-check-fill fs-5"></i>
                 <?php endif; ?>
             </h2>
         </div>

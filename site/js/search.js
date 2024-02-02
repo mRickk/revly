@@ -40,7 +40,7 @@ $(document).ready(function() {
                     <div class="col-9">
                         <p>${user.username}
                         <?php if (${user.isCompany}): ?>
-                        <i class="bi bi-patch-check-fill"></i>
+                        <i class="bi bi-patch-check-fill fs-5"></i>
                         <?php endif; ?></p>
                     </div>
             </div>
