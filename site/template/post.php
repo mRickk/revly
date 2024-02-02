@@ -93,7 +93,9 @@
     </div>
     <div class="row gx-1 text-center">
         <div class="col-3" id="numLike">
-            <p><?php echo $post['likes']; ?></p>
+            <a href="like.php?idPost=<?php echo $post['id_post']; ?>">
+                <p><?php echo $post['likes']; ?></p>
+            </a>
         </div>
         <div class="col-6"></div>
         <div class="col-3" id="numComment">
