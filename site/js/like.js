@@ -16,9 +16,9 @@ $(document).ready(function() {
                 // Aggiorna l'aspetto dell'icona del like in base alla risposta del server
                 data = JSON.parse(response);
                 if (data.liked) {
-                    likeIcon.html('<i class="bi bi-heart-fill w-100" ></i>');
+                    likeIcon.html('<i class="bi bi-heart-fill text-danger fs-2" ></i>');
                 } else {
-                    likeIcon.html('<i class="bi bi-heart w-100"></i> ');
+                    likeIcon.html('<i class="bi bi-heart text-secondary fs-2"></i> ');
                 }
             }
         });

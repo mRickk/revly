@@ -4,7 +4,7 @@
             <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $comment["img"]; ?>" alt="Profile picture of <?php echo $comment["username"];?>"/>
         </div>
         <div class="col-10">
-            <a href='profile.php?username=<?php echo $post['username']; ?>'>
+            <a href='profile.php?username=<?php echo $comment['username']; ?>'>
                 <h2>
                     <?php echo $comment["username"]; 
                     if ($comment["isCompany"]): ?>

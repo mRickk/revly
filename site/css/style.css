@@ -39,3 +39,17 @@ article, form[action="create-post.php"], .comment {
 .like-icon {
     cursor: pointer;
 }
+
+a, a:link, a:visited:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #EE9D9B;
+    transition-delay: 1s;
+}
+
+a:active, a:link:active {
+    color: #F28380;
+}

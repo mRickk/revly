@@ -43,9 +43,8 @@ $(document).ready(function() {
                         <i class="bi bi-patch-check-fill"></i>
                         <?php endif; ?></p>
                     </div>
-                
             </div>
-            </a>
+        </a>
         `).join("");
 
         // Aggiungi un gestore di eventi per i clic sui link degli utenti
