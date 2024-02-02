@@ -5,7 +5,7 @@ session_start();
 if (isUserLoggedIn()) {
     
     $templateParams["title"] = "Revly - Settings";
-    $templateParams["top-template"] = "page-top.php";
+    $templateParams["top-template"] = "focus-top.php";
     $templateParams["main-template"] = "main-settings.php";
     $templateParams["js"] = array("js/newPost.js", "js/change-photo.js");
     $templateParams["user"] = $dbh->getUserWithEmail($_SESSION["email"]);

@@ -4,7 +4,7 @@ session_start();
 
 if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Change personal details";
-    $templateParams["top-template"] = "page-top.php";
+    $templateParams["top-template"] = "focus-top.php";
     $templateParams["main-template"] = "personal-details-form.php";
 
     if (isset($_POST["username"]) && isset($_POST["name"]) && isset($_POST["surname"])) {

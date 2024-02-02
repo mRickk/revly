@@ -7,7 +7,7 @@ if (isUserLoggedIn() && isset($_GET['idPost'])) {
     $_SESSION["id_post"] = $_GET["idPost"];
     if (count($post) == 0) {
         $templateParams["title"] = "Revly - Post not found";
-        $templateParams["top-template"] = "page-top.php";
+        $templateParams["top-template"] = "focus-top.php";
         $templateParams["main-template"] = "not-found.php";
         $templateParams["not-found"] = "post";
     }
@@ -16,7 +16,7 @@ if (isUserLoggedIn() && isset($_GET['idPost'])) {
     $templateParams["comments"] = $dbh->getComments($post["id_post"]);
 
     $templateParams["title"] = "Revly - " . $post["username"] . "'s post";
-    $templateParams["top-template"] = "page-top.php";
+    $templateParams["top-template"] = "focus-top.php";
     $templateParams["main-template"] = "main-post-focus.php";
     $templateParams["js"] = array("js/comment.js", "js/like.js");
     require("template/base.php");
