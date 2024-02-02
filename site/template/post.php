@@ -92,11 +92,11 @@
         <div class="col-1"></div>
     </div>
     <div class="row gx-1 text-center">
-        <div class="col-3">
+        <div class="col-3" id="numLike">
             <p><?php echo $post['likes']; ?></p>
         </div>
         <div class="col-6"></div>
-        <div class="col-3">
+        <div class="col-3" id="numComment">
             <p><?php echo $post['comments']; ?></p>
         </div>
     </div>

@@ -10,21 +10,18 @@ $(document).ready(function() {
             data: { "comment": commentText },
             success: function(response) {
                 var data = JSON.parse(response);
-
                 var commentContainer = $('#commentContainer');
                 var newComment = `
                 <div class="comment bg-body-secondary bg-opacity-75 mb-2">
                     <div class="row gx-1">
                         <div class="col-1">
-                            <img class="rounded-circle" src="<?php echo UPLOAD_DIR . ${data.img}; ?>" alt="Profile picture of <?php echo ${data.username};?>"/>
+                            <img class="rounded-circle" src="${data.img}" alt="Profile picture of ${data.username}"/>
                         </div>
                         <div class="col-10">
-                            <a href='profile.php?username=<?php echo ${data.username}; ?>'>
+                            <a href='profile.php?username=${data.username}'>
                                 <h2>
-                                    <?php echo ${data.username}; 
-                                    if (${data.isCompany}): ?>
-                                    <i class="bi bi-patch-check-fill"></i>
-                                    <?php endif; ?>
+                                    ${data.username} 
+                                    ${data.isCompany ? '<i class="bi bi-patch-check-fill"></i>' : ''}
                                 </h2>
                             </a>
                         </div>
@@ -33,21 +30,25 @@ $(document).ready(function() {
                     <div class="row gx-1">
                         <div class="col-1"></div>
                         <div class="col-10">
-                            <p class="text-break"><?php echo ${data.description};?></p>
+                            <p class="text-break">${data.description}</p>
                         </div>
                         <div class="col-1"></div>
                     </div>
                     <div class="row gx-1">
                         <div class="col-1"></div>
                         <div class="col-10 text-end">
-                            <p class="text-break"><?php echo substr(${data.date_time}, 0, -3);?></p>
+                            <p class="text-break">${data.date_time}</p>
                         </div>
                         <div class="col-1"></div>
                     </div>
-                </div>`
+                </div>`;
 
                 commentContainer.append(newComment);
                 $('#inputComment').val('');
+
+                var commentCount = $('#numComment');
+                var currentCount = parseInt(commentCount.text());
+                commentCount.text(currentCount + 1);
             }
         });
     });

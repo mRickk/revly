@@ -15,9 +15,14 @@ $(document).ready(function() {
             success: function(response) {
                 // Aggiorna l'aspetto dell'icona del like in base alla risposta del server
                 data = JSON.parse(response);
+                
+                var likeCount = $('#numLike');
+                var currentCount = parseInt(likeCount.text());
                 if (data.liked) {
+                    likeCount.text(currentCount + 1);
                     likeIcon.html('<i class="bi bi-heart-fill text-danger fs-2" ></i>');
                 } else {
+                    likeCount.text(currentCount - 1);
                     likeIcon.html('<i class="bi bi-heart text-secondary fs-2"></i> ');
                 }
             }
