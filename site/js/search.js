@@ -33,7 +33,7 @@ $(document).ready(function() {
         console.log(data);
         let resultContainer = document.querySelector("#searchResult");
         resultContainer.innerHTML = JSON.parse(data).map(user => `
-        <a href="#" class="d-inline-block user-link" data-email="${user.email}">
+        <a href="#" class="d-inline-block user-link">
             <div class="row gx-2">                
                     <div class="col-1">
                         <img class="rounded-circle" src="${user.img}" alt="Profile picture of <?php echo ${user.username}; ?>"/>
