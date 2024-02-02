@@ -4,7 +4,7 @@ session_start();
 
 if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Change password";
-    $templateParams["top-template"] = "page-top.php";
+    $templateParams["top-template"] = "focus-top.php";
     $templateParams["main-template"] = "photo-bio-form.php";
 
     // Recupera le informazioni dell'utente dal database
