@@ -24,11 +24,11 @@
                     Evaluation
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" data-value="1">1 <i class="bi bi-star-fill"></i></a></li>
-                    <li><a class="dropdown-item" href="#" data-value="2">2 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-                    <li><a class="dropdown-item" href="#" data-value="3">3<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-                    <li><a class="dropdown-item" href="#" data-value="4">4<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-                    <li><a class="dropdown-item" href="#" data-value="5">5<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
+                    <li><a class="dropdown-item" data-value="1">1 <i class="bi bi-star-fill"></i></a></li>
+                    <li><a class="dropdown-item" data-value="2">2 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
+                    <li><a class="dropdown-item" data-value="3">3<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
+                    <li><a class="dropdown-item" data-value="4">4<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
+                    <li><a class="dropdown-item" data-value="5">5<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
                 </ul>
                 <!-- Aggiungi un campo nascosto per memorizzare il valore selezionato -->
                 <input type="hidden" name="selectedEvaluation" id="selectedEvaluation" required>

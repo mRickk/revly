@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 function previewImage() {
     var preview = document.getElementById('preview');
     var fileInput = document.getElementById('imgPost');
@@ -36,18 +37,14 @@ function previewImage() {
 }
 
 function getSuggestions(searchTerm) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                var suggestions = JSON.parse(xhr.responseText);
-                updateSuggestionsList(suggestions);  // Corretto il nome della funzione qui
-            }
+    $.ajax({
+        url: 'search.php',
+        type: 'GET',
+        data: { q: searchTerm },
+        success: function (suggestions) {
+            updateSuggestionsList(JSON.parse(suggestions));
         }
-    };
-
-    xhr.open('GET', 'search.php?q=' + encodeURIComponent(searchTerm), true);
-    xhr.send();
+    });
 }
 
 function updateSuggestionsList(suggestions) {
@@ -59,14 +56,3 @@ function updateSuggestionsList(suggestions) {
         datalist.appendChild(option);
     });
 }
-
-var inputSubject = document.getElementById('subjectInput');
-inputSubject.addEventListener('input', function () {
-    var inputValue = inputSubject.value.trim().toLowerCase();
-    datalist.innerHTML = '';
-
-    if (inputValue !== '') {
-        getSuggestions(inputValue);
-    }
-});
-
