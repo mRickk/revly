@@ -5,7 +5,7 @@
         </div>
         <div id="searchResult">
             <?php foreach ($templateParams["users"] as $user): ?>
-                <a href="profile.php?username=<?php echo $user['username']; ?>" class="user-link">
+                <a href="profile.php?username=<?php echo $user['username']; ?>">
                     <div class="row gx-2 mb-3">
                         <div class="d-flex align-items-center">
                             <div class="col-1 me-1">
