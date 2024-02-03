@@ -6,6 +6,7 @@ if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Change password";
     $templateParams["top-template"] = "focus-top.php";
     $templateParams["main-template"] = "photo-bio-form.php";
+    $templateParams["js"] = array("js/back.js");
 
     // Recupera le informazioni dell'utente dal database
     $userInfo = $dbh->getUserWithEmail($_SESSION["email"]);

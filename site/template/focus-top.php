@@ -3,7 +3,7 @@
         <div class="row gx-1 text-center">
             <nav class="navbar pb-0">
                 <div class="col-1">
-                    <a href="#" onclick="history.go(-1)">
+                    <a href="#" id="goBackLink">
                         <i class="bi bi-arrow-left fs-2"></i>
                     </a>
                 </div>
