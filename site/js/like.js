@@ -4,19 +4,19 @@ $(document).ready(function() {
         // Salva il riferimento all'elemento like-icon
         let likeIcon = $(this);
 
-        // Ottieni l'ID del post dal data attributo
-        let postId = likeIcon.data("post-id");
+        let idPost = likeIcon.firstChild;
+
+        console.log(idPost.value);
 
         // Effettua una chiamata AJAX per gestire il like
         $.ajax({
             url: "handle-like.php",
             type: "POST",
-            data: { post_id: postId },
+            data: { post_id: idPost },
             success: function(response) {
                 // Aggiorna l'aspetto dell'icona del like in base alla risposta del server
                 data = JSON.parse(response);
-                
-                var likeCount = $('#numLike');
+                var likeCount = $('#numLike' + idPost);
                 var currentCount = parseInt(likeCount.text());
                 if (data.liked) {
                     likeCount.text(currentCount + 1);

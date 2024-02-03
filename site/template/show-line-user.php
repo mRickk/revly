@@ -3,26 +3,24 @@
         <div class="row gx-1">
             <h2>Users</h2>
         </div>
-        <div id="searchResult">
-            <?php foreach ($templateParams["users"] as $user): ?>
-                <a href="profile.php?username=<?php echo $user['username']; ?>">
-                    <div class="row gx-2 mb-3">
-                        <div class="d-flex align-items-center">
-                            <div class="col-1 me-1">
-                                <div class="ratio ratio-1x1 text-center">
-                                    <img class="rounded-circle object-fit-fill" src="<?php echo $user['img']; ?>" alt="Profile picture of <?php echo $user['username']; ?>"/>
-                                </div>
-                            </div>
-                            <div class="col-9">
-                                <p class="m-0">
-                                    <?php echo $user['username']; ?>
-                                    <?php echo $user['isCompany'] ? '<i class="bi bi-patch-check-fill fs-5"></i>' : ''; ?>
-                                </p>
+        <?php foreach ($templateParams["users"] as $user): ?>
+            <a href="profile.php?username=<?php echo $user['username']; ?>">
+                <div class="row gx-2 mb-3">
+                    <div class="d-flex align-items-center">
+                        <div class="col-1 me-1">
+                            <div class="ratio ratio-1x1 text-center">
+                                <img class="rounded-circle object-fit-fill" src="<?php echo $user['img']; ?>" alt="Profile picture of <?php echo $user['username']; ?>"/>
                             </div>
                         </div>
+                        <div class="col-9">
+                            <p class="m-0">
+                                <?php echo $user['username']; ?>
+                                <?php echo $user['isCompany'] ? '<i class="bi bi-patch-check-fill fs-5"></i>' : ''; ?>
+                            </p>
+                        </div>
                     </div>
-                </a>
-            <?php endforeach; ?>
-        </div>
+                </div>
+            </a>
+        <?php endforeach; ?>
     </div>
 </section>

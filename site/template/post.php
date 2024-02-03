@@ -56,7 +56,8 @@
     <div class="row gx-0 d-flex align-items-center text-center">
         <div class="col-1"></div>
         <div class="col-1">
-            <div class="like-icon" data-post-id="<?php echo $post['id_post']; ?>">
+            <div class="like-icon">
+                <input id="idPost" type="hidden" value="<?php echo $post['id_post']; ?>"/>
             <?php if ($post['liked']): //TODO: aggiungere evento js click del like ?>
                 <i class="bi bi-heart-fill fs-2 text-danger"></i>
             <?php else: ?>
@@ -94,14 +95,14 @@
         <div class="col-1"></div>
     </div>
     <div class="row gx-1 text-center">
-        <div class="col-3" id="numLike">
+        <div class="col-3">
             <a href="like.php?idPost=<?php echo $post['id_post']; ?>">
-                <p><?php echo $post['likes']; ?></p>
+                <p id="numLike<?php echo $post['id_post']; ?>"><?php echo $post['likes']; ?></p>
             </a>
         </div>
         <div class="col-6"></div>
-        <div class="col-3" id="numComment">
-            <p><?php echo $post['comments']; ?></p>
+        <div class="col-3">
+            <p class="numComment"><?php echo $post['comments']; ?></p>
         </div>
     </div>
     <div class="row gx-1 my-2">
