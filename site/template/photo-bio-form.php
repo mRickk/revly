@@ -11,7 +11,7 @@
             </div>
         </li>
         <li>
-            <i class="bi bi-trash"></i></a>
+            <button type="button" id="removePhotoButton"><i class="bi bi-trash"></i></button>
             <input type="submit" name="submit" value="UPDATE"/>
         </li>
         <li>

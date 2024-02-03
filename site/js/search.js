@@ -52,11 +52,9 @@ $(document).ready(function() {
         </a>
         `).join("");
 
-        // Aggiungi un gestore di eventi per i clic sui link degli utenti
         document.querySelectorAll(".user-link").forEach(link => link.addEventListener("click", handleUserClick));
     }
 
-    // Funzione per gestire il clic su un link utente
     function handleUserClick(event) {
         event.preventDefault();
     
@@ -66,7 +64,6 @@ $(document).ready(function() {
             type: "POST",
             data: { "username": username },
             success: function(response){ 
-                // Modifica l'URL per includere l'email e lo username
                 window.location.href = "profile.php?username=" + username;
             }
         });
