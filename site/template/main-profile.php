@@ -1,6 +1,8 @@
 <div class="row gx-1">
     <div class="col-3">
-        <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
+        <div class="ratio ratio-1x1 text-center">
+            <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt="Profile picture of <?php echo $profile['username']?>"/>
+        </div>
     </div>
     <div class="col-9">
         <div class="row gx-1">

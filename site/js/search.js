@@ -33,17 +33,21 @@ $(document).ready(function() {
         console.log(data);
         let resultContainer = document.querySelector("#searchResult");
         resultContainer.innerHTML = JSON.parse(data).map(user => `
-        <a href="#" class="d-inline-block user-link">
-            <div class="row gx-2">                
-                    <div class="col-1">
-                        <img class="rounded-circle" src="${user.img}" alt="Profile picture of <?php echo ${user.username}; ?>"/>
+        <a href="#" class="user-link">
+            <div class="row gx-2 mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="col-1 me-1">
+                        <div class="ratio ratio-1x1 text-center">
+                            <img class="rounded-circle object-fit-fill" src="${user.img}" alt="Profile picture of <?php echo ${user.username}; ?>"/>
+                        </div>
                     </div>
                     <div class="col-9">
-                        <p>
-                            ${user.username}
-                            ${user.isCompany ? '<i class="bi bi-patch-check-fill fs-5"></i>' : ''}
+                        <p class="m-0">
+                                ${user.username}
+                                ${user.isCompany ? '<i class="bi bi-patch-check-fill fs-5"></i>' : ''}
                         </p>
                     </div>
+                </div>
             </div>
         </a>
         `).join("");

@@ -2,7 +2,9 @@
 <article class="bg-body-secondary bg-opacity-75 mb-3">
     <div class="row gx-1">
         <div class="col-1">
-            <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $post['user_img']; ?>" alt="Profile picture of <?php echo $post['username']?>"/>
+            <div class="ratio ratio-1x1 text-center">
+                <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $post['user_img']; ?>" alt="Profile picture of <?php echo $post['username']?>"/>
+            </div>
         </div>
         <div class="col-10">
             <a href='profile.php?username=<?php echo $post['username']; ?>'>

@@ -15,7 +15,9 @@ $(document).ready(function() {
                 <div class="comment bg-body-secondary bg-opacity-75 mb-2">
                     <div class="row gx-1">
                         <div class="col-1">
-                            <img class="rounded-circle" src="${data.img}" alt="Profile picture of ${data.username}"/>
+                            <div class="ratio ratio-1x1 text-center">
+                                <img class="rounded-circle object-fit-fill" src="${data.img}" alt="Profile picture of ${data.username}"/>
+                            </div>
                         </div>
                         <div class="col-10">
                             <a href='profile.php?username=${data.username}'>

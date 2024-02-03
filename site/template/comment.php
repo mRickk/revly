@@ -1,7 +1,9 @@
 <div class="comment bg-body-secondary bg-opacity-75 mb-2">
    <div class="row gx-1">
         <div class="col-1">
-            <img class="rounded-circle" src="<?php echo UPLOAD_DIR . $comment["img"]; ?>" alt="Profile picture of <?php echo $comment["username"];?>"/>
+            <div class="ratio ratio-1x1 text-center">
+                <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $comment["img"]; ?>" alt="Profile picture of <?php echo $comment["username"];?>"/>
+            </div>
         </div>
         <div class="col-10">
             <a href='profile.php?username=<?php echo $comment['username']; ?>'>
