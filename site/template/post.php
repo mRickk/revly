@@ -57,7 +57,7 @@
         <div class="col-1"></div>
         <div class="col-1">
             <div class="like-icon">
-                <input id="idPost" type="hidden" value="<?php echo $post['id_post']; ?>"/>
+                <input name="idPost" type="hidden" value="<?php echo $post['id_post']; ?>"/>
             <?php if ($post['liked']): //TODO: aggiungere evento js click del like ?>
                 <i class="bi bi-heart-fill fs-2 text-danger"></i>
             <?php else: ?>
