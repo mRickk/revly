@@ -32,7 +32,7 @@ article, form[action="create-post.php"], .comment {
     border-radius: 15px;
 }
 
-.recent-searches {
+.recent-searches, .show-users{
     border-radius: 15px 15px 0 0;
 }
 

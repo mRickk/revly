@@ -1,5 +1,5 @@
 <section class="d-flex flex-column min-vh-100">
-    <div class="flex-grow-1 bg-body-tertiary bg-opacity-25 mt-3 p-2">
+    <div class="show-users flex-grow-1 bg-body-tertiary bg-opacity-25 mt-3 p-2">
         <div class="row gx-1">
             <h2>Users</h2>
         </div>
