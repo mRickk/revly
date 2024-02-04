@@ -501,7 +501,34 @@ SOLO SE id_taggable è != NULL*/
         return $results;
     }
 
-
+    public function updateToggle($update, $email) {
+        switch ($update) {
+            case 1:
+                $qry="UPDATE users
+                SET notyFollows = CASE WHEN notifyFollows = 1 THEN 0 ELSE 1 END
+                WHERE users.email=?;";
+                break;
+            case 2:
+                $qry="UPDATE users
+                SET notifyLikes = CASE WHEN notifyLikes = 1 THEN 0 ELSE 1 END
+                WHERE users.email=?;";
+                break;
+            case 3:
+                $qry="UPDATE users
+                SET notifyComments = CASE WHEN notifyComments = 1 THEN 0 ELSE 1 END
+                WHERE users.email=?;";
+                break;
+            case 4:
+                $qry="UPDATE users
+                SET notifyTags = CASE WHEN notifyTags = 1 THEN 0 ELSE 1 END
+                WHERE users.email=?;";
+                break;
+        }
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('s', $email);
+        $res = $stmt->execute();
+        return $res;
+    }
 
 }
 ?>

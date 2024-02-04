@@ -36,35 +36,35 @@
             <i class="bi bi-chat-left-heart"></i>
             <p>Likes</p>
             <?php if ($user["notifyLikes"]):?>
-                <i class="bi bi-toggle-on"></i>
+                <i class="bi bi-toggle-on" id="toggleLike"></i>
             <?php else:?>
-                <i class="bi bi-toggle-off"></i>
+                <i class="bi bi-toggle-off" id="toggleLike"></i>
             <?php endif;?>
         </div>
         <div class="comments">
             <i class="bi bi-chat-square-text"></i>
             <p>Comments</p>
             <?php if ($user["notifyComments"]):?>
-                <i class="bi bi-toggle-on"></i>
+                <i class="bi bi-toggle-on" id="toggleComments"></i>
             <?php else:?>
-                <i class="bi bi-toggle-off"></i>
+                <i class="bi bi-toggle-off" id="toggleComments"></i>
             <?php endif;?>
         </div>
         <div class="tags">
             <i class="bi bi-tag"></i>
             <p>Tags</p>
             <?php if ($user["notifyTags"]):?>
-                <i class="bi bi-toggle-on"></i>
+                <i class="bi bi-toggle-on" id="toggleTags"></i>
             <?php else:?>
-                <i class="bi bi-toggle-off"></i>
+                <i class="bi bi-toggle-off" id="toggleTags"></i>
             <?php endif;?>
         </div>
         <div class="follows">
             <p>Follows</p>
             <?php if ($user["notifyFollows"]):?>
-                <i class="bi bi-toggle-on"></i>
+                <i class="bi bi-toggle-on" id="toggleFollows"></i>
             <?php else:?>
-                <i class="bi bi-toggle-off"></i>
+                <i class="bi bi-toggle-off" id="toggleFollows"></i>
             <?php endif;?>
         </div>
     </div>
