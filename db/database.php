@@ -149,10 +149,33 @@ SOLO SE id_taggable è != NULL*/
     
 
     public function getUserNotifications($email) {
-        $qry = "SELECT N.date_time, U.username as notifier_username, U.email as notifier_email, U.img as notifier_img, U.isCompany, NT.message, post.img as post_img, N.id_post
-            FROM notification N JOIN notification_type NT ON NT.id = N.id_type JOIN users U ON U.email = N.notifier_email
-            LEFT OUTER JOIN post ON N.id_post = post.id WHERE N.notified_email = ?
-            ORDER BY N.date_time DESC";
+        $qry = "SELECT 
+        N.date_time, 
+        U.username as notifier_username, 
+        U.email as notifier_email, 
+        U.img as notifier_img, 
+        U.isCompany, 
+        NT.message, 
+        post.img as post_img, 
+        N.id_post
+    FROM 
+        notification N 
+    JOIN 
+        notification_type NT ON NT.id = N.id_type 
+    JOIN 
+        users U ON U.email = N.notifier_email
+    LEFT OUTER JOIN 
+        post ON N.id_post = post.id 
+    WHERE 
+        N.notified_email = ?
+        AND (
+            (U.notifyFollows = 1 AND N.id_type = 1) OR
+            (U.notifyLikes = 1 AND N.id_type = 2) OR
+            (U.notifyComments = 1 AND N.id_type = 3) OR
+            (U.notifyTags = 1 AND N.id_type = 4)
+        )
+    ORDER BY 
+        N.date_time DESC;";
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('s', $email);
         $stmt->execute();
