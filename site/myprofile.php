@@ -15,7 +15,7 @@ if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Your profile";
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "main-profile.php";
-    $templateParams["js"] = ["js/like.js"];
+    $templateParams["js"] = ["js/like.js","js/delete.js"];
     
     $profile["numFollowing"] = $dbh->getNumberFollows($profile["email"]);
     $profile["numFollower"] = $dbh->getNumberFollowers($profile["email"]);

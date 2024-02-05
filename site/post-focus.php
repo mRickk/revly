@@ -18,7 +18,7 @@ if (isUserLoggedIn() && isset($_GET['idPost'])) {
     $templateParams["title"] = "Revly - " . $post["username"] . "'s post";
     $templateParams["top-template"] = "focus-top.php";
     $templateParams["main-template"] = "main-post-focus.php";
-    $templateParams["js"] = array("js/comment.js", "js/like.js", "js/back.js");
+    $templateParams["js"] = array("js/comment.js", "js/like.js", "js/back.js", "js/delete.js");
     require("template/base.php");
 } else {
     header("Location: index.php");

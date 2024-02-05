@@ -19,12 +19,10 @@ if (isUserLoggedIn()) {
                 
                 $subject = $_POST["subjectInput"];
     
-                // Creo un array con le stringhe composte da name e company_name
                 $combinedNames = array_map(function ($tag) {
                     return $tag['name'] . ' - ' . $tag['company_name'];
                 }, $tag);
 
-                // Controllo se il subject è presente nell'array $combinedNames
                 $key = array_search($subject, $combinedNames);
                 if ($key !== false) {
                     echo "". $key ."". $subject ."";
@@ -34,12 +32,10 @@ if (isUserLoggedIn()) {
                     $dbh->newPost('anna.monti@email.com', $msg, $subject, $_POST["description"], $_POST["selectedEvaluation"], NULL);
                 }
                 header("Location: home.php");
-                exit(); // Assicurati di terminare lo script qui
             }
         }
     }
 
-    // Se non c'è una richiesta AJAX o l'input è vuoto, includi il template
     if (!isset($_GET['ajax']) || empty($_GET['q'])) {
         require("template/base.php");
     }

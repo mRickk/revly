@@ -48,9 +48,10 @@ $(document).ready(function() {
                 commentContainer.append(newComment);
                 $('#inputComment').val('');
 
-                var commentCount = $('#numComment');
+                var commentCount = $('.numComment');
                 var currentCount = parseInt(commentCount.text());
                 commentCount.text(currentCount + 1);
+                console.log(currentCount);
             }
         });
     });

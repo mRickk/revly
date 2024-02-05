@@ -4,8 +4,6 @@ $(document).ready(function() {
 
         let idPost = likeIcon.find('input[name="idPost"]').val();
 
-        console.log(idPost.value);
-
         $.ajax({
             url: "handle-like.php",
             type: "POST",
