@@ -1,19 +1,18 @@
 <?php $user = $templateParams["user"]; ?>
 <section class="d-flex flex-column min-vh-100">
-    <div class="settings-section flex-grow-1 bg-body-secondary bg-opacity-75 p-2">
+    <div class="settings-section flex-grow-1 bg-body-secondary bg-opacity-75 p-2 shadow">
         <div class="row gx-1">
             <h2>Settings</h2>
         </div>
         <div class="row gx-1 mb-2">
             <h3>Account</h3>
             <a href="change-personal-details.php">
-                <div class="row gx-2">
+                <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center">
-                        <div class="col-1"></div>
                         <div class="col-1 me-1">
                             <i class="bi bi-person-gear fs-2"></i>
                         </div>
-                        <div class="col-9">
+                        <div class="col-10">
                             <h4 class="m-0">Change personal details</h4>
                         </div>
                         <div class="col-1">
@@ -23,13 +22,12 @@
                 </div>
             </a>
             <a href="change-photo-bio.php">
-                <div class="row gx-2">
+                <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center">
-                        <div class="col-1"></div>
                         <div class="col-1 me-1">
                             <i class="bi bi-image fs-2"></i>
                         </div>
-                        <div class="col-9">
+                        <div class="col-10">
                             <h4 class="m-0">Change photo & bio</h4>
                         </div>
                         <div class="col-1">
@@ -39,13 +37,12 @@
                 </div>
             </a>
             <a href="change-password.php">
-                <div class="row gx-2">
+                <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center">
-                        <div class="col-1"></div>
                         <div class="col-1 me-1">
                             <i class="bi bi-key fs-2"></i>
                         </div>
-                        <div class="col-9">
+                        <div class="col-10">
                             <h4 class="m-0">Change password</h4>
                         </div>
                         <div class="col-1">
@@ -55,17 +52,16 @@
                 </div>
             </a>
             <?php if (!$user["isCompany"]):?>
-                <div class="row gx-2">
+                <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center" id="companyRequest">
-                        <div class="col-1"></div>
                         <div class="col-1 me-1">
                             <i class="bi bi-patch-check-fill"></i>
                         </div>
-                        <div class="col-9">
+                        <div class="col-10">
                             <h4 class="m-0">Request for a company profile</h4>
                         </div>
                         <div class="col-1">
-                            <i class="bi bi-caret-right fs-2"></i>  
+                            <i class="bi bi-caret-right fs-2"></i>
                         </div>
                     </div>
                 </div>

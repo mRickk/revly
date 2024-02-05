@@ -1,5 +1,5 @@
 <!-- single-post.php -->
-<article class="bg-body-secondary bg-opacity-75 mb-3">
+<article class="bg-body-secondary bg-opacity-75 mb-3 shadow">
     <div class="row gx-1">
         <div class="col-1">
             <div class="ratio ratio-1x1 text-center">

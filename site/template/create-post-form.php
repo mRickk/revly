@@ -1,4 +1,4 @@
-<form action="create-post.php" method="POST" enctype="multipart/form-data" class="bg-body-secondary bg-opacity-75 mb-3 pb-2">
+<form action="create-post.php" method="POST" enctype="multipart/form-data" class="bg-body-secondary bg-opacity-75 mb-3 pb-2 shadow">
     <div class="row px-3 py-2">
         <h2 class="fs-4">New Post</h2>
     </div>
