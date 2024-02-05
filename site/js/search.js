@@ -1,17 +1,14 @@
 $(document).ready(function() {
     let searchBar = document.querySelector("#searchBar");
 
-    // Aggiungi un evento alla search bar all'avvio della pagina
     showRecentSearches();
 
     searchBar.addEventListener("input", function() {
         let data = searchBar.value.trim();
 
-        // Se l'input è vuoto, mostra le ricerche recenti
         if (data === "") {
             showRecentSearches();
         } else {
-            // Altrimenti, mostra i suggerimenti in tempo reale
             $.ajax({
                 url: "search-user.php",
                 type: "POST",
