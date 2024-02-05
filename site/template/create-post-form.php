@@ -6,7 +6,7 @@
         <div class="col-1"></div>
         <div class="col-10">
             <div class="border rounded mb-2 text-center">
-                <label for="imgPost" class="file-label">
+                <label for="imgPost" class="file-label">Profile picture
                     <img class="rounded" id="preview" src="./img/default_preview.png" alt="Preview">
                     <input class="square visually-hidden" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg">
                 </label>

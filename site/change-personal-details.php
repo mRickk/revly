@@ -11,9 +11,9 @@ if (isUserLoggedIn()) {
     if (isset($_POST["username"]) && isset($_POST["name"]) && isset($_POST["surname"])) {
         $res = $dbh->updatePersonalDetails($_POST["username"], $_POST["name"], $_POST["surname"], $_SESSION["email"]);
         if ($res) {
-            $templateParams["success-msg"] = "Your personal details has been updated!";
+            $templateParams["success-msg"] = "Your personal details have been updated!";
         } else {
-            $templateParams["failure-msg"] = "An error occured: your personal details has NOT been updated.";
+            $templateParams["failure-msg"] = "An error occured: your personal details have NOT been updated.";
         }
     }
     $templateParams["user"] = $dbh->getUserWithEmail($_SESSION["email"]);

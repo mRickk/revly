@@ -31,10 +31,10 @@ if (isUserLoggedIn()) {
             $res = $dbh->updatePhoto($msg, $_POST["bio"], $_SESSION["email"]);
 
             if ($res) {
-                $templateParams["success-msg"] = "Your photo & bio has been updated!";
+                $templateParams["success-msg"] = "Your photo & bio have been updated!";
                 header("Location: settings.php");
             } else {
-                $templateParams["failure-msg"] = "An error occurred: your photo & bio has NOT been updated.";
+                $templateParams["failure-msg"] = "An error occurred: your photo & bio have NOT been updated.";
             }
         }
     }
