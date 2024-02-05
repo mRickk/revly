@@ -32,7 +32,7 @@ article, form[action="create-post.php"], .comment {
     border-radius: 15px;
 }
 
-.recent-searches, .show-users{
+.recent-searches, .show-users, .settings-section{
     border-radius: 15px 15px 0 0;
 }
 
@@ -53,4 +53,8 @@ a:hover {
 a:active, a:link:active {
     color: #F28380;
     transition: color 0.1s linear;
+}
+
+.revly-primary-color {
+    color: #EE9D9B;
 }
