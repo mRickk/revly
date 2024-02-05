@@ -105,7 +105,8 @@ alter table COMMENTS add constraint FKWRITE_FK
 
 alter table COMMENTS add constraint FKCONTAIN_FK
      foreign key (id_post)
-     references POST (id);
+     references POST (id)
+     on delete cascade;
 
 alter table COMPANY_ACCOUNT_REQUEST add constraint FKREQUEST
      foreign key (company_email)
@@ -125,7 +126,8 @@ alter table LIKES add constraint FKLIKER
 
 alter table LIKES add constraint FKLIKED
      foreign key (id_post)
-     references POST (id);
+     references POST (id)
+     on delete cascade;
 
 alter table NOTIFICATION add constraint FKSHOW_FK
      foreign key (id_type)
@@ -141,7 +143,8 @@ alter table NOTIFICATION add constraint FKNOTIFIED_FK
 	 
 alter table NOTIFICATION add constraint FKPOST_NOTIFICATION_FK
      foreign key (id_post)
-     references POST (id);
+     references POST (id)
+     on delete cascade;
 
 alter table NOTIFICATION add constraint POST_NOTIFICATION
      check ((id_type = 1 and id_post is null) or (id_type > 1 and id_post is not null));
