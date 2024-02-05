@@ -533,11 +533,9 @@ SOLO SE id_taggable è != NULL*/
     public function deletePost($idPost) {
         $qry = 'DELETE FROM post WHERE id = ?';
         $stmt = $this->db->prepare($qry);
-        $a = $this->getEmailFromPost($postId);
-        $stmt->bind_param('s', $idPost);
+        $stmt->bind_param('i', $idPost);
         $res = $stmt->execute();
         return $res;
     }
-
 }
 ?>

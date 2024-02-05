@@ -4,20 +4,3 @@ $(document).ready(function() {
         myToast.show();
     });
 });
-
-
-$(document).ready(function() {
-    $(document).on("click", "#confirm", function() {
-        let idPost = likeIcon.find('input[name="idPost"]').val();
-        $.ajax({
-            url: 'deletePost.php',
-            method: 'POST',
-            data: {
-                "idPost": idPost
-            },
-            success: function(response) {
-                location.reload();
-            }
-        });
-    });
-});
