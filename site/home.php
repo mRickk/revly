@@ -3,7 +3,6 @@ require_once("bootstrap.php");
 session_start();
 
 if (isUserLoggedIn()) {
-    //$currentPage = 'Home';
     $posts = $dbh->getHomePosts($_SESSION["email"]);
     for ($i = 0; $i < count($posts); $i++){
         $posts[$i]["liked"] = $dbh->isPostLiked($_SESSION["email"], $posts[$i]["id_post"]);   
