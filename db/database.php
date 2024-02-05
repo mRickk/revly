@@ -505,7 +505,7 @@ SOLO SE id_taggable è != NULL*/
         switch ($update) {
             case 1:
                 $qry="UPDATE users
-                SET notyFollows = CASE WHEN notifyFollows = 1 THEN 0 ELSE 1 END
+                SET notifyFollows = CASE WHEN notifyFollows = 1 THEN 0 ELSE 1 END
                 WHERE users.email=?;";
                 break;
             case 2:

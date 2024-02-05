@@ -16,12 +16,13 @@ document.getElementById('toggleFollows').addEventListener('click', function() {
 
 function changeToggle(toggle, update) {
     $.ajax({
-        url: "change-settings.php",
+        url: "change-toggle.php",
         type: "POST",
         data: { "toggle": update },
         success: function(response) {
             console.log(response);
             toggle.toggleClass('bi-toggle-on bi-toggle-off');
+            toggle.toggleClass('revly-primary-color text-secondary');
         }
     });
 }
