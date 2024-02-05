@@ -7,9 +7,7 @@
         <div class="col-10">
             <div class="border rounded mb-2 text-center">
                 <label for="imgPost" class="file-label">
-                    <!-- Imposta un'immagine di anteprima predefinita -->
                     <img class="rounded" id="preview" src="./img/default_preview.png" alt="Preview">
-                    <!-- Nascondi l'input del file finché non viene selezionato un'immagine -->
                     <input class="square visually-hidden" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg">
                 </label>
             </div>
@@ -30,7 +28,6 @@
                     <li><a class="dropdown-item" data-value="4">4<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
                     <li><a class="dropdown-item" data-value="5">5<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
                 </ul>
-                <!-- Aggiungi un campo nascosto per memorizzare il valore selezionato -->
                 <input type="hidden" name="selectedEvaluation" id="selectedEvaluation" required>
             </div>
         </div>

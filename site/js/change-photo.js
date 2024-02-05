@@ -13,6 +13,7 @@ function previewImage() {
     }
 }
 
+
 document.getElementById('imgPost').addEventListener('change', previewImage);
 
 document.getElementById('removePhotoButton').addEventListener('click', function () {

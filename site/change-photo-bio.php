@@ -16,15 +16,16 @@ if (isUserLoggedIn()) {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $msg = $userInfo["img"];
 
-            if (isset($_POST["removePhoto"]) && $_POST["removePhoto"] === "true") {
-                unlink(UPLOAD_DIR . $userInfo["img"]);
-                $msg = "default.png";
-            } elseif (isset($_FILES["imgPost"]) && $_FILES["imgPost"]["size"] > 0) {
+            if (isset($_FILES["imgPost"]) && $_FILES["imgPost"]["size"] > 0) {
                 list($result, $newMsg) = uploadImage(UPLOAD_DIR, $_FILES["imgPost"]);
 
                 if ($result == 1) {
                     $msg = $newMsg;
                 }
+               
+            } elseif (isset($_POST["removePhoto"]) && $_POST["removePhoto"] === "true") {
+                unlink(UPLOAD_DIR . $userInfo["img"]);
+                $msg = "default-image.png";
             }
 
             $res = $dbh->updatePhoto($msg, $_POST["bio"], $_SESSION["email"]);

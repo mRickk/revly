@@ -19,6 +19,5 @@
         </li>
     </ul>
     <input type="hidden" id="removePhotoInput" name="removePhoto" value="false">
-    <script src="./js/change-photo.js"></script>
     <?php require("update-msg.php"); ?>
 </form>
