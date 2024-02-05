@@ -254,11 +254,23 @@ SOLO SE id_taggable è != NULL*/
 
     public function newRequestCompany($email) {
         $timestamp = date('Y-m-d H:i:s');
-        $qry = "INSERT INTO `company_account_request` (`company_email`, `date_time`) VALUES (?, ?)";
-        $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('ss', $email, $timestamp);
-        $res = $stmt->execute();
-        return $res;
+    
+        $checkQuery = "SELECT COUNT(*) FROM `company_account_request` WHERE `company_email` = ?";
+        $checkStmt = $this->db->prepare($checkQuery);
+        $checkStmt->bind_param('s', $email);
+        $checkStmt->execute();
+        $checkStmt->bind_result($emailCount);
+        $checkStmt->fetch();
+        $checkStmt->close();
+
+        if ($emailCount == 0) {
+            $insertQuery = "INSERT INTO `company_account_request` (`company_email`, `date_time`) VALUES (?, ?);";
+            $insertStmt = $this->db->prepare($insertQuery);
+            $insertStmt->bind_param('ss', $email, $timestamp);
+            $res = $insertStmt->execute();
+            $insertStmt->close();
+            return $res;
+        } 
     }
 
     public function newComment($comment, $id_post, $author_email) {

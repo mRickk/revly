@@ -68,7 +68,7 @@
                             <i class="bi bi-caret-right fs-2"></i>  
                         </div>
                     </div>
-                </a>
+                </div>
             <?php endif;?>
             <a href="index.php">
                 <div class="row gx-2">
