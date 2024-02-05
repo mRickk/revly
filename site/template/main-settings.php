@@ -54,6 +54,22 @@
                     </div>
                 </div>
             </a>
+            <?php if (!$user["isCompany"]):?>
+                <div class="row gx-2">
+                    <div class="d-flex align-items-center" id="companyRequest">
+                        <div class="col-1"></div>
+                        <div class="col-1 me-1">
+                            <i class="bi bi-patch-check-fill"></i>
+                        </div>
+                        <div class="col-9">
+                            <h4 class="m-0">Request for a company profile</h4>
+                        </div>
+                        <div class="col-1">
+                            <i class="bi bi-caret-right fs-2"></i>  
+                        </div>
+                    </div>
+                </a>
+            <?php endif;?>
             <a href="index.php">
                 <div class="row gx-2">
                     <div class="col-1"></div>
