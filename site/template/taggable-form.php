@@ -10,7 +10,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label class="d-none" for="inputAddress">Address</label>
-                    <input type="text" class="form-control rounded-pill" name="Address" placeholder="Insert address..."/>
+                    <input type="text" class="form-control rounded-pill" name="address" id="inputAddress"  placeholder="Insert address..."/>
                 </div>
                 <input class="btn btn-primary w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="UPDATE"/>
                 <?php require("update-msg.php"); ?>

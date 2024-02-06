@@ -15,7 +15,7 @@
                 <button type="reset" class="btn btn-danger mb-3 py-1 px-2" id="removePhotoButton"><i class="bi bi-trash fs-5"></i></button>
                 <div class="form-group mb-3">
                     <label class="d-none" for="inputBio">Biography</label>
-                    <textarea rows="3" name="bio" class="form-control rounded-4"  placeholder="Insert new bio..." required><?php echo $user["biography"]; ?></textarea>
+                    <textarea rows="3" name="bio" class="form-control rounded-4" id="inputBio" placeholder="Insert new bio..." required><?php echo $user["biography"]; ?></textarea>
                 </div>
                 <input class="btn btn-primary w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="UPDATE"/>
                 <input type="hidden" id="removePhotoInput" name="removePhoto" value="false">

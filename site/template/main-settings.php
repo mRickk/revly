@@ -52,7 +52,7 @@
                 </div>
             </a>
             <?php if (!$user["isCompany"]):?>
-                <a href="company-request-company.php">
+                <a href="company-request-account.php">
                     <div class="row gx-2 shadow-sm rounded-2">
                         <div class="d-flex align-items-center" id="companyRequest">
                             <div class="col-1 me-1">

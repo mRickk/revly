@@ -252,11 +252,20 @@ SOLO SE id_taggable è != NULL*/
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function newRequestCompany($name, $address, $email) {
-        $timestamp = date('Y-m-d H:i:s');
-        $insertQuery = "INSERT INTO `company_account_request` (`company_email`, `date_time`, 'name', 'descrption') VALUES (?, ?);";
+    public function checkRequestCompany($email) {
+        $selectQuery = "SELECT COUNT(*) AS count FROM company_account_request WHERE company_email = ?";
+        $selectStmt = $this->db->prepare($selectQuery);
+        $selectStmt->bind_param('s', $email);
+        $selectStmt->execute();
+        $selectResult = $selectStmt->get_result();
+        $row = $selectResult->fetch_assoc();
+        return $row['count'] > 0 ;
+    }
+
+    public function newRequestCompany($address, $name, $email) {
+        $insertQuery = "INSERT INTO company_account_request (company_email, date_time, name, address) VALUES (?, CURRENT_TIMESTAMP, ?, ?);";
         $insertStmt = $this->db->prepare($insertQuery);
-        $insertStmt->bind_param('ssss', $email, $timestamp, $name, $address);
+        $insertStmt->bind_param('sss', $email, $name, $address);
         $res = $insertStmt->execute();
         $insertStmt->close();
         return $res;
@@ -539,11 +548,11 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
-    public function insertTaggable($name, $address, $temail){
-        $qry = 'INSERT INTO taggable (company_email, name, address)
+    public function insertTaggable($name, $address, $email){
+        $qry = 'INSERT INTO taggable (name, address, company_email)
         VALUES (?, ?, ?)';
         $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('sss', $email, $name, $address);
+        $stmt->bind_param('sss', $name, $address, $email);
         $res = $stmt->execute();
         return $res;
     }

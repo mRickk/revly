@@ -1,3 +1,4 @@
+<?php $isButtonDisabled = $templateParams["requestCompany"]; ?>
 <div class="bg-body-tertiary bg-opacity-50 rounded-5 shadow">
     <div class="row text-center">
         <div class="col-1"></div>
@@ -10,9 +11,10 @@
                 </div>
                 <div class="form-group mb-3">
                     <label class="d-none" for="inputAddress">Address</label>
-                    <input type="text" class="form-control rounded-pill" name="Address" placeholder="Insert address..."/>
+                    <input type="text" class="form-control rounded-pill" name="address" id="inputAddress" placeholder="Insert address..." required/>
                 </div>
-                <input class="btn btn-primary w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="UPDATE"/>
+
+                <input class="btn btn-primary w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="UPDATE" <?php if ($isButtonDisabled) echo 'disabled'; ?>/>
                 <?php require("update-msg.php"); ?>
             </form>
         </div>

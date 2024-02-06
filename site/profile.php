@@ -32,7 +32,7 @@ if (isUserLoggedIn() && isset($_GET['username'])) {
         $templateParams["title"] = "Revly - " . $profile["username"] . "'s profile";
         $templateParams["top-template"] = "page-top.php";
         $templateParams["main-template"] = "main-profile.php";
-        $templateParams["js"] = array("js/like.js", "js/follow.js", "js/back.js","js/delete.js");
+        $templateParams["js"] = array("js/like.js", "js/follow.js","js/delete.js");
 
         require("template/base.php");
     } else {
