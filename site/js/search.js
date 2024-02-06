@@ -41,7 +41,7 @@ $(document).ready(function() {
                     <div class="col-9">
                         <p class="m-0">
                                 ${user.username}
-                                ${user.isCompany ? '<i class="bi bi-patch-check-fill fs-5"></i>' : ''}
+                                ${user.isCompany ? '<span class="bi bi-patch-check-fill fs-5" title="company"></span>' : ''}
                         </p>
                     </div>
                 </div>
