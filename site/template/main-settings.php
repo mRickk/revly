@@ -93,14 +93,6 @@
                     </div>
                 </div>
             </a>
-            <a href="index.php">
-                <div class="row gx-2">
-                    <div class="col-1"></div>
-                    <div class="col-11">
-                        <p class="text-danger m-1">Delete this account</p><?php //TODO: implementare delete ?>
-                    </div>
-                </div>
-            </a>
         </div>
         <div class="row gx-1 mb-2">
             <h3>Notifications</h3>
