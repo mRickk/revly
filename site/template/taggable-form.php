@@ -3,16 +3,16 @@
         <div class="col-1"></div>
         <div class="col-10">
             <form action="#" method="POST">
-                <h2 class="mb-4 mt-2">Insert new Taggable</h2>
+                <h2 class="mb-4 mt-2">Add a new taggable</h2>
                 <div class="form-group mb-3">
                     <label class="d-none" for="inputTaggable">Taggable</label>
-                    <input type="text" class="form-control rounded-pill" id="inputTaggable" name="taggable" placeholder="Insert new taggable..." required/>
+                    <input type="text" class="form-control rounded-pill" id="inputTaggable" name="taggable" placeholder="Insert taggable name..." required/>
                 </div>
                 <div class="form-group mb-3">
                     <label class="d-none" for="inputAddress">Address</label>
-                    <input type="text" class="form-control rounded-pill" name="address" id="inputAddress"  placeholder="Insert address..."/>
+                    <input type="text" class="form-control rounded-pill" name="address" id="inputAddress"  placeholder="Insert taggable address..."/>
                 </div>
-                <input class="btn btn-primary w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="UPDATE"/>
+                <input class="btn btn-primary w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="ADD"/>
                 <?php require("update-msg.php"); ?>
             </form>
         </div>

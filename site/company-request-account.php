@@ -11,9 +11,9 @@ if (isUserLoggedIn()) {
     if (isset($_POST["address"]) && isset($_POST["name"])) {
         $res = $dbh->newRequestCompany($_POST["address"], $_POST["name"], $_SESSION["email"]);
         if ($res) {
-            $templateParams["success-msg"] = "You have successfully added a new taggable!";
+            $templateParams["success-msg"] = "Your company account request has been submitted!";
         } else {
-            $templateParams["failure-msg"] = "An error occured: the new taggable has not been inserted.";
+            $templateParams["failure-msg"] = "An error occured: your company account request has NOT been submitted.";
         }
     }
     $templateParams["user"] = $dbh->getUserWithEmail($_SESSION["email"]);

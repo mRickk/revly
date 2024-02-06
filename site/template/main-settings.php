@@ -56,10 +56,10 @@
                     <div class="row gx-2 shadow-sm rounded-2">
                         <div class="d-flex align-items-center" id="companyRequest">
                             <div class="col-1 me-1">
-                            <i class="bi bi-patch-check"></i>
+                            <i class="bi bi-patch-check fs-2"></i>
                             </div>
                             <div class="col-10">
-                                <h4 class="m-0">Request for a company profile</h4>
+                                <h4 class="m-0">Company account request</h4>
                             </div>
                             <div class="col-1">
                                 <i class="bi bi-caret-right fs-2"></i>
@@ -73,10 +73,10 @@
                 <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center">
                         <div class="col-1 me-1">
-                            <i class="bi bi-bookmark-plus"></i>
+                            <i class="bi bi-bookmark-plus fs-2"></i>
                         </div>
                         <div class="col-10">
-                            <h4 class="m-0">Insert new Taggable</h4>
+                            <h4 class="m-0">Add taggable</h4>
                         </div>
                         <div class="col-1">
                             <i class="bi bi-caret-right fs-2"></i> 
