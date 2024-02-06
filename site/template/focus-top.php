@@ -3,8 +3,8 @@
         <div class="row gx-1 text-center">
             <nav class="navbar pb-0">
                 <div class="col-1">
-                    <a href="#" id="goBackLink">
-                        <i class="bi bi-arrow-left fs-2"></i>
+                    <a href="#" id="goBackLink" title="Go Back to Previous Page">
+                        <span class="bi bi-arrow-left fs-2" title="Backward Arrow"></span>
                     </a>
                 </div>
                 <div class="col-10">
