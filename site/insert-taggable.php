@@ -17,7 +17,7 @@ if (isUserLoggedIn()) {
         if ($res) {
             $templateParams["success-msg"] = "You have successfully added a new taggable!";
         } else {
-            $templateParams["failure-msg"] = "An error occured: the new taggable has not been inserted.";
+            $templateParams["failure-msg"] = "An error occured: taggable has not been added.";
         }
     }
     $templateParams["user"] = $dbh->getUserWithEmail($_SESSION["email"]);
