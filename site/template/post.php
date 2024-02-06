@@ -71,14 +71,14 @@
     <div class="row gx-0 d-flex align-items-center text-center">
         <div class="col-1"></div>
         <div class="col-1">
-            <div class="like-icon">
+            <button class="like-icon btn btn-link p-0" type="button" role="button">
                 <input name="idPost" type="hidden" value="<?php echo $post['id_post']; ?>"/>
-            <?php if ($post['liked']): //TODO: aggiungere evento js click del like ?>
-                <i class="bi bi-heart-fill fs-2 text-danger"></i>
-            <?php else: ?>
-                <i class="bi bi-heart fs-2 text-secondary"></i>
-            <?php endif; ?>
-            </div>
+                <?php if ($post['liked']): //TODO: aggiungere evento js click del like ?>
+                    <i class="bi bi-heart-fill fs-2 text-danger"></i>
+                <?php else: ?>
+                    <i class="bi bi-heart fs-2 text-secondary"></i>
+                <?php endif; ?>
+            </button>
         </div>
         <div class="col-1"></div>
         <div class="col-6">
@@ -103,7 +103,7 @@
         </div>
         <div class="col-1"></div>
         <div class="col-1">
-            <a href='post-focus.php?idPost=<?php echo $post['id_post']; ?>'>
+            <a href='post-focus.php?idPost=<?php echo $post['id_post']; ?>' role="button">
                 <i class="bi bi-chat-right-text fs-2 text-secondary"></i>
             </a>
         </div>
