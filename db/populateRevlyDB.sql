@@ -263,6 +263,9 @@ VALUES ('Chicken Shawarma Piccante', 'Via Stazione 21, Turin', 'kebab.station@em
 INSERT INTO TAGGABLE (name, address, company_email)
 VALUES ('Baklava Dolce', 'Via Stazione 21, Turin', 'kebab.station@email.com');
 
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Kebab la Stazione', 'Via Stazione 21, Turin', 'kebab.station@email.com');
+
 -- Prodotti taggabili per FromGamer (Utente 9)
 INSERT INTO TAGGABLE (name, company_email)
 VALUES ('PlayStation 5', 'from.gamer@email.com');
@@ -278,6 +281,9 @@ VALUES ('Dungeons & Dragons Starter Set Edizione Limitata', 'from.gamer@email.co
 
 INSERT INTO TAGGABLE (name, company_email)
 VALUES ('Xbox Series X Bundle con Giochi', 'from.gamer@email.com');
+
+INSERT INTO TAGGABLE (name, company_email)
+VALUES ('FromGamer', 'Via Cesare Battisti, 456', 'from.gamer@email.com');
 
 -- Prodotti taggabili per Marco Guidi Parrucchieri (Utente 7)
 INSERT INTO TAGGABLE (name, address, company_email)
@@ -295,6 +301,9 @@ VALUES ('Acconciatura Sposa Personalizzata', 'Via della Bellezza 62, Rome', 'mar
 INSERT INTO TAGGABLE (name, address, company_email)
 VALUES ('Barba alla Moda con Styling', 'Via della Bellezza 62, Rome', 'marco.guidi@email.com');
 
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Marco Guidi Parrucchieri', 'Via della Bellezza 62, Rome', 'marco.guidi@email.com');
+
 -- Prodotti taggabili per Enoteca Galli (Utente 5)
 INSERT INTO TAGGABLE (name, address, company_email)
 VALUES ('Barolo Riserva 2015', 'Via Po 474, Bologna', 'enoteca.galli@email.com');
@@ -310,6 +319,9 @@ VALUES ('Prosecco Superiore Extra Dry', 'Via Po 474, Bologna', 'enoteca.galli@em
 
 INSERT INTO TAGGABLE (name, address, company_email)
 VALUES ('Brunello di Montalcino Riserva', 'Via Po 474, Bologna', 'enoteca.galli@email.com');
+
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Enoteca Galli', 'Via Po 474, Bologna', 'enoteca.galli@email.com');
 
 -- Prodotti taggabili per Trattoria da Salvatore (Utente 2)
 INSERT INTO TAGGABLE (name, address, company_email)
@@ -327,6 +339,8 @@ VALUES ('Tiramisu Tradizionale', 'Via Toledo 19, Naples', 'trattoria.salvatore@e
 INSERT INTO TAGGABLE (name, address, company_email)
 VALUES ('Cannoli Siciliani con Ricotta', 'Via Toledo 19, Naples', 'trattoria.salvatore@email.com');
 
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Trattoria da Salvatore', 'Via Toledo 19, Naples', 'trattoria.salvatore@email.com');
 
 -- Notification type
 
