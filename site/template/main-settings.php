@@ -106,11 +106,13 @@
                         <h4 class="m-0">Likes</h4>
                     </div>
                     <div class="col-2">
-                    <?php if ($user["notifyLikes"]):?>
-                        <i class="bi bi-toggle-on fs-1 revly-primary-color" id="toggleLike"></i>
-                    <?php else:?>
-                        <i class="bi bi-toggle-off fs-1 text-secondary" id="toggleLike"></i>
-                    <?php endif;?>
+                        <button class="btn btn-link" type="button" role="button" id="toggleLike" aria-pressed="<?php echo ($user["notifyLikes"]) ? 'true' : 'false'; ?>" aria-label="Toggle Likes Notifications">
+                            <?php if ($user["notifyLikes"]):?>
+                                <i class="bi bi-toggle-on fs-1 revly-primary-color"></i>
+                            <?php else:?>
+                                <i class="bi bi-toggle-off fs-1 text-secondary"></i>
+                            <?php endif;?>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -124,11 +126,13 @@
                         <h4 class="m-0">Comments</h4>
                     </div>
                     <div class="col-2">
-                    <?php if ($user["notifyComments"]):?>
-                        <i class="bi bi-toggle-on fs-1 revly-primary-color" id="toggleComments"></i>
-                    <?php else:?>
-                        <i class="bi bi-toggle-off fs-1 text-secondary" id="toggleComments"></i>
-                    <?php endif;?>
+                        <button class="btn" type="button" role="button" aria-pressed="<?php echo ($user["notifyComments"]) ? 'true' : 'false'; ?>" aria-label="Toggle Comments Notifications">
+                            <?php if ($user["notifyComments"]):?>
+                                <i class="bi bi-toggle-on fs-1 revly-primary-color" id="toggleComments"></i>
+                            <?php else:?>
+                                <i class="bi bi-toggle-off fs-1 text-secondary" id="toggleComments"></i>
+                            <?php endif;?>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -142,11 +146,13 @@
                         <h4 class="m-0">Tags</h4>
                     </div>
                     <div class="col-2">
-                    <?php if ($user["notifyTags"]):?>
-                        <i class="bi bi-toggle-on fs-1 revly-primary-color" id="toggleTags"></i>
-                    <?php else:?>
-                        <i class="bi bi-toggle-off fs-1 text-secondary" id="toggleTags"></i>
-                    <?php endif;?>
+                        <button class="btn" type="button" role="button"aria-pressed="<?php echo ($user["notifyTags"]) ? 'true' : 'false'; ?>" aria-label="Toggle Tags Notifications">
+                            <?php if ($user["notifyTags"]):?>
+                                <i class="bi bi-toggle-on fs-1 revly-primary-color" id="toggleTags"></i>
+                            <?php else:?>
+                                <i class="bi bi-toggle-off fs-1 text-secondary" id="toggleTags"></i>
+                            <?php endif;?>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -160,11 +166,13 @@
                         <h4 class="m-0">Follows</h4>
                     </div>
                     <div class="col-2">
-                    <?php if ($user["notifyFollows"]):?>
-                        <i class="bi bi-toggle-on fs-1 revly-primary-color" id="toggleFollows"></i>
-                    <?php else:?>
-                        <i class="bi bi-toggle-off fs-1 text-secondary" id="toggleFollows"></i>
-                    <?php endif;?>
+                        <button class="btn" type="button" role="button" aria-pressed="<?php echo ($user["notifyFollows"]) ? 'true' : 'false'; ?>" aria-label="Toggle Follow Notifications">
+                            <?php if ($user["notifyFollows"]):?>
+                                <i class="bi bi-toggle-on fs-1 revly-primary-color" id="toggleFollows"></i>
+                            <?php else:?>
+                                <i class="bi bi-toggle-off fs-1 text-secondary" id="toggleFollows"></i>
+                            <?php endif;?>
+                        </button>
                     </div>
                 </div>
             </div>
