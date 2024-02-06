@@ -9,7 +9,7 @@
             <h2>
                 <?php echo $profile["username"];
                 if ($profile["isCompany"]): ?>
-                <i class="bi bi-patch-check-fill fs-5" title="Company Badge"></i>
+                <span class="bi bi-patch-check-fill fs-5" title="Company Badge"></span>
                 <?php endif; ?>
             </h2>
         </div>

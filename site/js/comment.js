@@ -23,7 +23,7 @@ $(document).ready(function() {
                             <a href='profile.php?username=${data.username}'>
                                 <h2>
                                     ${data.username} 
-                                    ${data.isCompany ? '<i class="bi bi-patch-check-fill fs-5" title="Company Badge"></i>' : ''}
+                                    ${data.isCompany ? '<span class="bi bi-patch-check-fill fs-5" title="Company Badge"></span>' : ''}
                                 </h2>
                             </a>
                         </div>
