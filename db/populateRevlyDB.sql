@@ -282,7 +282,7 @@ VALUES ('Dungeons & Dragons Starter Set Edizione Limitata', 'from.gamer@email.co
 INSERT INTO TAGGABLE (name, company_email)
 VALUES ('Xbox Series X Bundle con Giochi', 'from.gamer@email.com');
 
-INSERT INTO TAGGABLE (name, company_email)
+INSERT INTO TAGGABLE (name, address, company_email)
 VALUES ('FromGamer', 'Via Cesare Battisti, 456', 'from.gamer@email.com');
 
 -- Prodotti taggabili per Marco Guidi Parrucchieri (Utente 7)
