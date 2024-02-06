@@ -1,13 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var dropdownItems = document.querySelectorAll('.dropdown-item');
-
-    dropdownItems.forEach(function (item) {
-        item.addEventListener('click', function () {
-            document.getElementById('selectedEvaluation').value = item.getAttribute('data-value');
-            document.getElementById('evaluationBtn').innerText = item.innerText;
-        });
-    });
-
+    
     var inputSubject = document.getElementById('subjectInput');
     var datalist = document.getElementById('tagSuggestions');
 

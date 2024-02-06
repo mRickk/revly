@@ -1,7 +1,7 @@
 <div class="row gx-1">
     <div class="col-3">
         <div class="ratio ratio-1x1 text-center">
-            <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $profile['img']; ?>"/>
+            <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt=""/>
         </div>
     </div>
     <div class="col-9">

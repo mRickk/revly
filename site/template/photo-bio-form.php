@@ -8,7 +8,7 @@
                 <h2 class="mb-4 mt-2">Change your photo & bio</h2>
                 <div class="border rounded mb-2 text-center">
                     <label for="imgPost" class="file-label"><span class="visually-hidden">Profile picture</span>
-                        <img id="preview" src="<?php echo UPLOAD_DIR . $user["img"]; ?>" alt="User Preview">
+                        <img id="preview" src="<?php echo UPLOAD_DIR . $user["img"]; ?>" alt="Profile picture preview">
                         <input class="square visually-hidden" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg">
                     </label>
                 </div>
