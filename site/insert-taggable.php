@@ -8,8 +8,8 @@ if (isUserLoggedIn()) {
     $templateParams["main-template"] = "taggable-form.php";
     $templateParams["js"] = array("js/back.js");
 
-    if (isset($_POST["address"]) && isset($_POST["name"])) {
-        $res = $dbh->insertNewCompanyReuest($_POST["address"], $_POST["name"], $_SESSION["email"]);
+    if (isset($_POST["taggable"]) && isset($_POST["address"])) {
+        $res = $dbh->insertTaggable($_POST["taggable"], $_POST["address"], $_SESSION["email"]);
         if ($res) {
             $templateParams["success-msg"] = "You have successfully added a new taggable!";
         } else {

@@ -252,25 +252,14 @@ SOLO SE id_taggable è != NULL*/
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function newRequestCompany($email) {
+    public function newRequestCompany($name, $address, $email) {
         $timestamp = date('Y-m-d H:i:s');
-    
-        $checkQuery = "SELECT COUNT(*) FROM `company_account_request` WHERE `company_email` = ?";
-        $checkStmt = $this->db->prepare($checkQuery);
-        $checkStmt->bind_param('s', $email);
-        $checkStmt->execute();
-        $checkStmt->bind_result($emailCount);
-        $checkStmt->fetch();
-        $checkStmt->close();
-
-        if ($emailCount == 0) {
-            $insertQuery = "INSERT INTO `company_account_request` (`company_email`, `date_time`) VALUES (?, ?);";
-            $insertStmt = $this->db->prepare($insertQuery);
-            $insertStmt->bind_param('ss', $email, $timestamp);
-            $res = $insertStmt->execute();
-            $insertStmt->close();
-            return $res;
-        } 
+        $insertQuery = "INSERT INTO `company_account_request` (`company_email`, `date_time`, 'name', 'descrption') VALUES (?, ?);";
+        $insertStmt = $this->db->prepare($insertQuery);
+        $insertStmt->bind_param('ssss', $email, $timestamp, $name, $address);
+        $res = $insertStmt->execute();
+        $insertStmt->close();
+        return $res;
     }
 
     public function newComment($comment, $id_post, $author_email) {
@@ -546,6 +535,15 @@ SOLO SE id_taggable è != NULL*/
         $qry = 'DELETE FROM post WHERE id = ?';
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('i', $idPost);
+        $res = $stmt->execute();
+        return $res;
+    }
+
+    public function insertTaggable($name, $address, $temail){
+        $qry = 'INSERT INTO taggable (company_email, name, address)
+        VALUES (?, ?, ?)';
+        $stmt = $this->db->prepare($qry);
+        $stmt->bind_param('sss', $email, $name, $address);
         $res = $stmt->execute();
         return $res;
     }

@@ -52,19 +52,38 @@
                 </div>
             </a>
             <?php if (!$user["isCompany"]):?>
+                <a href="company-request-company.php">
+                    <div class="row gx-2 shadow-sm rounded-2">
+                        <div class="d-flex align-items-center" id="companyRequest">
+                            <div class="col-1 me-1">
+                            <i class="bi bi-patch-check"></i>
+                            </div>
+                            <div class="col-10">
+                                <h4 class="m-0">Request for a company profile</h4>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi bi-caret-right fs-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            <?php endif;?>
+            <?php if ($user["isCompany"]):?>
+                <a href="insert-taggable.php">
                 <div class="row gx-2 shadow-sm rounded-2">
-                    <div class="d-flex align-items-center" id="companyRequest">
+                    <div class="d-flex align-items-center">
                         <div class="col-1 me-1">
-                            <i class="bi bi-patch-check-fill"></i>
+                            <i class="bi bi-bookmark-plus"></i>
                         </div>
                         <div class="col-10">
-                            <h4 class="m-0">Request for a company profile</h4>
+                            <h4 class="m-0">Insert new Taggable</h4>
                         </div>
                         <div class="col-1">
-                            <i class="bi bi-caret-right fs-2"></i>
+                            <i class="bi bi-caret-right fs-2"></i> 
                         </div>
                     </div>
                 </div>
+            </a>
             <?php endif;?>
             <a href="index.php">
                 <div class="row gx-2">
@@ -121,7 +140,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row gx-2">
+            <div class="row gx-2 <?php echo ($user['isCompany']) ? '' : 'd-none'; ?>">
                 <div class="d-flex align-items-center">
                     <div class="col-1"></div>
                     <div class="col-1 me-1">
