@@ -136,7 +136,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row gx-2 <?php echo ($user['isCompany']) ? '' : 'd-none'; ?>">
+            <div class="row gx-2 <?php echo ($user['isCompany']) ? '' : 'visually-hidden'; ?>">
                 <div class="d-flex align-items-center">
                     <div class="col-1"></div>
                     <div class="col-1 me-1">

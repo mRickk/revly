@@ -11,7 +11,7 @@
         <div class="row gx-1 mb-3 align-middle">
             <div class="col-10">
                 <div class="form-group">
-                    <label class="d-none" for="inputComment">Comment</label>
+                    <label class="visually-hidden" for="inputComment">Comment</label>
                     <input type="text" class="form-control rounded-pill" id="inputComment" name="comment" placeholder="Write a comment..." required/>
                 </div>
             </div>

@@ -7,15 +7,15 @@
             <form action="#" method="POST">
                 <h2 class="mb-4 mt-2">Change your password</h2>
                 <div class="form-group mb-3">
-                    <label class="d-none" for="inputOldPassword">Old password</label>
+                    <label class="visually-hidden" for="inputOldPassword">Old password</label>
                     <input type="password" class="form-control rounded-pill" id="inputOldPassword" name="oldpassword" placeholder="Old password" required/>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="d-none" for="inputNewPassword">New password</label>
+                    <label class="visually-hidden" for="inputNewPassword">New password</label>
                     <input type="password" class="form-control rounded-pill" id="inputNewPassword" name="password" placeholder="New password" required/>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="d-none" for="inputConfirmPassword">Confirm new password</label>
+                    <label class="visually-hidden" for="inputConfirmPassword">Confirm new password</label>
                     <input type="password" class="form-control rounded-pill" id="inputConfirmPassword" name="confirmpassword" placeholder="Confirm new password" required/>
                 </div>
                 <input class="btn btn-danger w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="UPDATE"/>

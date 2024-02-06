@@ -2,11 +2,11 @@
     <form action="#" method="POST">
         <h2 class="text-center mb-4">LOGIN</h2>
         <div class="form-group mb-3">
-            <label class="d-none" for="inputUsername">Username</label>
+            <label class="visually-hidden" for="inputUsername">Username</label>
             <input type="text" class="form-control rounded-pill" id="inputUsername" name="username" placeholder="Username" required/>
         </div>
         <div class="form-group mb-3">
-            <label class="d-none" for="inputPassword">Password</label>
+            <label class="visually-hidden" for="inputPassword">Password</label>
             <input type="password" class="form-control rounded-pill" id="inputPassword" name="password" placeholder="Password" required/>
         </div>
         <div class="text-center"> <!-- Aggiunto il div con la classe text-center -->

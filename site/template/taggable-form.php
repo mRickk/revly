@@ -5,11 +5,11 @@
             <form action="#" method="POST">
                 <h2 class="mb-4 mt-2">Add a new taggable</h2>
                 <div class="form-group mb-3">
-                    <label class="d-none" for="inputTaggable">Taggable</label>
+                    <label class="visually-hidden" for="inputTaggable">Taggable</label>
                     <input type="text" class="form-control rounded-pill" id="inputTaggable" name="taggable" placeholder="Insert taggable name..." required/>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="d-none" for="inputAddress">Address</label>
+                    <label class="visually-hidden" for="inputAddress">Address</label>
                     <input type="text" class="form-control rounded-pill" name="address" id="inputAddress"  placeholder="Insert taggable address..."/>
                 </div>
                 <input class="btn btn-primary w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="ADD"/>

@@ -1,7 +1,7 @@
 <form action="#" method="POST">
     <div class="row gx-1">
         <input type="search" id="searchBar" class="form-control rounded-pill shadow-sm" placeholder="Search"/>
-        <label class="form-label d-none" for="searchBar">Search</label>
+        <label class="form-label visually-hidden" for="searchBar">Search</label>
     </div>
 </form>
 

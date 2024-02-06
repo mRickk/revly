@@ -9,7 +9,7 @@
                     <div class="d-flex align-items-center">
                         <div class="col-1 me-1">
                             <div class="ratio ratio-1x1 text-center">
-                                <img class="rounded-circle object-fit-fill" src="<?php echo $user['img']; ?>" alt="Profile picture of <?php echo $user['username']; ?>"/>
+                                <img class="rounded-circle object-fit-fill" src="<?php echo $user['img']; ?>"/>
                             </div>
                         </div>
                         <div class="col-9">

@@ -2,7 +2,7 @@
    <div class="row gx-1">
         <div class="col-1">
             <div class="ratio ratio-1x1 text-center">
-                <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $comment["img"]; ?>" alt="Profile picture of <?php echo $comment["username"];?>"/>
+                <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $comment["img"]; ?>"/>
             </div>
         </div>
         <div class="col-10">

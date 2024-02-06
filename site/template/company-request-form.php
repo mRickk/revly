@@ -6,11 +6,11 @@
             <form action="#" method="POST">
                 <h2 class="mb-4 mt-2">Submit your company account request</h2>
                 <div class="form-group mb-3">
-                    <label class="d-none" for="inputName">Name</label>
+                    <label class="visually-hidden" for="inputName">Name</label>
                     <input type="text" class="form-control rounded-pill" id="inputName" name="name" placeholder="Insert company name..." required/>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="d-none" for="inputAddress">Address</label>
+                    <label class="visually-hidden" for="inputAddress">Address</label>
                     <input type="text" class="form-control rounded-pill" name="address" id="inputAddress" placeholder="Insert company address..." required/>
                 </div>
 
