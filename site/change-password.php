@@ -1,6 +1,6 @@
 <?php
 require_once("bootstrap.php");
-session_start();
+sec_session_start();
 
 if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Change password";
@@ -18,7 +18,7 @@ if (isUserLoggedIn()) {
         elseif (count($dbh->checkLogin($_SESSION["username"], $_POST["oldpassword"])) == 0) {
             $templateParams["failure-msg"] = "Wrong old password!";
         } else {
-            $res = $dbh->updatePassword($_SESSION["email"], $_POST["oldpassword"], $_POST["password"], );
+            $res = $dbh->updatePassword($_SESSION["username"], $_SESSION["email"], $_POST["oldpassword"], $_POST["password"], );
             if ($res) {
                 $templateParams["success-msg"] = "Your password has been updated!";
             } else {

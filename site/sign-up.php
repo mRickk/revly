@@ -4,7 +4,7 @@ require_once("bootstrap.php");
 $templateParams["title"] = "Revly - Sign up";
 $templateParams["top-template"] = "logo.php";
 $templateParams["main-template"] = "signup-form.php";
-session_start();
+sec_session_start();
 
 if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["confirm_password"])) {
     if (strcmp($_POST["confirm_password"], $_POST["password"]) != 0) {

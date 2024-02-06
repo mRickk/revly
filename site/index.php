@@ -4,7 +4,7 @@ require_once("bootstrap.php");
 $templateParams["title"] = "Revly - Login";
 $templateParams["top-template"] = "logo.php";
 $templateParams["main-template"] = "login-form.php";
-session_start();
+sec_session_start();
 
 if(isset($_POST["username"]) && isset($_POST["password"])) {
     $loginResult = $dbh->checkLogin($_POST["username"], $_POST["password"]);

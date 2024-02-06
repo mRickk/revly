@@ -1,6 +1,6 @@
 <?php
 require_once("bootstrap.php");
-session_start();
+sec_session_start();
 
 if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Add Taggable";

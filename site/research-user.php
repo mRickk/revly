@@ -1,6 +1,6 @@
 <?php
 require("bootstrap.php");
-session_start();
+sec_session_start();
 
 $templateParams["title"] = "Search";
 $templateParams["top-template"] = "focus-top.php";
