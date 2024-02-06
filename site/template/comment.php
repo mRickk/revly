@@ -10,7 +10,7 @@
                 <h2>
                     <?php echo $comment["username"]; 
                     if ($comment["isCompany"]): ?>
-                    <i class="bi bi-patch-check-fill fs-5"></i>
+                    <i class="bi bi-patch-check-fill fs-5" title="Company Badge"></i>
                     <?php endif; ?>
                 </h2>
             </a>

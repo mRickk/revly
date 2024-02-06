@@ -14,10 +14,10 @@ $(document).ready(function() {
                 var currentCount = parseInt(likeCount.text());
                 if (data.liked) {
                     likeCount.text(currentCount + 1);
-                    likeIcon.html('<input name="idPost" type="hidden" value="'+ idPost + '"/><i class="bi bi-heart-fill text-danger fs-2" ></i>');
+                    likeIcon.html('<input name="idPost" type="hidden" value="'+ idPost + '"/><span class="bi bi-heart-fill text-danger fs-2" title="Liked"></span>');
                 } else {
                     likeCount.text(currentCount - 1);
-                    likeIcon.html('<input name="idPost" type="hidden" value="'+ idPost + '"/><i class="bi bi-heart text-secondary fs-2"></i> ');
+                    likeIcon.html('<input name="idPost" type="hidden" value="'+ idPost + '"/><span class="bi bi-heart text-secondary fs-2" title="Not liked"></span> ');
                 }
             }
         });
