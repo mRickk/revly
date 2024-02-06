@@ -17,7 +17,7 @@ USE revly_db;
 -- Tables Section
 -- _____________ 
 
-CREATE TABLE IF NOT EXISTS COMMENTS (
+CREATE TABLE COMMENTS (
      id INT UNSIGNED NOT NULL AUTO_INCREMENT,
      description TEXT NOT NULL,
      date_time DATETIME NOT NULL,
@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS COMMENTS (
 CREATE TABLE COMPANY_ACCOUNT_REQUEST (
      company_email VARCHAR(80) NOT NULL,
      date_time DATETIME NOT NULL,
+     name VARCHAR(64) NOT NULL,
+     address VARCHAR(128) NOT NULL,
      constraint ID_COMPANY_user_REQUEST_ID primary key (company_email, date_time));
 
 create table FOLLOW (
@@ -74,8 +76,6 @@ create table RECENT_SEARCHES (
 create table TAGGABLE (
      id int unsigned not null AUTO_INCREMENT,
      name varchar(64) not null,
-     country varchar(64),
-     city varchar(64),
      address varchar(128),
      company_email varchar(80) not null,
      constraint ID_TAGGABLE_ID primary key (id));
@@ -168,10 +168,6 @@ alter table RECENT_SEARCHES add constraint FKSEARCHED_FK
      foreign key (searched_email)
      references USERS (email);
 
-alter table TAGGABLE add constraint ADDRESS_TAGGABLE
-     check((country is not null and city is not null and address is not null)
-           or (country is null and city is null and address is null));
-
 alter table TAGGABLE add constraint FKPRODUCE_FK
      foreign key (company_email)
      references USERS (email);
@@ -199,8 +195,7 @@ create index FKSEARCHER_IND
      on RECENT_SEARCHES (user_email);
 
 create index FKPRODUCE_IND
-     on TAGGABLE (company_email);
-	 
+     on TAGGABLE (company_email);	 
 	 
 	 
 	 
@@ -217,7 +212,7 @@ STARTS CURRENT_TIMESTAMP
 DO
 BEGIN
   DELETE FROM NOTIFICATION
-  WHERE date_time < NOW() - INTERVAL 30 DAY;
+  WHERE date_time < NOW() - INTERVAL 15 DAY;
 END //
 
 DELIMITER ;
@@ -230,7 +225,7 @@ STARTS CURRENT_TIMESTAMP
 DO
 BEGIN
   DELETE FROM RECENT_SEARCHES
-  WHERE date_time < NOW() - INTERVAL 30 DAY;
+  WHERE date_time < NOW() - INTERVAL 15 DAY;
 END //
 
 DELIMITER ;
