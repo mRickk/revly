@@ -1,16 +1,16 @@
-document.getElementById('toggleLike').addEventListener('click', function() {
+$('.toggleLike').on('click', function() {
     changeToggle($(this), 2);
 });
 
-document.getElementById('toggleComments').addEventListener('click', function() {
+$('.toggleComments').on('click', function() {
     changeToggle($(this), 3);
 });
 
-document.getElementById('toggleTags').addEventListener('click', function() {
+$('.toggleTags').on('click', function() {
     changeToggle($(this), 4);
 });
 
-document.getElementById('toggleFollows').addEventListener('click', function() {
+$('.toggleFollows').on('click', function() {
     changeToggle($(this), 1);
 });
 
@@ -20,10 +20,13 @@ function changeToggle(toggle, update) {
         type: "POST",
         data: { "toggle": update },
         success: function(response) {
-            console.log(response);
-            toggle.toggleClass('bi-toggle-on bi-toggle-off');
-            toggle.toggleClass('revly-primary-color text-secondary');
+            var icon = toggle.find('i');
+            var classList = icon.removeClass('bi-toggle-on bi-toggle-off').toggleClass('revly-primary-color text-secondary');
+            if (classList.hasClass('text-secondary')) {
+                icon.addClass('bi-toggle-off');
+            } else {
+                icon.addClass('bi-toggle-on');
+            }
         }
     });
 }
-
