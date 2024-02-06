@@ -7,7 +7,7 @@ VALUES ('mario.rossi@email.com', 'mario123', 'Mario', 'Rossi', 'password123', 'A
 
 -- Inserisci utente 2
 INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('trattoriaSalvatore@email.com', 'TrattoriaDaSalvatore', 'Trattoria da Salvatore', '', 'securepass', 'Siamo una trattoria nel mezzo di un paesaggio mozzafiato', 1, 1, 0, 1, 0);
+VALUES ('trattoria.salvatore@email.com', 'TrattoriaDaSalvatore', 'Trattoria da Salvatore', '', 'securepass', 'Siamo una trattoria nel mezzo di un paesaggio mozzafiato', 1, 1, 0, 1, 0);
 
 -- Inserisci utente 3
 INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
@@ -35,7 +35,7 @@ VALUES ('sara.verdi@email.com', 'sara.v', 'Sara', 'Verdi', 'secure123', 'Appassi
 
 -- Inserisci utente 9
 INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
-VALUES ('from.gamer@email.com', 'fromGamer', 'FromGamer', '', 'mypassword123', 'Negozio di videogiochi e giochi da tavolo', 1, 1, 1, 0, 0);
+VALUES ('from.gamer@email.com', 'fromGamer', 'FromGamer', '', 'mypassword123', 'Negozio online di videogiochi e giochi da tavolo', 1, 1, 1, 0, 0);
 
 -- Inserisci utente 10
 INSERT INTO USERS (email, username, name, surname, password, biography, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows)
@@ -66,26 +66,26 @@ VALUES ('kebab.station@email.com', 'Kebab_Stazione', 'Kebab la Stazione', '', 'k
 
 -- Utente 1 (Mario Rossi) ha cercato altri 3 profili
 INSERT INTO RECENT_SEARCHES (searched_email, user_email, date_time)
-VALUES ('trattoriaSalvatore@email.com', 'mario.rossi@email.com', NOW()),
+VALUES ('trattoria.salvatore@email.com', 'mario.rossi@email.com', NOW()),
        ('giuseppe.verdi@email.com', 'mario.rossi@email.com', NOW()),
        ('anna.monti@email.com', 'mario.rossi@email.com', NOW());
 
 -- Utente 2 (Trattoria da Salvatore) ha cercato altri 3 profili
 INSERT INTO RECENT_SEARCHES (searched_email, user_email, date_time)
-VALUES ('mario.rossi@email.com', 'trattoriaSalvatore@email.com', NOW()),
-       ('giuseppe.verdi@email.com', 'trattoriaSalvatore@email.com', NOW()),
-       ('anna.monti@email.com', 'trattoriaSalvatore@email.com', NOW());
+VALUES ('mario.rossi@email.com', 'trattoria.salvatore@email.com', NOW()),
+       ('giuseppe.verdi@email.com', 'trattoria.salvatore@email.com', NOW()),
+       ('anna.monti@email.com', 'trattoria.salvatore@email.com', NOW());
 
 -- Utente 3 (Giuseppe Verdi) ha cercato altri 3 profili
 INSERT INTO RECENT_SEARCHES (searched_email, user_email, date_time)
 VALUES ('mario.rossi@email.com', 'giuseppe.verdi@email.com', NOW()),
-       ('trattoriaSalvatore@email.com', 'giuseppe.verdi@email.com', NOW()),
+       ('trattoria.salvatore@email.com', 'giuseppe.verdi@email.com', NOW()),
        ('anna.monti@email.com', 'giuseppe.verdi@email.com', NOW());
 
 -- Utente 4 (Anna Monti) ha cercato altri 3 profili
 INSERT INTO RECENT_SEARCHES (searched_email, user_email, date_time)
 VALUES ('mario.rossi@email.com', 'anna.monti@email.com', NOW()),
-       ('trattoriaSalvatore@email.com', 'anna.monti@email.com', NOW()),
+       ('trattoria.salvatore@email.com', 'anna.monti@email.com', NOW()),
        ('giuseppe.verdi@email.com', 'anna.monti@email.com', NOW());
 
 -- Utente 5 (Enoteca Galli) ha cercato altri 3 profili
@@ -159,7 +159,7 @@ VALUES ('enoteca.galli@email.com', 'kebab.station@email.com', NOW()),
 
 -- Utente 1 (Mario Rossi) seguito da 6 persone
 INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('trattoriaSalvatore@email.com', 'mario.rossi@email.com'),
+VALUES ('trattoria.salvatore@email.com', 'mario.rossi@email.com'),
        ('giuseppe.verdi@email.com', 'mario.rossi@email.com'),
        ('anna.monti@email.com', 'mario.rossi@email.com'),
        ('enoteca.galli@email.com', 'mario.rossi@email.com'),
@@ -168,16 +168,16 @@ VALUES ('trattoriaSalvatore@email.com', 'mario.rossi@email.com'),
 
 -- Utente 2 (Trattoria da Salvatore) seguito da 5 persone
 INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('mario.rossi@email.com', 'trattoriaSalvatore@email.com'),
-       ('giuseppe.verdi@email.com', 'trattoriaSalvatore@email.com'),
-       ('anna.monti@email.com', 'trattoriaSalvatore@email.com'),
-       ('eleonora.rossi@email.com', 'trattoriaSalvatore@email.com'),
-       ('marco.guidi@email.com', 'trattoriaSalvatore@email.com');
+VALUES ('mario.rossi@email.com', 'trattoria.salvatore@email.com'),
+       ('giuseppe.verdi@email.com', 'trattoria.salvatore@email.com'),
+       ('anna.monti@email.com', 'trattoria.salvatore@email.com'),
+       ('eleonora.rossi@email.com', 'trattoria.salvatore@email.com'),
+       ('marco.guidi@email.com', 'trattoria.salvatore@email.com');
 
 -- Utente 3 (Giuseppe Verdi) seguito da 7 persone
 INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('mario.rossi@email.com', 'giuseppe.verdi@email.com'),
-       ('trattoriaSalvatore@email.com', 'giuseppe.verdi@email.com'),
+       ('trattoria.salvatore@email.com', 'giuseppe.verdi@email.com'),
        ('anna.monti@email.com', 'giuseppe.verdi@email.com'),
        ('eleonora.rossi@email.com', 'giuseppe.verdi@email.com'),
        ('marco.guidi@email.com', 'giuseppe.verdi@email.com'),
@@ -187,7 +187,7 @@ VALUES ('mario.rossi@email.com', 'giuseppe.verdi@email.com'),
 -- Utente 4 (Anna Monti) seguito da 6 persone
 INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('mario.rossi@email.com', 'anna.monti@email.com'),
-       ('trattoriaSalvatore@email.com', 'anna.monti@email.com'),
+       ('trattoria.salvatore@email.com', 'anna.monti@email.com'),
        ('giuseppe.verdi@email.com', 'anna.monti@email.com'),
        ('enoteca.galli@email.com', 'anna.monti@email.com'),
        ('eleonora.rossi@email.com', 'anna.monti@email.com'),
@@ -198,7 +198,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('eleonora.rossi@email.com', 'enoteca.galli@email.com'),
        ('marco.guidi@email.com', 'enoteca.galli@email.com'),
        ('sara.verdi@email.com', 'enoteca.galli@email.com'),
-       ('trattoriaSalvatore@email.com', 'enoteca.galli@email.com'),
+       ('trattoria.salvatore@email.com', 'enoteca.galli@email.com'),
        ('anna.monti@email.com', 'enoteca.galli@email.com');
 
 -- Utente 6 (Eleonora Rossi) seguito da 7 persone
@@ -206,7 +206,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('enoteca.galli@email.com', 'eleonora.rossi@email.com'),
        ('marco.guidi@email.com', 'eleonora.rossi@email.com'),
        ('sara.verdi@email.com', 'eleonora.rossi@email.com'),
-       ('trattoriaSalvatore@email.com', 'eleonora.rossi@email.com'),
+       ('trattoria.salvatore@email.com', 'eleonora.rossi@email.com'),
        ('anna.monti@email.com', 'eleonora.rossi@email.com'),
        ('giovanni.baldi@email.com', 'eleonora.rossi@email.com'),
        ('silvia.moro@email.com', 'eleonora.rossi@email.com');
@@ -224,7 +224,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('enoteca.galli@email.com', 'sara.verdi@email.com'),
        ('eleonora.rossi@email.com', 'sara.verdi@email.com'),
        ('marco.guidi@email.com', 'sara.verdi@email.com'),
-       ('trattoriaSalvatore@email.com', 'sara.verdi@email.com'),
+       ('trattoria.salvatore@email.com', 'sara.verdi@email.com'),
        ('anna.monti@email.com', 'sara.verdi@email.com');
 
 -- Utente 9 (FromGamer) seguito da 7 persone
@@ -232,7 +232,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('eleonora.rossi@email.com', 'from.gamer@email.com'),
        ('marco.guidi@email.com', 'from.gamer@email.com'),
        ('sara.verdi@email.com', 'from.gamer@email.com'),
-       ('trattoriaSalvatore@email.com', 'from.gamer@email.com'),
+       ('trattoria.salvatore@email.com', 'from.gamer@email.com'),
        ('anna.monti@email.com', 'from.gamer@email.com'),
        ('enoteca.galli@email.com', 'from.gamer@email.com'),
        ('elena.monti@email.com', 'from.gamer@email.com');
@@ -242,7 +242,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('enoteca.galli@email.com', 'elena.monti@email.com'),
        ('eleonora.rossi@email.com', 'elena.monti@email.com'),
        ('marco.guidi@email.com', 'elena.monti@email.com'),
-       ('trattoriaSalvatore@email.com', 'elena.monti@email.com'),
+       ('trattoria.salvatore@email.com', 'elena.monti@email.com'),
        ('anna.monti@email.com', 'elena.monti@email.com');
 
 -- Utente 11 (Giovanni Baldi) seguito da 6 persone
@@ -250,7 +250,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('enoteca.galli@email.com', 'giovanni.baldi@email.com'),
        ('eleonora.rossi@email.com', 'giovanni.baldi@email.com'),
        ('sara.verdi@email.com', 'giovanni.baldi@email.com'),
-       ('trattoriaSalvatore@email.com', 'giovanni.baldi@email.com'),
+       ('trattoria.salvatore@email.com', 'giovanni.baldi@email.com'),
        ('anna.monti@email.com', 'giovanni.baldi@email.com');
 
 -- Utente 12 (Silvia Moro) seguito da 7 persone
@@ -258,7 +258,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('enoteca.galli@email.com', 'silvia.moro@email.com'),
        ('eleonora.rossi@email.com', 'silvia.moro@email.com'),
        ('marco.guidi@email.com', 'silvia.moro@email.com'),
-       ('trattoriaSalvatore@email.com', 'silvia.moro@email.com'),
+       ('trattoria.salvatore@email.com', 'silvia.moro@email.com'),
        ('anna.monti@email.com', 'silvia.moro@email.com'),
        ('giovanni.baldi@email.com', 'silvia.moro@email.com'),
        ('simona.rossi@email.com', 'silvia.moro@email.com');
@@ -268,7 +268,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('enoteca.galli@email.com', 'andrea.cavalli@email.com'),
        ('eleonora.rossi@email.com', 'andrea.cavalli@email.com'),
        ('marco.guidi@email.com', 'andrea.cavalli@email.com'),
-       ('trattoriaSalvatore@email.com', 'andrea.cavalli@email.com'),
+       ('trattoria.salvatore@email.com', 'andrea.cavalli@email.com'),
        ('anna.monti@email.com', 'andrea.cavalli@email.com');
 
 -- Utente 14 (Simona Rossi) seguito da 6 persone
@@ -276,7 +276,7 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('enoteca.galli@email.com', 'simona.rossi@email.com'),
        ('eleonora.rossi@email.com', 'simona.rossi@email.com'),
        ('marco.guidi@email.com', 'simona.rossi@email.com'),
-       ('trattoriaSalvatore@email.com', 'simona.rossi@email.com'),
+       ('trattoria.salvatore@email.com', 'simona.rossi@email.com'),
        ('anna.monti@email.com', 'simona.rossi@email.com');
 
 -- Utente 15 (Kebab la Stazione) seguito da 7 persone
@@ -284,91 +284,91 @@ INSERT INTO FOLLOW (follower_email, user_email)
 VALUES ('eleonora.rossi@email.com', 'kebab.station@email.com'),
        ('marco.guidi@email.com', 'kebab.station@email.com'),
        ('sara.verdi@email.com', 'kebab.station@email.com'),
-       ('trattoriaSalvatore@email.com', 'kebab.station@email.com'),
+       ('trattoria.salvatore@email.com', 'kebab.station@email.com'),
        ('anna.monti@email.com', 'kebab.station@email.com'),
        ('giovanni.baldi@email.com', 'kebab.station@email.com'),
        ('simona.rossi@email.com', 'kebab.station@email.com');
 
 
 -- Prodotti taggabili per Kebab la Stazione (Utente 15)
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Kebab Misto Deluxe', 'Italy', 'Rome', 'Via Roma, 123', 'kebab.station@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Kebab Misto Deluxe', 'Via Stazione 21, Turin', 'kebab.station@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Falafel Wrap Vegano', 'Italy', 'Rome', 'Via Roma, 123', 'kebab.station@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Falafel Wrap Vegano', 'Via Stazione 21, Turin', 'kebab.station@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Hummus Plate Mediterraneo', 'Italy', 'Rome', 'Via Roma, 123', 'kebab.station@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Hummus Plate Mediterraneo', 'Via Stazione 21, Turin', 'kebab.station@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Chicken Shawarma Piccante', 'Italy', 'Rome', 'Via Roma, 123', 'kebab.station@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Chicken Shawarma Piccante', 'Via Stazione 21, Turin', 'kebab.station@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Baklava Dolce', 'Italy', 'Rome', 'Via Roma, 123', 'kebab.station@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Baklava Dolce', 'Via Stazione 21, Turin', 'kebab.station@email.com');
 
 -- Prodotti taggabili per FromGamer (Utente 9)
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('PlayStation 5', 'Italy', 'Milan', 'Via Cesare Battisti, 456', 'from.gamer@email.com');
+INSERT INTO TAGGABLE (name, company_email)
+VALUES ('PlayStation 5', 'from.gamer@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Settlers of Catan', 'Italy', 'Milan', 'Via Cesare Battisti, 456', 'from.gamer@email.com');
+INSERT INTO TAGGABLE (name, company_email)
+VALUES ('Settlers of Catan', 'from.gamer@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Nintendo Switch Lite', 'Italy', 'Milan', 'Via Cesare Battisti, 456', 'from.gamer@email.com');
+INSERT INTO TAGGABLE (name, company_email)
+VALUES ('Nintendo Switch Lite', 'from.gamer@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Dungeons & Dragons Starter Set Edizione Limitata', 'Italy', 'Milan', 'Via Cesare Battisti, 456', 'from.gamer@email.com');
+INSERT INTO TAGGABLE (name, company_email)
+VALUES ('Dungeons & Dragons Starter Set Edizione Limitata', 'from.gamer@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Xbox Series X Bundle con Giochi', 'Italy', 'Milan', 'Via Cesare Battisti, 456', 'from.gamer@email.com');
+INSERT INTO TAGGABLE (name, company_email)
+VALUES ('Xbox Series X Bundle con Giochi', 'from.gamer@email.com');
 
 -- Prodotti taggabili per Marco Guidi Parrucchieri (Utente 7)
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Taglio di Capelli alla Moda', 'Italy', 'Florence', 'Via della Bellezza, 789', 'marco.guidi@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Taglio di Capelli alla Moda', 'Via della Bellezza 62, Rome', 'marco.guidi@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Colore Capelli Elegante', 'Italy', 'Florence', 'Via della Bellezza, 789', 'marco.guidi@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Colore Capelli Elegante', 'Via della Bellezza 62, Rome', 'marco.guidi@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Trattamento alla Cheratina Professionale', 'Italy', 'Florence', 'Via della Bellezza, 789', 'marco.guidi@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Trattamento alla Cheratina Professionale', 'Via della Bellezza 62, Rome', 'marco.guidi@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Acconciatura Sposa Personalizzata', 'Italy', 'Florence', 'Via della Bellezza, 789', 'marco.guidi@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Acconciatura Sposa Personalizzata', 'Via della Bellezza 62, Rome', 'marco.guidi@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Barba alla Moda con Styling', 'Italy', 'Florence', 'Via della Bellezza, 789', 'marco.guidi@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Barba alla Moda con Styling', 'Via della Bellezza 62, Rome', 'marco.guidi@email.com');
 
 -- Prodotti taggabili per Enoteca Galli (Utente 5)
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Barolo Riserva 2015', 'Italy', 'Turin', 'Via Po, 123', 'enoteca.galli@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Barolo Riserva 2015', 'Via Po 474, Bologna', 'enoteca.galli@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Chianti Classico Gran Selezione', 'Italy', 'Turin', 'Via Po, 123', 'enoteca.galli@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Chianti Classico Gran Selezione', 'Via Po 474, Bologna', 'enoteca.galli@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Amarone della Valpolicella Riserva', 'Italy', 'Turin', 'Via Po, 123', 'enoteca.galli@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Amarone della Valpolicella Riserva', 'Via Po 474, Bologna', 'enoteca.galli@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Prosecco Superiore Extra Dry', 'Italy', 'Turin', 'Via Po, 123', 'enoteca.galli@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Prosecco Superiore Extra Dry', 'Via Po 474, Bologna', 'enoteca.galli@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Brunello di Montalcino Riserva', 'Italy', 'Turin', 'Via Po, 123', 'enoteca.galli@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Brunello di Montalcino Riserva', 'Via Po 474, Bologna', 'enoteca.galli@email.com');
 
 -- Prodotti taggabili per Trattoria da Salvatore (Utente 2)
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Spaghetti alla Carbonara', 'Italy', 'Naples', 'Via Toledo, 123', 'trattoriaSalvatore@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Spaghetti alla Carbonara', 'Via Toledo 19, Naples', 'trattoria.salvatore@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Pizza Napoli Margherita', 'Italy', 'Naples', 'Via Toledo, 123', 'trattoriaSalvatore@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Pizza Napoli Margherita', 'Via Toledo 19, Naples', 'trattoria.salvatore@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Linguine alle Vongole Fresche', 'Italy', 'Naples', 'Via Toledo, 123', 'trattoriaSalvatore@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Linguine alle Vongole Fresche', 'Via Toledo 19, Naples', 'trattoria.salvatore@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Tiramisu Tradizionale', 'Italy', 'Naples', 'Via Toledo, 123', 'trattoriaSalvatore@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Tiramisu Tradizionale', 'Via Toledo 19, Naples', 'trattoria.salvatore@email.com');
 
-INSERT INTO TAGGABLE (name, country, city, address, company_email)
-VALUES ('Cannoli Siciliani con Ricotta', 'Italy', 'Naples', 'Via Toledo, 123', 'trattoriaSalvatore@email.com');
+INSERT INTO TAGGABLE (name, address, company_email)
+VALUES ('Cannoli Siciliani con Ricotta', 'Via Toledo 19, Naples', 'trattoria.salvatore@email.com');
 
 
 -- Notification type
@@ -382,21 +382,21 @@ VALUES ('USER started following you'),
 -- Company Account Request
 
 -- Azienda 2 (Trattoria da Salvatore) richiede un account il 2024-01-05 alle 14:30
-INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time)
-VALUES ('trattoriaSalvatore@email.com', '2023-01-05 14:30:00');
+INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time, name, address)
+VALUES ('trattoria.salvatore@email.com', '2023-01-05 14:30:00', 'Trattoria da Salvatore', 'Via Toledo 19, Naples');
 
 -- Azienda 5 (Enoteca Galli) richiede un account il 2024-01-10 alle 10:45
-INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time)
-VALUES ('enoteca.galli@email.com', '2023-01-10 10:45:00');
+INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time, name, address)
+VALUES ('enoteca.galli@email.com', '2023-01-10 10:45:00', 'Enoteca Galli', 'Via Po 474, Bologna');
 
 -- Azienda 7 (Marco Guidi Parrucchieri) richiede un account il 2024-01-15 alle 16:20
-INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time)
-VALUES ('marco.guidi@email.com', '2023-01-15 16:20:00');
+INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time, name, address)
+VALUES ('marco.guidi@email.com', '2023-01-15 16:20:00', 'Marco Guidi Parrucchieri', 'Via della Bellezza 62, Rome');
 
 -- Azienda 9 (FromGamer) richiede un account il 2024-01-20 alle 11:10
-INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time)
-VALUES ('from.gamer@email.com', '2023-01-20 11:10:00');
+INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time, name, address)
+VALUES ('from.gamer@email.com', '2023-01-20 11:10:00', 'From Gamer', 'Via Cesare Battisti, 456');
 
 -- Azienda 15 (Kebab la Stazione) richiede un account il 2024-01-25 alle 13:45
-INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time)
-VALUES ('kebab.station@email.com', '2023-01-25 13:45:00');
+INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time, name, address)
+VALUES ('kebab.station@email.com', '2023-01-25 13:45:00', 'Kebab la Stazione', 'Via Stazione 21, Turin');
