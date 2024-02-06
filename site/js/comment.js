@@ -51,7 +51,6 @@ $(document).ready(function() {
                 var commentCount = $('.numComment');
                 var currentCount = parseInt(commentCount.text());
                 commentCount.text(currentCount + 1);
-                console.log(currentCount);
             }
         });
     });

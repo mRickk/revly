@@ -21,12 +21,7 @@ function changeToggle(toggle, update) {
         data: { "toggle": update },
         success: function(response) {
             var icon = toggle.find('i');
-            var classList = icon.removeClass('bi-toggle-on bi-toggle-off').toggleClass('revly-primary-color text-secondary');
-            if (classList.hasClass('text-secondary')) {
-                icon.addClass('bi-toggle-off');
-            } else {
-                icon.addClass('bi-toggle-on');
-            }
+            icon.toggleClass('bi-toggle-on bi-toggle-off revly-primary-color text-secondary');
         }
     });
 }
