@@ -11,15 +11,20 @@ class DatabaseHelper {
     }
 
     public function checkLogin($username, $password) {
-        $qry = "SELECT username, img as user_img, email FROM users U WHERE U.username = ? AND U.password = ?";
+        $qry = "SELECT username, img as user_img, email, password FROM users U WHERE U.username = ?";
         $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('ss', $username, $password);
+        $stmt->bind_param('s', $username);
         $stmt->execute();
         $res = $stmt->get_result();
-        return $res->num_rows == 1 ? $res->fetch_assoc() : [];
+        $arr = $res->fetch_assoc();
+        if ($res->num_rows == 1 && password_verify($password, $arr["password"])) {
+            return $arr;
+        }
+        return [];
     }
 
     public function registerUser($username, $password, $name, $email, $surname = '') {
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $qry = "INSERT INTO `users` (`email`, `username`, `name`, `surname`, `password`, `biography`,
             `isCompany`, `notifyLikes`, `notifyComments`, `notifyTags`, `notifyFollows`)
             VALUES (?, ?, ?, ?, ?, '', 0, 1, 1, 1, 1)";
@@ -306,12 +311,16 @@ SOLO SE id_taggable è != NULL*/
         return $res;
     }
 
-    public function updatePassword($email, $oldPassword, $newPassword) {
-        $qry = "UPDATE users SET password = ? WHERE email = ? AND password = ?";
-        $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('sss', $newPassword, $email, $oldPassword);
-        $res = $stmt->execute();
-        return $res;
+    public function updatePassword($username, $email, $oldPassword, $newPassword) {
+        if ($this->checkLogin($username, $oldPassword)) {
+            $newPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+            $qry = "UPDATE users SET password = ? WHERE email = ?";
+            $stmt = $this->db->prepare($qry);
+            $stmt->bind_param('ss', $newPassword, $email);
+            $res = $stmt->execute();
+            return $res;
+        }
+        return false;
     }
 
     public function isFollowed($user_email, $follower_email) {

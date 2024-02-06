@@ -1,6 +1,6 @@
 <?php
 require_once("bootstrap.php");
-session_start();
+sec_session_start();
 
 if (isUserLoggedIn() && isset($_GET['idPost'])) {
     $post = $dbh->getPost($_GET["idPost"]);

@@ -1,6 +1,6 @@
 <?php
 require_once("bootstrap.php");
-session_start();
+sec_session_start();
 
 if (isUserLoggedIn() && isset($_GET["email"])) {
     $templateParams["title"] = "Revly - " . $_GET["email"] . "'s follows";

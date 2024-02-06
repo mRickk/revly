@@ -1,6 +1,6 @@
 <?php
 require_once("bootstrap.php");
-session_start();
+sec_session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['post_id'])) {
     $postId = $_POST['post_id'];

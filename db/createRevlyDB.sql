@@ -85,7 +85,7 @@ create table USERS (
      username varchar(64) not null unique,
      name varchar(64) not null,
      surname varchar(64),
-     password varchar(64) not null,
+     password varchar(255) not null,
      biography text not null,
      img varchar(128) not null default 'default-image.png',
      isCompany boolean not null,

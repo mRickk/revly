@@ -12,7 +12,7 @@
         </div>
         <div class="form-group mb-3">
             <label class="d-none" for="inputSurname">Surname (optional)</label>
-            <input type="text" class="form-control rounded-pill" id="inputSurname" name="surname" value="<?php echo isset($templateParams["surname"]) ? $templateParams["surname"] : '';?>" placeholder="Surname"/>
+            <input type="text" class="form-control rounded-pill" id="inputSurname" name="surname" value="<?php echo isset($templateParams["surname"]) ? $templateParams["surname"] : '';?>" placeholder="Surname (optional)"/>
         </div>
         <div class="form-group mb-3">
             <label class="d-none" for="inputEmail">Email</label>
