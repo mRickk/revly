@@ -565,5 +565,13 @@ SOLO SE id_taggable è != NULL*/
         $res = $stmt->execute();
         return $res;
     }
+
+    public function getAllUsers() {
+        $qry = "SELECT email, username, password FROM users";
+        $stmt = $this->db->prepare($qry);
+        $stmt->execute();
+        $res = $stmt->get_result()->fetch_assoc();
+        return is_null($res) ? [] : $res;
+    }
 }
 ?>
