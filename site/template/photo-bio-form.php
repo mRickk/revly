@@ -12,7 +12,7 @@
                         <input class="square visually-hidden" type="file" id="imgPost" name="imgPost" accept="image/jpg, image/png, image/jpeg, image/jpg">
                     </label>
                 </div>
-                <button type="reset" class="btn btn-danger mb-3 py-1 px-2" id="removePhotoButton"><i class="bi bi-trash fs-5"></i></button>
+                <button type="reset" class="btn btn-danger mb-3 py-1 px-2" id="removePhotoButton"><span class="bi bi-trash fs-5"></span></button>
                 <div class="form-group mb-3">
                     <label class="d-none" for="inputBio">Biography</label>
                     <textarea rows="3" name="bio" class="form-control rounded-4" id="inputBio" placeholder="Insert new bio..." required><?php echo $user["biography"]; ?></textarea>
