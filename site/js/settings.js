@@ -20,7 +20,7 @@ function changeToggle(toggle, update) {
         type: "POST",
         data: { "toggle": update },
         success: function(response) {
-            var icon = toggle.find('i');
+            var icon = toggle.find('span');
             icon.toggleClass('bi-toggle-on bi-toggle-off revly-primary-color text-secondary');
         }
     });

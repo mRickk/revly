@@ -15,7 +15,7 @@
                         <div class="col-9">
                             <p class="m-0">
                                 <?php echo $user['username']; ?>
-                                <?php echo $user['isCompany'] ? '<i class="bi bi-patch-check-fill fs-5"></i>' : ''; ?>
+                                <?php echo $user['isCompany'] ? '<span class="bi bi-patch-check-fill fs-5"></span>' : ''; ?>
                             </p>
                         </div>
                     </div>
