@@ -23,7 +23,7 @@
         </div>
         <div class="col-3">            
         <?php if ($notification["id_post"] != null): //TODO: gestire con js il click dell'immagine post e il redirect ?>
-            <a href="post-focus.php?idPost=<?php echo $notification["id_post"]; ?>">
+            <a href="post-focus.php?idPost=<?php echo $notification["id_post"]; ?>" title="image profile">
                 <div class="ratio ratio-1x1">
                         <img class="rounded object-fit-cover" src="<?php echo UPLOAD_DIR . $notification["post_img"]; ?>" alt="Post picture"/>
                 </div>

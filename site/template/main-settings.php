@@ -126,7 +126,7 @@
                         <h4 class="m-0">Comments</h4>
                     </div>
                     <div class="col-2">
-                        <button class="btn toggleComments" type="button" aria-pressed="<?php echo ($user["notifyComments"]) ? 'true' : 'false'; ?>" aria-label="Toggle Comments Notifications">
+                        <button class="btn btn-link toggleComments" type="button" aria-pressed="<?php echo ($user["notifyComments"]) ? 'true' : 'false'; ?>" aria-label="Toggle Comments Notifications">
                             <?php if ($user["notifyComments"]):?>
                                 <span class="bi bi-toggle-on fs-1 revly-primary-color" ></span>
                             <?php else:?>
@@ -146,7 +146,7 @@
                         <h4 class="m-0">Tags</h4>
                     </div>
                     <div class="col-2">
-                        <button class="btn toggleTags" type="button" aria-pressed="<?php echo ($user["notifyTags"]) ? 'true' : 'false'; ?>" aria-label="Toggle Tags Notifications">
+                        <button class="btn btn-link toggleTags" type="button" aria-pressed="<?php echo ($user["notifyTags"]) ? 'true' : 'false'; ?>" aria-label="Toggle Tags Notifications">
                             <?php if ($user["notifyTags"]):?>
                                 <span class="bi bi-toggle-on fs-1 revly-primary-color" ></span>
                             <?php else:?>
@@ -166,7 +166,7 @@
                         <h4 class="m-0">Follows</h4>
                     </div>
                     <div class="col-2">
-                        <button class="btn toggleFollows" type="button" aria-pressed="<?php echo ($user["notifyFollows"]) ? 'true' : 'false'; ?>" aria-label="Toggle Follow Notifications">
+                        <button class="btn btn-link toggleFollows" type="button" aria-pressed="<?php echo ($user["notifyFollows"]) ? 'true' : 'false'; ?>" aria-label="Toggle Follow Notifications">
                             <?php if ($user["notifyFollows"]):?>
                                 <span class="bi bi-toggle-on fs-1 revly-primary-color" ></span>
                             <?php else:?>
