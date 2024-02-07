@@ -2,21 +2,21 @@
 
 use revly_db;
 
-INSERT INTO `users` (`email`, `username`, `name`, `surname`, `password`, `biography`, `img`, `isCompany`, `notifyLikes`, `notifyComments`, `notifyTags`, `notifyFollows`) VALUES
+INSERT INTO users (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows) VALUES
 ('andrea.cavalli@email.com', 'andrea.c', 'Andrea', 'Cavalli', '$2y$10$PekGuqyHgx4hi/JXlybscuqmeYLeGx1exTxIsWGWnbodkzpqMec..', 'Ingegnere civile appassionato di trekking', 'default-image.png', 0, 1, 0, 1, 0),
-('anna.monti@email.com', 'anna.monti', 'Anna', 'Monti', '$2y$10$eWps9IiAfD1K5BW3TZdSmuR1fi0R4aUf9T2m3cILAlyUfIfFvAJ6m', 'Ingegnere software appassionata di viaggi', 'default-image.png', 0, 1, 0, 1, 1),
+('anna.monti@email.com', 'anna.monti', 'Anna', 'Monti', '$2y$10$eWps9IiAfD1K5BW3TZdSmuR1fi0R4aUf9T2m3cILAlyUfIfFvAJ6m', 'Ingegnere software appassionata di viaggi', '6.jpg', 0, 1, 0, 1, 1),
 ('elena.monti@email.com', 'elena.m', 'Elena', 'Monti', '$2y$10$Xg2LrADwc36HNOfeJYajle8nojn1yz8LHEd2yPveHMrxlkAIjnW3O', 'Insegnante di lingue straniere e appassionata di yoga', 'default-image.png', 0, 1, 1, 1, 1),
 ('eleonora.rossi@email.com', 'eleo_rossi', 'Eleonora', 'Rossi', '$2y$10$enQH2h8/i83CPehWOKudNez1rvOeZK.ZTOIKisyT2O8k/aLXpUAWa', 'Studiosa di letteratura e appassionata di cinema', 'default-image.png', 0, 0, 1, 1, 0),
-('enoteca.galli@email.com', 'enoteca_galli', 'Enoteca Galli', '', '$2y$10$BMk/26lxa.LRKvNjI2a7QO6QIrpjMwJrHKWH0.PfvxFUO4wHdfCuS', 'Passione in ogni bottiglia, esperienza in ogni sorso', 'default-image.png', 1, 1, 1, 0, 1),
-('from.gamer@email.com', 'fromGamer', 'FromGamer', '', '$2y$10$5x71kHkPTNCEmOEPaexV2uNozBNJnYyuHByaZEWR6fXc2Hg6XmSVe', 'Negozio online di videogiochi e giochi da tavolo', 'default-image.png', 1, 1, 1, 0, 0),
+('enoteca.galli@email.com', 'enoteca_galli', 'Enoteca Galli', '', '$2y$10$BMk/26lxa.LRKvNjI2a7QO6QIrpjMwJrHKWH0.PfvxFUO4wHdfCuS', 'Passione in ogni bottiglia, esperienza in ogni sorso', '7.jpg', 1, 1, 1, 0, 1),
+('from.gamer@email.com', 'fromGamer', 'FromGamer', '', '$2y$10$5x71kHkPTNCEmOEPaexV2uNozBNJnYyuHByaZEWR6fXc2Hg6XmSVe', 'Negozio online di videogiochi e giochi da tavolo', '12.jpg', 1, 1, 1, 0, 0),
 ('giovanni.baldi@email.com', 'giovanni.b', 'Giovanni', 'Baldi', '$2y$10$gjCJioWynRHnDOyxzP9iHejShX6Bj2kHeaeI4SfKJiKGSnQLmSyGm', 'Appassionato di musica classica e tecnologia', 'default-image.png', 0, 0, 1, 1, 0),
 ('giuseppe.verdi@email.com', 'peppev', 'Giuseppe', 'Verdi', '$2y$10$AGwkLo3hAbXvjkBo3ueIuu7OPtOVrm7HNM5HEJPLx4UaC7GvumldS', 'Musicista e appassionato di opera', 'default-image.png', 0, 0, 1, 1, 1),
-('kebab.station@email.com', 'Kebab_Stazione', 'Kebab la Stazione', '', '$2y$10$9YO/8M9iRw1XfVThuQH0SumdgHZrExfWXk67loBKxoAaTCKe7gh7.', 'Negozio di veri kebab e falafel alla stazione', 'default-image.png', 1, 1, 1, 1, 1),
+('kebab.station@email.com', 'Kebab_Stazione', 'Kebab la Stazione', '', '$2y$10$9YO/8M9iRw1XfVThuQH0SumdgHZrExfWXk67loBKxoAaTCKe7gh7.', 'Negozio di veri kebab e falafel alla stazione', '1.jpeg', 1, 1, 1, 1, 1),
 ('marco.guidi@email.com', 'marco_guidi_parrucchieri', 'Marco Guidi Parrucchieri', '', '$2y$10$qwE1EFB/fw20Cl0fhGbUJesplBXHbcvLtTtTC35V5c14NArlCi6Ae', 'Tagliamo il passato, coloriamo il presente, stiliamo il futuro', 'default-image.png', 1, 0, 1, 1, 1),
 ('mario.rossi@email.com', 'mario123', 'Mario', 'Rossi', '$2y$10$n/5KiW64NasQh25e7gaho.GYiy2vj5gfOR36gwu9wcgVB1pyTuGlW', 'Appassionato di tecnologia e sport', 'default-image.png', 0, 1, 1, 0, 1),
 ('sara.verdi@email.com', 'sara.v', 'Sara', 'Verdi', '$2y$10$wOH4ErzfGPLgTYwzT1UYeON5isNgVz/sU4vB3B4HINMtpnfEOUd/m', 'Appassionata di moda e arte contemporanea', 'default-image.png', 0, 1, 0, 0, 1),
 ('silvia.moro@email.com', 'silvia_m', 'Silvia', 'Moro', '$2y$10$NA16FjeCTHagv/uhSLyEzO4ki3WXLGCfp4G8hoV2AkU6xZn3dd.Dm', 'Designer di moda e amante degli animali', 'default-image.png', 0, 0, 0, 1, 1),
-('simona.rossi@email.com', 'simona_r', 'Simona', 'Rossi', '$2y$10$5BqcO2p4/2.KOdPxlUxp0uloHL94Anxn1ElNf3YLb.4X/3ch1uk2S', 'Appassionata di letteratura russa e scienze politiche', 'default-image.png', 0, 1, 1, 0, 1),
+('simona.rossi@email.com', 'simona_r', 'Simona', 'Rossi', '$2y$10$5BqcO2p4/2.KOdPxlUxp0uloHL94Anxn1ElNf3YLb.4X/3ch1uk2S', 'Appassionata di letteratura russa e scienze politiche', '11.jpg', 0, 1, 1, 0, 1),
 ('trattoria.salvatore@email.com', 'TrattoriaDaSalvatore', 'Trattoria da Salvatore', '', '$2y$10$0ka5UiRLLXi8wL/Kpw4tmenzGkq64rSE/f3NVYuIsika./IN2HeSG', 'Siamo una trattoria nel mezzo di un paesaggio mozzafiato', 'default-image.png', 1, 1, 0, 1, 0);
 
 -- Ricerche
@@ -115,136 +115,103 @@ VALUES ('enoteca.galli@email.com', 'kebab.station@email.com', NOW()),
 -- Follower
 
 -- Utente 1 (Mario Rossi) seguito da 6 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('trattoria.salvatore@email.com', 'mario.rossi@email.com'),
-       ('giuseppe.verdi@email.com', 'mario.rossi@email.com'),
-       ('anna.monti@email.com', 'mario.rossi@email.com'),
-       ('enoteca.galli@email.com', 'mario.rossi@email.com'),
-       ('eleonora.rossi@email.com', 'mario.rossi@email.com'),
-       ('marco.guidi@email.com', 'mario.rossi@email.com');
-
--- Utente 2 (Trattoria da Salvatore) seguito da 5 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('mario.rossi@email.com', 'trattoria.salvatore@email.com'),
-       ('giuseppe.verdi@email.com', 'trattoria.salvatore@email.com'),
-       ('anna.monti@email.com', 'trattoria.salvatore@email.com'),
-       ('eleonora.rossi@email.com', 'trattoria.salvatore@email.com'),
-       ('marco.guidi@email.com', 'trattoria.salvatore@email.com');
-
--- Utente 3 (Giuseppe Verdi) seguito da 7 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('mario.rossi@email.com', 'giuseppe.verdi@email.com'),
-       ('trattoria.salvatore@email.com', 'giuseppe.verdi@email.com'),
-       ('anna.monti@email.com', 'giuseppe.verdi@email.com'),
-       ('eleonora.rossi@email.com', 'giuseppe.verdi@email.com'),
-       ('marco.guidi@email.com', 'giuseppe.verdi@email.com'),
-       ('enoteca.galli@email.com', 'giuseppe.verdi@email.com'),
-       ('sara.verdi@email.com', 'giuseppe.verdi@email.com');
-
--- Utente 4 (Anna Monti) seguito da 6 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('mario.rossi@email.com', 'anna.monti@email.com'),
-       ('trattoria.salvatore@email.com', 'anna.monti@email.com'),
-       ('giuseppe.verdi@email.com', 'anna.monti@email.com'),
-       ('enoteca.galli@email.com', 'anna.monti@email.com'),
-       ('eleonora.rossi@email.com', 'anna.monti@email.com'),
-       ('marco.guidi@email.com', 'anna.monti@email.com');
-
--- Utente 5 (Enoteca Galli) seguito da 5 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('eleonora.rossi@email.com', 'enoteca.galli@email.com'),
-       ('marco.guidi@email.com', 'enoteca.galli@email.com'),
-       ('sara.verdi@email.com', 'enoteca.galli@email.com'),
-       ('trattoria.salvatore@email.com', 'enoteca.galli@email.com'),
-       ('anna.monti@email.com', 'enoteca.galli@email.com');
-
--- Utente 6 (Eleonora Rossi) seguito da 7 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('enoteca.galli@email.com', 'eleonora.rossi@email.com'),
-       ('marco.guidi@email.com', 'eleonora.rossi@email.com'),
-       ('sara.verdi@email.com', 'eleonora.rossi@email.com'),
-       ('trattoria.salvatore@email.com', 'eleonora.rossi@email.com'),
-       ('anna.monti@email.com', 'eleonora.rossi@email.com'),
-       ('giovanni.baldi@email.com', 'eleonora.rossi@email.com'),
-       ('silvia.moro@email.com', 'eleonora.rossi@email.com');
-
--- Utente 7 (Marco Guidi Parrucchieri) seguito da 5 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('enoteca.galli@email.com', 'marco.guidi@email.com'),
-       ('eleonora.rossi@email.com', 'marco.guidi@email.com'),
-       ('sara.verdi@email.com', 'marco.guidi@email.com'),
-       ('giuseppe.verdi@email.com', 'marco.guidi@email.com'),
-       ('anna.monti@email.com', 'marco.guidi@email.com');
-
--- Utente 8 (Sara Verdi) seguito da 6 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('enoteca.galli@email.com', 'sara.verdi@email.com'),
-       ('eleonora.rossi@email.com', 'sara.verdi@email.com'),
-       ('marco.guidi@email.com', 'sara.verdi@email.com'),
-       ('trattoria.salvatore@email.com', 'sara.verdi@email.com'),
-       ('anna.monti@email.com', 'sara.verdi@email.com');
-
--- Utente 9 (FromGamer) seguito da 7 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('eleonora.rossi@email.com', 'from.gamer@email.com'),
-       ('marco.guidi@email.com', 'from.gamer@email.com'),
-       ('sara.verdi@email.com', 'from.gamer@email.com'),
-       ('trattoria.salvatore@email.com', 'from.gamer@email.com'),
-       ('anna.monti@email.com', 'from.gamer@email.com'),
-       ('enoteca.galli@email.com', 'from.gamer@email.com'),
-       ('elena.monti@email.com', 'from.gamer@email.com');
-
--- Utente 10 (Elena Monti) seguito da 5 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('enoteca.galli@email.com', 'elena.monti@email.com'),
-       ('eleonora.rossi@email.com', 'elena.monti@email.com'),
-       ('marco.guidi@email.com', 'elena.monti@email.com'),
-       ('trattoria.salvatore@email.com', 'elena.monti@email.com'),
-       ('anna.monti@email.com', 'elena.monti@email.com');
-
--- Utente 11 (Giovanni Baldi) seguito da 6 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('enoteca.galli@email.com', 'giovanni.baldi@email.com'),
-       ('eleonora.rossi@email.com', 'giovanni.baldi@email.com'),
-       ('sara.verdi@email.com', 'giovanni.baldi@email.com'),
-       ('trattoria.salvatore@email.com', 'giovanni.baldi@email.com'),
-       ('anna.monti@email.com', 'giovanni.baldi@email.com');
-
--- Utente 12 (Silvia Moro) seguito da 7 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('enoteca.galli@email.com', 'silvia.moro@email.com'),
-       ('eleonora.rossi@email.com', 'silvia.moro@email.com'),
-       ('marco.guidi@email.com', 'silvia.moro@email.com'),
-       ('trattoria.salvatore@email.com', 'silvia.moro@email.com'),
-       ('anna.monti@email.com', 'silvia.moro@email.com'),
-       ('giovanni.baldi@email.com', 'silvia.moro@email.com'),
-       ('simona.rossi@email.com', 'silvia.moro@email.com');
-
--- Utente 13 (Andrea Cavalli) seguito da 5 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('enoteca.galli@email.com', 'andrea.cavalli@email.com'),
-       ('eleonora.rossi@email.com', 'andrea.cavalli@email.com'),
-       ('marco.guidi@email.com', 'andrea.cavalli@email.com'),
-       ('trattoria.salvatore@email.com', 'andrea.cavalli@email.com'),
-       ('anna.monti@email.com', 'andrea.cavalli@email.com');
-
--- Utente 14 (Simona Rossi) seguito da 6 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('enoteca.galli@email.com', 'simona.rossi@email.com'),
-       ('eleonora.rossi@email.com', 'simona.rossi@email.com'),
-       ('marco.guidi@email.com', 'simona.rossi@email.com'),
-       ('trattoria.salvatore@email.com', 'simona.rossi@email.com'),
-       ('anna.monti@email.com', 'simona.rossi@email.com');
-
--- Utente 15 (Kebab la Stazione) seguito da 7 persone
-INSERT INTO FOLLOW (follower_email, user_email)
-VALUES ('eleonora.rossi@email.com', 'kebab.station@email.com'),
-       ('marco.guidi@email.com', 'kebab.station@email.com'),
-       ('sara.verdi@email.com', 'kebab.station@email.com'),
-       ('trattoria.salvatore@email.com', 'kebab.station@email.com'),
-       ('anna.monti@email.com', 'kebab.station@email.com'),
-       ('giovanni.baldi@email.com', 'kebab.station@email.com'),
-       ('simona.rossi@email.com', 'kebab.station@email.com');
+INSERT INTO `follow` (`follower_email`, `user_email`) VALUES
+('andrea.cavalli@email.com', 'kebab.station@email.com'),
+('anna.monti@email.com', 'andrea.cavalli@email.com'),
+('anna.monti@email.com', 'elena.monti@email.com'),
+('anna.monti@email.com', 'eleonora.rossi@email.com'),
+('anna.monti@email.com', 'enoteca.galli@email.com'),
+('anna.monti@email.com', 'from.gamer@email.com'),
+('anna.monti@email.com', 'giovanni.baldi@email.com'),
+('anna.monti@email.com', 'giuseppe.verdi@email.com'),
+('anna.monti@email.com', 'kebab.station@email.com'),
+('anna.monti@email.com', 'marco.guidi@email.com'),
+('anna.monti@email.com', 'mario.rossi@email.com'),
+('anna.monti@email.com', 'sara.verdi@email.com'),
+('anna.monti@email.com', 'silvia.moro@email.com'),
+('anna.monti@email.com', 'simona.rossi@email.com'),
+('anna.monti@email.com', 'trattoria.salvatore@email.com'),
+('elena.monti@email.com', 'from.gamer@email.com'),
+('eleonora.rossi@email.com', 'andrea.cavalli@email.com'),
+('eleonora.rossi@email.com', 'anna.monti@email.com'),
+('eleonora.rossi@email.com', 'elena.monti@email.com'),
+('eleonora.rossi@email.com', 'enoteca.galli@email.com'),
+('eleonora.rossi@email.com', 'from.gamer@email.com'),
+('eleonora.rossi@email.com', 'giovanni.baldi@email.com'),
+('eleonora.rossi@email.com', 'giuseppe.verdi@email.com'),
+('eleonora.rossi@email.com', 'kebab.station@email.com'),
+('eleonora.rossi@email.com', 'marco.guidi@email.com'),
+('eleonora.rossi@email.com', 'mario.rossi@email.com'),
+('eleonora.rossi@email.com', 'sara.verdi@email.com'),
+('eleonora.rossi@email.com', 'silvia.moro@email.com'),
+('eleonora.rossi@email.com', 'simona.rossi@email.com'),
+('eleonora.rossi@email.com', 'trattoria.salvatore@email.com'),
+('enoteca.galli@email.com', 'andrea.cavalli@email.com'),
+('enoteca.galli@email.com', 'anna.monti@email.com'),
+('enoteca.galli@email.com', 'elena.monti@email.com'),
+('enoteca.galli@email.com', 'eleonora.rossi@email.com'),
+('enoteca.galli@email.com', 'from.gamer@email.com'),
+('enoteca.galli@email.com', 'giovanni.baldi@email.com'),
+('enoteca.galli@email.com', 'giuseppe.verdi@email.com'),
+('enoteca.galli@email.com', 'kebab.station@email.com'),
+('enoteca.galli@email.com', 'marco.guidi@email.com'),
+('enoteca.galli@email.com', 'mario.rossi@email.com'),
+('enoteca.galli@email.com', 'sara.verdi@email.com'),
+('enoteca.galli@email.com', 'silvia.moro@email.com'),
+('enoteca.galli@email.com', 'simona.rossi@email.com'),
+('from.gamer@email.com', 'andrea.cavalli@email.com'),
+('from.gamer@email.com', 'anna.monti@email.com'),
+('giovanni.baldi@email.com', 'eleonora.rossi@email.com'),
+('giovanni.baldi@email.com', 'kebab.station@email.com'),
+('giovanni.baldi@email.com', 'silvia.moro@email.com'),
+('giuseppe.verdi@email.com', 'anna.monti@email.com'),
+('giuseppe.verdi@email.com', 'marco.guidi@email.com'),
+('giuseppe.verdi@email.com', 'mario.rossi@email.com'),
+('giuseppe.verdi@email.com', 'trattoria.salvatore@email.com'),
+('kebab.station@email.com', 'andrea.cavalli@email.com'),
+('kebab.station@email.com', 'anna.monti@email.com'),
+('kebab.station@email.com', 'enoteca.galli@email.com'),
+('marco.guidi@email.com', 'andrea.cavalli@email.com'),
+('marco.guidi@email.com', 'anna.monti@email.com'),
+('marco.guidi@email.com', 'elena.monti@email.com'),
+('marco.guidi@email.com', 'eleonora.rossi@email.com'),
+('marco.guidi@email.com', 'enoteca.galli@email.com'),
+('marco.guidi@email.com', 'from.gamer@email.com'),
+('marco.guidi@email.com', 'giuseppe.verdi@email.com'),
+('marco.guidi@email.com', 'kebab.station@email.com'),
+('marco.guidi@email.com', 'mario.rossi@email.com'),
+('marco.guidi@email.com', 'sara.verdi@email.com'),
+('marco.guidi@email.com', 'silvia.moro@email.com'),
+('marco.guidi@email.com', 'simona.rossi@email.com'),
+('marco.guidi@email.com', 'trattoria.salvatore@email.com'),
+('mario.rossi@email.com', 'anna.monti@email.com'),
+('mario.rossi@email.com', 'giuseppe.verdi@email.com'),
+('mario.rossi@email.com', 'trattoria.salvatore@email.com'),
+('sara.verdi@email.com', 'eleonora.rossi@email.com'),
+('sara.verdi@email.com', 'enoteca.galli@email.com'),
+('sara.verdi@email.com', 'from.gamer@email.com'),
+('sara.verdi@email.com', 'giovanni.baldi@email.com'),
+('sara.verdi@email.com', 'giuseppe.verdi@email.com'),
+('sara.verdi@email.com', 'kebab.station@email.com'),
+('sara.verdi@email.com', 'marco.guidi@email.com'),
+('silvia.moro@email.com', 'eleonora.rossi@email.com'),
+('simona.rossi@email.com', 'eleonora.rossi@email.com'),
+('simona.rossi@email.com', 'from.gamer@email.com'),
+('simona.rossi@email.com', 'kebab.station@email.com'),
+('simona.rossi@email.com', 'silvia.moro@email.com'),
+('trattoria.salvatore@email.com', 'andrea.cavalli@email.com'),
+('trattoria.salvatore@email.com', 'anna.monti@email.com'),
+('trattoria.salvatore@email.com', 'elena.monti@email.com'),
+('trattoria.salvatore@email.com', 'eleonora.rossi@email.com'),
+('trattoria.salvatore@email.com', 'enoteca.galli@email.com'),
+('trattoria.salvatore@email.com', 'from.gamer@email.com'),
+('trattoria.salvatore@email.com', 'giovanni.baldi@email.com'),
+('trattoria.salvatore@email.com', 'giuseppe.verdi@email.com'),
+('trattoria.salvatore@email.com', 'kebab.station@email.com'),
+('trattoria.salvatore@email.com', 'mario.rossi@email.com'),
+('trattoria.salvatore@email.com', 'sara.verdi@email.com'),
+('trattoria.salvatore@email.com', 'silvia.moro@email.com'),
+('trattoria.salvatore@email.com', 'simona.rossi@email.com');
 
 
 -- Prodotti taggabili per Kebab la Stazione (Utente 15)
@@ -371,3 +338,88 @@ VALUES ('from.gamer@email.com', '2023-01-20 11:10:00', 'From Gamer', 'Via Cesare
 -- Azienda 15 (Kebab la Stazione) richiede un account il 2024-01-25 alle 13:45
 INSERT INTO COMPANY_ACCOUNT_REQUEST (company_email, date_time, name, address)
 VALUES ('kebab.station@email.com', '2023-01-25 13:45:00', 'Kebab la Stazione', 'Via Stazione 21, Turin');
+
+INSERT INTO post (id, img, evaluation, subject, description, date_time, id_taggable, author_email) VALUES
+(1, '1.jpg', 4, NULL, 'Se vuoi provare un ottimo kebab, passa qui da noi!', '2024-02-07 12:56:47', 1, 'kebab.station@email.com'),
+(2, '2.jpg', 5, NULL, 'Un gustoso Falafel Wrap Vegano ti sta aspettando ', '2024-02-07 12:58:33', 2, 'kebab.station@email.com'),
+(3, '3.jpg', 4, NULL, 'Ho recentemente optato per una piega presso Marco Guidi Parrucchieri e sono rimasta estremamente soddisfatta dell esperienza. L atmosfera del salone era rilassante, e il personale si è dimostrato competente e professionale. La mia parrucchiera ha manifestato una conoscenza approfondita delle ultime tendenze e tecniche di styling. In conclusione, Marco Guidi Parrucchieri ha confermato la sua reputazione per la qualità del servizio, e non vedo l ora di prenotare la prossima piega!', '2024-02-07 13:11:22', 14, 'anna.monti@email.com'),
+(7, '4.jpg', 4, 'Mojito fatto in casa', 'Un ottimo mojito fatto in casa, vi lascio la ricetta qui sotto se voelte provarlo.\r\n\r\nPer preparare il mojito iniziate versando in un bicchiere da long drink (tumbler alto) le foglie di menta e lo zucchero di canna; servendovi di un pestello schiacciatele contro il lato del bicchiere così da sprigionare l’aroma della menta. Aggiungete il succo di lime (circa 1/5 della bibita) e pestate ancora per qualche secondo, poi riempite il bicchiere di ghiaccio (a cubetti o tritato), aggiungete il rum, l’angostura e in ultimo uno spruzzo di acqua gassata (o soda); mescolate in modo circolare e servite decorando con un rametto di menta.', '2024-02-07 13:21:17', NULL, 'andrea.cavalli@email.com'),
+(8, '5.jpg', 4, NULL, 'Un ottimo vino. Consigliato per una buona mangiata in compagnia', '2024-02-07 13:25:30', 19, 'enoteca.galli@email.com'),
+(9, '8.jpg', 5, NULL, 'Un buonissimo vino preso dai miei amici dell enoteca Galli', '2024-02-07 13:33:27', 20, 'andrea.cavalli@email.com'),
+(10, '9.jpg', 5, NULL, 'vieni in negozio e compra la tua PS5', '2024-02-07 15:50:55', 7, 'from.gamer@email.com'),
+(11, '10.jpg', 5, NULL, 'Esperienza straordinaria con Nintendo Switch!', '2024-02-07 15:56:34', 9, 'simona.rossi@email.com');
+
+
+INSERT INTO likes (user_email, id_post) VALUES
+('andrea.cavalli@email.com', 1),
+('anna.monti@email.com', 1),
+('kebab.station@email.com', 1),
+('andrea.cavalli@email.com', 2),
+('anna.monti@email.com', 2),
+('from.gamer@email.com', 2),
+('kebab.station@email.com', 2),
+('simona.rossi@email.com', 2),
+('anna.monti@email.com', 3),
+('enoteca.galli@email.com', 3),
+('andrea.cavalli@email.com', 7),
+('anna.monti@email.com', 7),
+('enoteca.galli@email.com', 7),
+('anna.monti@email.com', 8),
+('enoteca.galli@email.com', 8),
+('andrea.cavalli@email.com', 9),
+('enoteca.galli@email.com', 9),
+('from.gamer@email.com', 10),
+('simona.rossi@email.com', 10),
+('simona.rossi@email.com', 11);
+
+
+INSERT INTO comments (id, description, date_time, author_email, id_post) VALUES
+(1, 'woow, non vedo l ora di provarlo!', '2024-02-07 13:13:23', 'andrea.cavalli@email.com', 2),
+(2, 'Grazie mille, a presto ;)', '2024-02-07 13:35:56', 'enoteca.galli@email.com', 9),
+(3, 'Affrettatevi, son rimaste solo poche bottiglie!', '2024-02-07 13:37:28', 'enoteca.galli@email.com', 8),
+(4, 'Wooow fantastico', '2024-02-07 14:32:10', 'anna.monti@email.com', 7),
+(5, 'Qual è il prezzo di vendita?', '2024-02-07 15:57:27', 'simona.rossi@email.com', 10);
+
+INSERT INTO notification (id, date_time, id_type, notifier_email, notified_email, id_post) VALUES
+(1, '2024-02-07 12:56:47', 4, 'kebab.station@email.com', 'kebab.station@email.com', 1),
+(2, '2024-02-07 12:58:33', 4, 'kebab.station@email.com', 'kebab.station@email.com', 2),
+(3, '2024-02-07 12:58:39', 2, 'kebab.station@email.com', 'kebab.station@email.com', 2),
+(5, '2024-02-07 13:11:22', 4, 'anna.monti@email.com', 'marco.guidi@email.com', 3),
+(6, '2024-02-07 13:11:30', 2, 'anna.monti@email.com', 'anna.monti@email.com', 3),
+(7, '2024-02-07 13:11:37', 2, 'anna.monti@email.com', 'kebab.station@email.com', 2),
+(8, '2024-02-07 13:12:59', 1, 'andrea.cavalli@email.com', 'kebab.station@email.com', NULL),
+(9, '2024-02-07 13:13:02', 2, 'andrea.cavalli@email.com', 'kebab.station@email.com', 2),
+(10, '2024-02-07 13:13:04', 2, 'andrea.cavalli@email.com', 'kebab.station@email.com', 1),
+(11, '2024-02-07 13:13:23', 3, 'andrea.cavalli@email.com', 'kebab.station@email.com', 2),
+(13, '2024-02-07 13:21:35', 2, 'andrea.cavalli@email.com', 'andrea.cavalli@email.com', 7),
+(14, '2024-02-07 13:25:30', 4, 'enoteca.galli@email.com', 'enoteca.galli@email.com', 8),
+(15, '2024-02-07 13:25:33', 2, 'enoteca.galli@email.com', 'andrea.cavalli@email.com', 7),
+(16, '2024-02-07 13:25:35', 2, 'enoteca.galli@email.com', 'anna.monti@email.com', 3),
+(17, '2024-02-07 13:25:51', 2, 'enoteca.galli@email.com', 'enoteca.galli@email.com', 8),
+(18, '2024-02-07 13:26:31', 1, 'enoteca.galli@email.com', 'kebab.station@email.com', NULL),
+(19, '2024-02-07 13:27:02', 1, 'kebab.station@email.com', 'enoteca.galli@email.com', NULL),
+(20, '2024-02-07 13:27:12', 1, 'kebab.station@email.com', 'anna.monti@email.com', NULL),
+(21, '2024-02-07 13:27:29', 1, 'kebab.station@email.com', 'andrea.cavalli@email.com', NULL),
+(22, '2024-02-07 13:28:27', 2, 'kebab.station@email.com', 'kebab.station@email.com', 1),
+(23, '2024-02-07 13:33:27', 4, 'andrea.cavalli@email.com', 'enoteca.galli@email.com', 9),
+(24, '2024-02-07 13:33:32', 2, 'andrea.cavalli@email.com', 'andrea.cavalli@email.com', 9),
+(25, '2024-02-07 13:33:52', 2, 'enoteca.galli@email.com', 'andrea.cavalli@email.com', 9),
+(26, '2024-02-07 13:35:56', 3, 'enoteca.galli@email.com', 'andrea.cavalli@email.com', 9),
+(27, '2024-02-07 13:37:28', 3, 'enoteca.galli@email.com', 'enoteca.galli@email.com', 8),
+(28, '2024-02-07 13:43:00', 1, 'enoteca.galli@email.com', 'marco.guidi@email.com', NULL),
+(29, '2024-02-07 14:31:59', 2, 'anna.monti@email.com', 'enoteca.galli@email.com', 8),
+(30, '2024-02-07 14:32:10', 3, 'anna.monti@email.com', 'andrea.cavalli@email.com', 7),
+(31, '2024-02-07 14:35:07', 2, 'anna.monti@email.com', 'kebab.station@email.com', 1),
+(32, '2024-02-07 14:35:10', 2, 'anna.monti@email.com', 'andrea.cavalli@email.com', 7),
+(33, '2024-02-07 15:50:55', 4, 'from.gamer@email.com', 'from.gamer@email.com', 10),
+(34, '2024-02-07 15:51:11', 1, 'from.gamer@email.com', 'anna.monti@email.com', NULL),
+(35, '2024-02-07 15:51:22', 1, 'from.gamer@email.com', 'andrea.cavalli@email.com', NULL),
+(36, '2024-02-07 15:51:47', 2, 'from.gamer@email.com', 'from.gamer@email.com', 10),
+(37, '2024-02-07 15:52:32', 1, 'simona.rossi@email.com', 'from.gamer@email.com', NULL),
+(38, '2024-02-07 15:56:34', 4, 'simona.rossi@email.com', 'from.gamer@email.com', 11),
+(39, '2024-02-07 15:56:38', 2, 'simona.rossi@email.com', 'from.gamer@email.com', 10),
+(40, '2024-02-07 15:56:40', 2, 'simona.rossi@email.com', 'kebab.station@email.com', 2),
+(41, '2024-02-07 15:56:45', 2, 'simona.rossi@email.com', 'simona.rossi@email.com', 11),
+(42, '2024-02-07 15:57:27', 3, 'simona.rossi@email.com', 'from.gamer@email.com', 10),
+(43, '2024-02-07 16:00:35', 1, 'simona.rossi@email.com', 'eleonora.rossi@email.com', NULL),
+(44, '2024-02-07 16:02:58', 2, 'from.gamer@email.com', 'kebab.station@email.com', 2);
