@@ -29,7 +29,7 @@ if (isUserLoggedIn()) {
                     $tagId = $tag[$key]['id'];
                     $dbh->newPost($_SESSION["email"], $msg, NULL, $_POST["description"], $_POST["selectedEvaluation"], $tagId);
                 } else {
-                    $dbh->newPost('anna.monti@email.com', $msg, $subject, $_POST["description"], $_POST["selectedEvaluation"], NULL);
+                    $dbh->newPost($_SESSION["email"], $msg, $subject, $_POST["description"], $_POST["selectedEvaluation"], NULL);
                 }
                 header("Location: home.php");
             }
