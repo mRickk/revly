@@ -1,11 +1,11 @@
 
 function previewImage() {
-    var preview = document.getElementById('preview');
-    var fileInput = document.getElementById('imgPost');
-    var file = fileInput.files[0];
+    let preview = document.getElementById('preview');
+    let fileInput = document.getElementById('imgPost');
+    let file = fileInput.files[0];
 
     if (file) {
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = function (e) {
             preview.src = e.target.result;
         };

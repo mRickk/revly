@@ -10,8 +10,8 @@ $(document).ready(function() {
             data: { post_id: idPost },
             success: function(response) {
                 data = JSON.parse(response);
-                var likeCount = $('#numLike' + idPost);
-                var currentCount = parseInt(likeCount.text());
+                let likeCount = $('#numLike' + idPost);
+                let currentCount = parseInt(likeCount.text());
                 if (data.liked) {
                     likeCount.text(currentCount + 1);
                     likeIcon.html('<input name="idPost" type="hidden" value="'+ idPost + '"/><span class="bi bi-heart-fill text-danger fs-2" title="Liked"></span>');

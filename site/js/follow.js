@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var followBtn = $('#followBtn');
+    let followBtn = $('#followBtn');
 
     followBtn.click(function() {
         $.ajax({
@@ -13,8 +13,8 @@ $(document).ready(function() {
                 followBtn.addClass(data.follow ? 'btn-secondary' : 'btn-primary');
                 followBtn.text(data.follow ? 'Following' : 'Follow me');
 
-                var followerCount = $('#followerCount');
-                var currentCount = parseInt(followerCount.text());
+                let followerCount = $('#followerCount');
+                let currentCount = parseInt(followerCount.text());
                 followerCount.text(data.follow ? (currentCount + 1) : (currentCount - 1));
             }
         });

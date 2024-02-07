@@ -2,16 +2,16 @@ $(document).ready(function() {
     $('#commentForm').submit(function(e) {
         e.preventDefault();
 
-        var commentText = $('#inputComment').val();
+        let commentText = $('#inputComment').val();
 
         $.ajax({
             type: 'POST',
             url: 'save_comment.php',
             data: { "comment": commentText },
             success: function(response) {
-                var data = JSON.parse(response);
-                var commentContainer = $('#commentContainer');
-                var newComment = `
+                let data = JSON.parse(response);
+                let commentContainer = $('#commentContainer');
+                let newComment = `
                 <div class="comment bg-body-secondary bg-opacity-75 mb-2 shadow-sm">
                     <div class="row gx-1">
                         <div class="col-1">
@@ -48,8 +48,8 @@ $(document).ready(function() {
                 commentContainer.append(newComment);
                 $('#inputComment').val('');
 
-                var commentCount = $('.numComment');
-                var currentCount = parseInt(commentCount.text());
+                let commentCount = $('.numComment');
+                let currentCount = parseInt(commentCount.text());
                 commentCount.text(currentCount + 1);
             }
         });

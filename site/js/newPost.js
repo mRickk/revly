@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    var inputSubject = document.getElementById('subjectInput');
-    var datalist = document.getElementById('tagSuggestions');
+    let inputSubject = document.getElementById('subjectInput');
+    let datalist = document.getElementById('tagSuggestions');
 
     inputSubject.addEventListener('input', function () {
-        var inputValue = inputSubject.value.trim().toLowerCase();
+        let inputValue = inputSubject.value.trim().toLowerCase();
         datalist.innerHTML = '';
 
         if (inputValue !== '') {
@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function previewImage() {
-    var preview = document.getElementById('preview');
-    var fileInput = document.getElementById('imgPost');
-    var file = fileInput.files[0];
+    let preview = document.getElementById('preview');
+    let fileInput = document.getElementById('imgPost');
+    let file = fileInput.files[0];
 
     if (file) {
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = function (e) {
             preview.src = e.target.result;
         };
@@ -40,10 +40,10 @@ function getSuggestions(searchTerm) {
 }
 
 function updateSuggestionsList(suggestions) {
-    var datalist = document.getElementById('tagSuggestions');
+    let datalist = document.getElementById('tagSuggestions');
 
     suggestions.forEach(function (tagItem) {
-        var option = document.createElement('option');
+        let option = document.createElement('option');
         option.value = tagItem.name + ' - ' + tagItem.company_name;
         datalist.appendChild(option);
     });
