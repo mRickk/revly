@@ -4,7 +4,7 @@
         <div class="col-1"></div>
         <div class="col-10">
             <form action="#" method="POST">
-                <h2 class="mb-4 mt-2">Submit your company account request</h2>
+                <h2 class="mb-4 mt-2 roboto-light">Submit your company account request</h2>
                 <div class="form-group mb-3">
                     <label class="visually-hidden" for="inputName">Name</label>
                     <input type="text" class="form-control rounded-pill" id="inputName" name="name" placeholder="Insert company name..." required/>

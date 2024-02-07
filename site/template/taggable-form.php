@@ -3,7 +3,7 @@
         <div class="col-1"></div>
         <div class="col-10">
             <form action="#" method="POST">
-                <h2 class="mb-4 mt-2">Add a new taggable</h2>
+                <h2 class="mb-4 mt-2 roboto-light">Add a new taggable</h2>
                 <div class="form-group mb-3">
                     <label class="visually-hidden" for="inputTaggable">Taggable</label>
                     <input type="text" class="form-control rounded-pill" id="inputTaggable" name="taggable" placeholder="Insert taggable name..." required/>

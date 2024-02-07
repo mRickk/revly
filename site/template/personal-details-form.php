@@ -5,7 +5,7 @@
         <div class="col-1"></div>
         <div class="col-10">
             <form action="#" method="POST">
-                <h2 class="mb-4 mt-2">Change your personal details</h2>
+                <h2 class="mb-4 mt-2 roboto-light">Change your personal details</h2>
                 <div class="form-group mb-3">
                     <label class="visually-hidden" for="inputUsername">Username</label>
                     <input type="text" class="form-control rounded-pill" id="inputUsername" name="username" placeholder="Insert new username..." value="<?php echo $user["username"]; ?>" required/>

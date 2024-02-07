@@ -12,7 +12,7 @@ $(document).ready(function() {
                 let data = JSON.parse(response);
                 let commentContainer = $('#commentContainer');
                 let newComment = `
-                <div class="comment bg-body-secondary bg-opacity-75 mb-2 shadow-sm">
+                <div class="comment bg-body-secondary bg-opacity-75 mb-2 shadow-sm roboto-regular">
                     <div class="row gx-1">
                         <div class="col-1">
                             <div class="ratio ratio-1x1 text-center">
@@ -39,7 +39,7 @@ $(document).ready(function() {
                     <div class="row gx-1">
                         <div class="col-1"></div>
                         <div class="col-10 text-end">
-                            <p class="text-break">${data.date_time}</p>
+                            <p class="text-break">${data.date_time.slice(0, -3)}</p>
                         </div>
                         <div class="col-1"></div>
                     </div>
