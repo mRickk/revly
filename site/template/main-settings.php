@@ -87,11 +87,8 @@
             <?php endif;?>
             <div class="text-danger">
                 <a href="logout.php">
-                    <div class="row gx-2">
-                        <div class="col-1"></div>
-                        <div class="col-11">
-                            <p class="m-1 roboto-bold">Logout from this account</p>
-                        </div>
+                    <div class="row gx-2 ps-3">
+                        <h4 class="m-1 roboto-bold fs-5">Logout from this account</h4>
                     </div>
                 </a>
             </div>
