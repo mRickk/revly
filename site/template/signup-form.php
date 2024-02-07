@@ -1,6 +1,6 @@
-<div class="bg-body-tertiary bg-opacity-25 rounded-5 shadow p-4 mb-5">
+<div class="bg-body-tertiary bg-opacity-25 rounded-5 shadow p-4 mb-5 text-center">
     <form action="#" method="POST">
-        <h2 class="text-center mb-4 roboto-light">CREATE ACCOUNT</h2>
+        <h2 class="mb-4 roboto-light">CREATE ACCOUNT</h2>
         <small class="text-muted d-block text-center mb-2">(All fields are required unless specified optional)</small>
         <div class="form-group mb-3">
             <label class="visually-hidden" for="inputUsername">Username</label>
@@ -26,9 +26,7 @@
             <label class="visually-hidden" for="inputConfirmPassword">Confirm password</label>
             <input type="password" class="form-control rounded-pill" id="inputConfirmPassword" name="confirm_password" placeholder="Confirm password" required/>
         </div>
-        <div class="text-center"> <!-- Aggiunto il div con la classe text-center -->
-            <input class="btn btn-primary w-auto px-4 rounded-pill mb-2" type="submit" name="submit" value="CREATE ACCOUNT"/>
-        </div>
+        <input class="btn btn-primary w-auto px-4 rounded-pill mb-2" type="submit" name="submit" value="CREATE ACCOUNT"/>
         <?php require("update-msg.php"); ?>
     </form>
     <div class="text-center mt-2 text-secondary">
