@@ -165,6 +165,8 @@ SOLO SE id_taggable è != NULL*/
         N.id_post
     FROM 
         notification N 
+     JOIN
+		users NU ON NU.email = ?
     JOIN 
         notification_type NT ON NT.id = N.id_type 
     JOIN 
@@ -174,15 +176,15 @@ SOLO SE id_taggable è != NULL*/
     WHERE 
         N.notified_email = ?
         AND (
-            (U.notifyFollows = 1 AND N.id_type = 1) OR
-            (U.notifyLikes = 1 AND N.id_type = 2) OR
-            (U.notifyComments = 1 AND N.id_type = 3) OR
-            (U.notifyTags = 1 AND N.id_type = 4)
+            (NU.notifyFollows = 1 AND N.id_type = 1) OR
+            (NU.notifyLikes = 1 AND N.id_type = 2) OR
+            (NU.notifyComments = 1 AND N.id_type = 3) OR
+            (NU.notifyTags = 1 AND N.id_type = 4)
         )
     ORDER BY 
         N.date_time DESC;";
         $stmt = $this->db->prepare($qry);
-        $stmt->bind_param('s', $email);
+        $stmt->bind_param('ss', $email, $email);
         $stmt->execute();
         $res = $stmt->get_result();
         return $res->fetch_all(MYSQLI_ASSOC);
