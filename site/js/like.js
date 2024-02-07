@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $(document).on("click", ".like-icon", function() {
         let likeIcon = $(this);
-
         let idPost = likeIcon.find('input[name="idPost"]').val();
 
         $.ajax({
