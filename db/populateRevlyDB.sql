@@ -3,7 +3,7 @@
 use revly_db;
 
 INSERT INTO users (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows) VALUES
-('andrea.cavalli@email.com', 'andrea.c', 'Andrea', 'Cavalli', '$2y$10$PekGuqyHgx4hi/JXlybscuqmeYLeGx1exTxIsWGWnbodkzpqMec..', 'Ingegnere civile appassionato di trekking', 'default-image.png', 0, 1, 0, 1, 0),
+('andrea.cavalli@email.com', 'andrea.c', 'Andrea', 'Cavalli', '$2y$10$PekGuqyHgx4hi/JXlybscuqmeYLeGx1exTxIsWGWnbodkzpqMec..', 'Ingegnere civile appassionato di trekking', '14.jpg', 0, 1, 0, 1, 0),
 ('anna.monti@email.com', 'anna.monti', 'Anna', 'Monti', '$2y$10$eWps9IiAfD1K5BW3TZdSmuR1fi0R4aUf9T2m3cILAlyUfIfFvAJ6m', 'Ingegnere software appassionata di viaggi', '6.jpg', 0, 1, 0, 1, 1),
 ('elena.monti@email.com', 'elena.m', 'Elena', 'Monti', '$2y$10$Xg2LrADwc36HNOfeJYajle8nojn1yz8LHEd2yPveHMrxlkAIjnW3O', 'Insegnante di lingue straniere e appassionata di yoga', 'default-image.png', 0, 1, 1, 1, 1),
 ('eleonora.rossi@email.com', 'eleo_rossi', 'Eleonora', 'Rossi', '$2y$10$enQH2h8/i83CPehWOKudNez1rvOeZK.ZTOIKisyT2O8k/aLXpUAWa', 'Studiosa di letteratura e appassionata di cinema', 'default-image.png', 0, 0, 1, 1, 0),

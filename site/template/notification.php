@@ -2,7 +2,7 @@
     <div class="row gx-1">
         <div class="col-1">
             <div class="ratio ratio-1x1 text-center">
-                <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $notification["notifier_img"]; ?>" alt=""/>
+                <img class="rounded-circle object-fit-cover" src="<?php echo UPLOAD_DIR . $notification["notifier_img"]; ?>" alt=""/>
             </div>
         </div>
         <div class="col-11">
@@ -22,7 +22,7 @@
             <p class="text-break"><?php echo str_replace("USER", $notification["notifier_username"], $notification["message"]); ?></p>
         </div>
         <div class="col-3">
-        <?php if ($notification["id_post"] != null): //TODO: gestire con js il click dell'immagine post e il redirect ?>
+        <?php if ($notification["id_post"] != null):?>
             <a href="post-focus.php?idPost=<?php echo $notification["id_post"]; ?>" title="image profile">
                 <div class="ratio ratio-1x1">
                         <img class="rounded object-fit-cover" src="<?php echo UPLOAD_DIR . $notification["post_img"]; ?>" alt="Post picture"/>

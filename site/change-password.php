@@ -4,9 +4,8 @@ sec_session_start();
 
 if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Change password";
-    $templateParams["top-template"] = "focus-top.php";
+    $templateParams["top-template"] = "subsettings-top.php";
     $templateParams["main-template"] = "password-form.php";
-    $templateParams["js"] = array("js/back.js");
 
     if (isset($_POST["oldpassword"]) && isset($_POST["password"]) && isset($_POST["confirmpassword"])) {
         if (strcmp($_POST["password"], $_POST["confirmpassword"]) != 0) {

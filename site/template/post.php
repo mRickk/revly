@@ -3,7 +3,7 @@
     <div class="row gx-1">
         <div class="col-1">
             <div class="ratio ratio-1x1 text-center">
-                <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $post['user_img']; ?>" alt=""/>
+                <img class="rounded-circle object-fit-cover" src="<?php echo UPLOAD_DIR . $post['user_img']; ?>" alt=""/>
             </div>
         </div>
         <div class="col-10">
@@ -17,7 +17,7 @@
             </a>
         </div>
         <div class="col-1 p-1">
-            <?php if (isUserLoggedIn() && strcmp($_SESSION["username"], $post["username"]) == 0): //TODO: aggiungere evento js click del bin ?>
+            <?php if (isUserLoggedIn() && strcmp($_SESSION["username"], $post["username"]) == 0):?>
                 <button type="button" class="trash-icon btn btn-danger p-0 shadow-sm">
                     <span class="visually-hidden">Delete post</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -72,7 +72,7 @@
         <div class="col-1">
             <button class="like-icon btn btn-link p-0" type="button">
                 <input name="idPost" type="hidden" value="<?php echo $post['id_post']; ?>"/>
-                <?php if ($post['liked']): //TODO: aggiungere evento js click del like ?>
+                <?php if ($post['liked']):?>
                     <span class="bi bi-heart-fill fs-2 text-danger" title="Liked"></span>
                 <?php else: ?>
                     <span class="bi bi-heart fs-2 text-secondary" title="Not liked"></span>

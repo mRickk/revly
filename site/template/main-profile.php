@@ -1,7 +1,7 @@
 <div class="row gx-1 roboto-regular">
     <div class="col-3">
         <div class="ratio ratio-1x1 text-center">
-            <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt=""/>
+            <img class="rounded-circle object-fit-cover" src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt=""/>
         </div>
     </div>
     <div class="col-9">
@@ -32,7 +32,7 @@
             <div class="col-1"></div>
             <div class="col-10 text-center">
             <?php if (isset($templateParams["isFollowed"])):?>
-                <?php if ($templateParams["isFollowed"]): //TODO: pulsante following con js?>
+                <?php if ($templateParams["isFollowed"]):?>
                     <button type="button" id="followBtn" class="shadow btn btn-secondary w-100 rounded-pill">Following</button>
                 <?php else:?>
                     <button type="button" id="followBtn" class="shadow btn btn-primary w-100 rounded-pill">Follow me</button>

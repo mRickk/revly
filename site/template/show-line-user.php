@@ -10,7 +10,7 @@
                     <div class="d-flex align-items-center">
                         <div class="col-1 me-1">
                             <div class="ratio ratio-1x1 text-center">
-                                <img class="rounded-circle object-fit-fill" src="<?php echo $user['img']; ?>" alt=""/>
+                                <img class="rounded-circle object-fit-cover" src="<?php echo $user['img']; ?>" alt=""/>
                             </div>
                         </div>
                         <div class="col-9">

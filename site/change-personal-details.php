@@ -4,9 +4,8 @@ sec_session_start();
 
 if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Change personal details";
-    $templateParams["top-template"] = "focus-top.php";
+    $templateParams["top-template"] = "subsettings-top.php";
     $templateParams["main-template"] = "personal-details-form.php";
-    $templateParams["js"] = array("js/back.js");
 
     if (isset($_POST["username"]) && isset($_POST["name"]) && isset($_POST["surname"])) {
         $res = $dbh->updatePersonalDetails($_POST["username"], $_POST["name"], $_POST["surname"], $_SESSION["email"]);

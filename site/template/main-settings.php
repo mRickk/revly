@@ -85,14 +85,16 @@
                 </div>
             </a>
             <?php endif;?>
-            <a href="index.php">
-                <div class="row gx-2">
-                    <div class="col-1"></div>
-                    <div class="col-11">
-                        <p class="text-danger m-1">Logout from this account</p>
+            <div class="text-danger">
+                <a href="logout.php">
+                    <div class="row gx-2">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <p class="m-1 roboto-bold">Logout from this account</p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
         <div class="row gx-1 mb-2 ps-1">
             <h3 class="text-secondary roboto-light fs-4 mb-0 mt-2">Notifications</h3>

@@ -4,9 +4,9 @@ sec_session_start();
 
 if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Change password";
-    $templateParams["top-template"] = "focus-top.php";
+    $templateParams["top-template"] = "subsettings-top.php";
     $templateParams["main-template"] = "photo-bio-form.php";
-    $templateParams["js"] = array("js/back.js", "js/change-photo.js");
+    $templateParams["js"] = array("js/change-photo.js");
 
     $userInfo = $dbh->getUserWithEmail($_SESSION["email"]);
 
