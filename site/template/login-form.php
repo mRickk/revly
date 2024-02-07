@@ -1,4 +1,4 @@
-<div class="bg-body-tertiary bg-opacity-25 rounded-5 shadow p-4">
+<div class="bg-body-tertiary bg-opacity-25 rounded-5 shadow p-4 mb-5">
     <form action="#" method="POST">
         <h2 class="text-center mb-4 roboto-light">LOGIN</h2>
         <div class="form-group mb-3">
@@ -14,7 +14,7 @@
         </div>
         <?php require("update-msg.php"); ?>
     </form>
-    <div class="text-center">
-        <a class="link-primary" href="sign-up.php">Register a new account</a>
+    <div class="text-center mt-2 text-secondary">
+        <a class="roboto-bold" href="sign-up.php">Register a new account</a>
     </div>
 </div>

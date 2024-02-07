@@ -1,6 +1,6 @@
-<div class="bg-body-tertiary bg-opacity-25 rounded-5 shadow p-4">
+<div class="bg-body-tertiary bg-opacity-25 rounded-5 shadow p-4 mb-5">
     <form action="#" method="POST">
-        <h2 class="text-primary text-center mb-4">CREATE ACCOUNT</h2>
+        <h2 class="text-center mb-4 roboto-light">CREATE ACCOUNT</h2>
         <small class="text-muted d-block text-center mb-2">(All fields are required unless specified optional)</small>
         <div class="form-group mb-3">
             <label class="visually-hidden" for="inputUsername">Username</label>
@@ -31,7 +31,7 @@
         </div>
         <?php require("update-msg.php"); ?>
     </form>
-    <div class="text-center">
-        <a class="link-primary" href="index.php">Log into existing account</a>
+    <div class="text-center mt-2 text-secondary">
+        <a class="roboto-bold" href="index.php">Log into existing account</a>
     </div>
 </div>

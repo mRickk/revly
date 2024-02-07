@@ -86,7 +86,7 @@
                 <div class="col-1"></div>
                 <?php for ($i = 0; $i < $post["evaluation"]; $i++): ?>
                     <div class="col-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="#F28380" class="bi bi-star-fill" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="#FF8A49" class="bi bi-star-fill" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                         </svg>
                     </div>
@@ -111,12 +111,13 @@
     </div>
     <div class="row gx-1 text-center">
         <div class="col-3">
-            <a href="like.php?idPost=<?php echo $post['id_post']; ?>">
+            <a href="like.php?idPost=<?php echo $post['id_post']; ?>" title="Likes number">
                 <p id="numLike<?php echo $post['id_post']; ?>"><?php echo $post['likes']; ?></p>
             </a>
         </div>
         <div class="col-6"></div>
         <div class="col-3">
+            <span class="visually-hidden">Comments number</span>
             <p class="numComment"><?php echo $post['comments']; ?></p>
         </div>
     </div>

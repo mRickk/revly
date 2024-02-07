@@ -18,7 +18,7 @@
                     <label class="visually-hidden" for="inputConfirmPassword">Confirm new password</label>
                     <input type="password" class="form-control rounded-pill" id="inputConfirmPassword" name="confirmpassword" placeholder="Confirm new password" required/>
                 </div>
-                <input class="btn btn-danger w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="UPDATE"/>
+                <input class="btn btn-primary w-50 mb-2 rounded-pill shadow-sm" type="submit" name="submit" value="UPDATE"/>
                 <?php require("update-msg.php"); ?>
             </form>
         </div>
