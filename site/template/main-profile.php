@@ -1,4 +1,4 @@
-<div class="row gx-1">
+<div class="row gx-1 roboto-regular">
     <div class="col-3">
         <div class="ratio ratio-1x1 text-center">
             <img class="rounded-circle object-fit-fill" src="<?php echo UPLOAD_DIR . $profile['img']; ?>" alt=""/>
@@ -28,7 +28,7 @@
                 </a>
             </div>
         </div>
-        <div class="row gx-1 mb-2">
+        <div class="row gx-1">
             <div class="col-1"></div>
             <div class="col-10 text-center">
             <?php if (isset($templateParams["isFollowed"])):?>
@@ -42,7 +42,7 @@
         </div>
     </div>
 </div>
-<div class="bg-body-tertiary bg-opacity-25 mb-5 rounded-3 p-2 shadow-sm">
+<div class="bg-body-tertiary bg-opacity-25 mb-5 rounded-3 p-2 shadow-sm mt-2">
     <div class="row gx-1">
         <h3 class="m-0">
             <?php echo $profile["name"]; ?>

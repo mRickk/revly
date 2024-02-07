@@ -2,11 +2,11 @@
 <section class="d-flex flex-column min-vh-100">
     <div class="settings-section flex-grow-1 bg-body-secondary bg-opacity-75 p-2 shadow">
         <div class="row gx-1">
-            <h2>Settings</h2>
+            <h2 class="text-secondary">Settings</h2>
         </div>
-        <div class="row gx-1 mb-2">
-            <h3>Account</h3>
-            <a href="change-personal-details.php">
+        <div class="row gx-1 mb-2 ps-1">
+            <h3 class="text-secondary roboto-light fs-4 mb-0 mt-2">Account</h3>
+            <a href="change-personal-details.php" class="p-2">
                 <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center">
                         <div class="col-1 me-1">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </a>
-            <a href="change-photo-bio.php">
+            <a href="change-photo-bio.php" class="p-2">
                 <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center">
                         <div class="col-1 me-1">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </a>
-            <a href="change-password.php">
+            <a href="change-password.php" class="p-2">
                 <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center">
                         <div class="col-1 me-1">
@@ -52,7 +52,7 @@
                 </div>
             </a>
             <?php if (!$user["isCompany"]):?>
-                <a href="company-request-account.php">
+                <a href="company-request-account.php" class="p-2">
                     <div class="row gx-2 shadow-sm rounded-2">
                         <div class="d-flex align-items-center" id="companyRequest">
                             <div class="col-1 me-1">
@@ -69,7 +69,7 @@
                 </a>
             <?php endif;?>
             <?php if ($user["isCompany"]):?>
-                <a href="insert-taggable.php">
+                <a href="insert-taggable.php" class="p-2">
                 <div class="row gx-2 shadow-sm rounded-2">
                     <div class="d-flex align-items-center">
                         <div class="col-1 me-1">
@@ -94,8 +94,8 @@
                 </div>
             </a>
         </div>
-        <div class="row gx-1 mb-2">
-            <h3>Notifications</h3>
+        <div class="row gx-1 mb-2 ps-1">
+            <h3 class="text-secondary roboto-light fs-4 mb-0 mt-2">Notifications</h3>
             <div class="row gx-2">
                 <div class="d-flex align-items-center">
                     <div class="col-1"></div>

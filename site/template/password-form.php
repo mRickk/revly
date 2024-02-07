@@ -5,7 +5,7 @@
         <div class="col-1"></div>
         <div class="col-10">
             <form action="#" method="POST">
-                <h2 class="mb-4 mt-2">Change your password</h2>
+                <h2 class="mb-4 mt-2 roboto-light">Change your password</h2>
                 <div class="form-group mb-3">
                     <label class="visually-hidden" for="inputOldPassword">Old password</label>
                     <input type="password" class="form-control rounded-pill" id="inputOldPassword" name="oldpassword" placeholder="Old password" required/>

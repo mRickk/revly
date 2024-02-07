@@ -1,4 +1,4 @@
-<div class="comment bg-body-secondary bg-opacity-75 mb-2 shadow-sm">
+<div class="comment bg-body-secondary bg-opacity-75 mb-2 shadow-sm roboto-regular">
    <div class="row gx-1">
         <div class="col-1">
             <div class="ratio ratio-1x1 text-center">

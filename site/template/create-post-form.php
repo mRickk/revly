@@ -1,6 +1,6 @@
-<form action="create-post.php" method="POST" enctype="multipart/form-data" class="bg-body-secondary bg-opacity-75 mb-3 pb-2 shadow">
+<form action="create-post.php" method="POST" enctype="multipart/form-data" class="bg-body-secondary bg-opacity-75 mb-3 pb-2 shadow roboto-regular">
     <div class="row px-3 py-2">
-        <h2 class="fs-4">New Post</h2>
+        <h2 class="fs-4 ">New Post</h2>
     </div>
     <div class="row gx-1 mb-1">
         <div class="col-1"></div>
@@ -17,7 +17,7 @@
     <div class="row gx-1 mb-3">
         <div class="col-4"></div>
         <div class="col-4 text-center">
-            <label for="evaluationInput" class="visually-hidden">Evaluation</label>
+            <label for="evaluationInput" class="">Evaluation</label>
             <select class="form-select" name="selectedEvaluation" id="evaluationInput">
                 <option>0</option>
                 <option>1</option>

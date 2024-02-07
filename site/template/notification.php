@@ -21,7 +21,7 @@
         <div class="col-7">
             <p class="text-break"><?php echo str_replace("USER", $notification["notifier_username"], $notification["message"]); ?></p>
         </div>
-        <div class="col-3">            
+        <div class="col-3">
         <?php if ($notification["id_post"] != null): //TODO: gestire con js il click dell'immagine post e il redirect ?>
             <a href="post-focus.php?idPost=<?php echo $notification["id_post"]; ?>" title="image profile">
                 <div class="ratio ratio-1x1">

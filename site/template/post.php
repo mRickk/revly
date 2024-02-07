@@ -1,5 +1,5 @@
 <!-- single-post.php -->
-<article class="bg-body-secondary bg-opacity-75 mb-3 shadow">
+<article class="bg-body-secondary bg-opacity-75 mb-3 shadow roboto-regular">
     <div class="row gx-1">
         <div class="col-1">
             <div class="ratio ratio-1x1 text-center">
@@ -30,10 +30,10 @@
     <div class="row text-center m-3 justify-content-center">
         <div class="toast shadow-lg" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body">
-                <p>Are you sure to delete this post?</p>
+                <h3 class="roboto-light">Are you sure to delete this post?</h4>
                 <div class="mt-2 pt-2 border-top">
-                    <a href="deletePost.php?idPost=<?php echo $post['id_post'];?>" role="button" class="btn btn-secondary btn-sm">YES</a>
-                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="toast">NO</button>
+                    <a href="deletePost.php?idPost=<?php echo $post['id_post'];?>" role="button" class="btn btn-secondary btn-sm text-white roboto-bold">YES</a>
+                    <button type="button" class="btn btn-primary btn-sm roboto-bold" data-bs-dismiss="toast">NO</button>
                 </div>
             </div>
         </div>
@@ -42,9 +42,9 @@
         <div class="col-1"></div>
         <div class="col-10">
             <?php if ($post['subject'] != null): ?>
-                <h3><?php echo $post['subject']; ?></h3>
+                <h3 class="fs-5"><?php echo $post['subject']; ?></h3>
                 <?php else: ?>
-                <h3><?php echo $post['tag_name']; ?> - <?php echo $post['company_name']; ?></h3>
+                <h3 class="fs-5"><?php echo $post['tag_name']; ?> - <?php echo $post['company_name']; ?></h3>
             <?php endif; ?>
             <div class="col-1"></div>
         </div>
@@ -53,7 +53,7 @@
         <div class="row gx-1">
             <div class="col-1"></div>
             <div class="col-10">
-                <h4><?php echo $post['tag_address']; ?></h4>
+                <h4 class="text-secondary fs-6"><?php echo $post['tag_address']; ?></h4>
             </div>
             <div class="col-1"></div>
         </div>

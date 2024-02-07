@@ -5,7 +5,7 @@
         <div class="col-1"></div>
         <div class="col-10">
             <form action="#" method="POST" enctype="multipart/form-data">
-                <h2 class="mb-4 mt-2">Change your photo & bio</h2>
+                <h2 class="mb-4 mt-2 roboto-light">Change your photo & bio</h2>
                 <div class="border rounded mb-2 text-center">
                     <label for="imgPost" class="file-label"><span class="visually-hidden">Profile picture</span>
                         <img id="preview" src="<?php echo UPLOAD_DIR . $user["img"]; ?>" alt="Profile picture preview">
