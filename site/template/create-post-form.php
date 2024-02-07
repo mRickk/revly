@@ -1,6 +1,6 @@
 <form action="create-post.php" method="POST" enctype="multipart/form-data" class="bg-body-secondary bg-opacity-75 mb-3 pb-2 shadow roboto-regular">
     <div class="row px-3 py-2">
-        <h2 class="fs-4 ">New Post</h2>
+        <h2 class="fs-4 text-secondary">New Post</h2>
     </div>
     <div class="row gx-1 mb-1">
         <div class="col-1"></div>

@@ -16,7 +16,9 @@
                 </div>
             </div>
             <div class="col-2 p-0 text-end">
-                <button class="btn btn-outline-dark bi bi-send rounded-4" type="submit" name="submit" value="SUBMIT"></button>
+                <button class="btn btn-outline-dark bi bi-send rounded-4" type="submit" name="submit" value="SUBMIT">
+                    <span class="visually-hidden">Send comment</span>
+                </button>
             </div>
         </div>
     </form>

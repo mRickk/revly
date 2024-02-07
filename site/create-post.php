@@ -7,6 +7,7 @@ if (isUserLoggedIn()) {
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "create-post-form.php";
     $templateParams["js"] = array("js/newPost.js", "js/change-photo.js");
+    $templateParams["iconSelected"] = 3;
 
     $tag = $dbh->getTaggable();
     $templateParams["tags"] = $tag;
