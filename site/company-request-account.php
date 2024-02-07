@@ -7,7 +7,6 @@ if (isUserLoggedIn()) {
     $templateParams["top-template"] = "focus-top.php";
     $templateParams["main-template"] = "company-request-form.php";
     $templateParams["js"] = array("js/back.js");
-    $templateParams["requestCompany"] = $dbh->checkRequestCompany($_SESSION["email"]);
     if (isset($_POST["address"]) && isset($_POST["name"])) {
         $res = $dbh->newRequestCompany($_POST["address"], $_POST["name"], $_SESSION["email"]);
         if ($res) {
@@ -17,6 +16,7 @@ if (isUserLoggedIn()) {
         }
     }
     $templateParams["user"] = $dbh->getUserWithEmail($_SESSION["email"]);
+    $templateParams["requestCompany"] = $dbh->checkRequestCompany($_SESSION["email"]);
     require("template/base.php");
 } else {
     header("Location: index.php");
