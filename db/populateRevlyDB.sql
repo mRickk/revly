@@ -2,21 +2,21 @@
 
 use revly_db;
 
-INSERT INTO `users` (`email`, `username`, `name`, `surname`, `password`, `biography`, `img`, `isCompany`, `notifyLikes`, `notifyComments`, `notifyTags`, `notifyFollows`) VALUES
+INSERT INTO users (email, username, name, surname, password, biography, img, isCompany, notifyLikes, notifyComments, notifyTags, notifyFollows) VALUES
 ('andrea.cavalli@email.com', 'andrea.c', 'Andrea', 'Cavalli', '$2y$10$PekGuqyHgx4hi/JXlybscuqmeYLeGx1exTxIsWGWnbodkzpqMec..', 'Ingegnere civile appassionato di trekking', 'default-image.png', 0, 1, 0, 1, 0),
-('anna.monti@email.com', 'anna.monti', 'Anna', 'Monti', '$2y$10$eWps9IiAfD1K5BW3TZdSmuR1fi0R4aUf9T2m3cILAlyUfIfFvAJ6m', 'Ingegnere software appassionata di viaggi', 'default-image.png', 0, 1, 0, 1, 1),
+('anna.monti@email.com', 'anna.monti', 'Anna', 'Monti', '$2y$10$eWps9IiAfD1K5BW3TZdSmuR1fi0R4aUf9T2m3cILAlyUfIfFvAJ6m', 'Ingegnere software appassionata di viaggi', '6.jpg', 0, 1, 0, 1, 1),
 ('elena.monti@email.com', 'elena.m', 'Elena', 'Monti', '$2y$10$Xg2LrADwc36HNOfeJYajle8nojn1yz8LHEd2yPveHMrxlkAIjnW3O', 'Insegnante di lingue straniere e appassionata di yoga', 'default-image.png', 0, 1, 1, 1, 1),
 ('eleonora.rossi@email.com', 'eleo_rossi', 'Eleonora', 'Rossi', '$2y$10$enQH2h8/i83CPehWOKudNez1rvOeZK.ZTOIKisyT2O8k/aLXpUAWa', 'Studiosa di letteratura e appassionata di cinema', 'default-image.png', 0, 0, 1, 1, 0),
-('enoteca.galli@email.com', 'enoteca_galli', 'Enoteca Galli', '', '$2y$10$BMk/26lxa.LRKvNjI2a7QO6QIrpjMwJrHKWH0.PfvxFUO4wHdfCuS', 'Passione in ogni bottiglia, esperienza in ogni sorso', 'default-image.png', 1, 1, 1, 0, 1),
-('from.gamer@email.com', 'fromGamer', 'FromGamer', '', '$2y$10$5x71kHkPTNCEmOEPaexV2uNozBNJnYyuHByaZEWR6fXc2Hg6XmSVe', 'Negozio online di videogiochi e giochi da tavolo', 'default-image.png', 1, 1, 1, 0, 0),
+('enoteca.galli@email.com', 'enoteca_galli', 'Enoteca Galli', '', '$2y$10$BMk/26lxa.LRKvNjI2a7QO6QIrpjMwJrHKWH0.PfvxFUO4wHdfCuS', 'Passione in ogni bottiglia, esperienza in ogni sorso', '7.jpg', 1, 1, 1, 0, 1),
+('from.gamer@email.com', 'fromGamer', 'FromGamer', '', '$2y$10$5x71kHkPTNCEmOEPaexV2uNozBNJnYyuHByaZEWR6fXc2Hg6XmSVe', 'Negozio online di videogiochi e giochi da tavolo', '12.jpg', 1, 1, 1, 0, 0),
 ('giovanni.baldi@email.com', 'giovanni.b', 'Giovanni', 'Baldi', '$2y$10$gjCJioWynRHnDOyxzP9iHejShX6Bj2kHeaeI4SfKJiKGSnQLmSyGm', 'Appassionato di musica classica e tecnologia', 'default-image.png', 0, 0, 1, 1, 0),
 ('giuseppe.verdi@email.com', 'peppev', 'Giuseppe', 'Verdi', '$2y$10$AGwkLo3hAbXvjkBo3ueIuu7OPtOVrm7HNM5HEJPLx4UaC7GvumldS', 'Musicista e appassionato di opera', 'default-image.png', 0, 0, 1, 1, 1),
-('kebab.station@email.com', 'Kebab_Stazione', 'Kebab la Stazione', '', '$2y$10$9YO/8M9iRw1XfVThuQH0SumdgHZrExfWXk67loBKxoAaTCKe7gh7.', 'Negozio di veri kebab e falafel alla stazione', 'default-image.png', 1, 1, 1, 1, 1),
+('kebab.station@email.com', 'Kebab_Stazione', 'Kebab la Stazione', '', '$2y$10$9YO/8M9iRw1XfVThuQH0SumdgHZrExfWXk67loBKxoAaTCKe7gh7.', 'Negozio di veri kebab e falafel alla stazione', '1.jpeg', 1, 1, 1, 1, 1),
 ('marco.guidi@email.com', 'marco_guidi_parrucchieri', 'Marco Guidi Parrucchieri', '', '$2y$10$qwE1EFB/fw20Cl0fhGbUJesplBXHbcvLtTtTC35V5c14NArlCi6Ae', 'Tagliamo il passato, coloriamo il presente, stiliamo il futuro', 'default-image.png', 1, 0, 1, 1, 1),
 ('mario.rossi@email.com', 'mario123', 'Mario', 'Rossi', '$2y$10$n/5KiW64NasQh25e7gaho.GYiy2vj5gfOR36gwu9wcgVB1pyTuGlW', 'Appassionato di tecnologia e sport', 'default-image.png', 0, 1, 1, 0, 1),
 ('sara.verdi@email.com', 'sara.v', 'Sara', 'Verdi', '$2y$10$wOH4ErzfGPLgTYwzT1UYeON5isNgVz/sU4vB3B4HINMtpnfEOUd/m', 'Appassionata di moda e arte contemporanea', 'default-image.png', 0, 1, 0, 0, 1),
 ('silvia.moro@email.com', 'silvia_m', 'Silvia', 'Moro', '$2y$10$NA16FjeCTHagv/uhSLyEzO4ki3WXLGCfp4G8hoV2AkU6xZn3dd.Dm', 'Designer di moda e amante degli animali', 'default-image.png', 0, 0, 0, 1, 1),
-('simona.rossi@email.com', 'simona_r', 'Simona', 'Rossi', '$2y$10$5BqcO2p4/2.KOdPxlUxp0uloHL94Anxn1ElNf3YLb.4X/3ch1uk2S', 'Appassionata di letteratura russa e scienze politiche', 'default-image.png', 0, 1, 1, 0, 1),
+('simona.rossi@email.com', 'simona_r', 'Simona', 'Rossi', '$2y$10$5BqcO2p4/2.KOdPxlUxp0uloHL94Anxn1ElNf3YLb.4X/3ch1uk2S', 'Appassionata di letteratura russa e scienze politiche', '11.jpg', 0, 1, 1, 0, 1),
 ('trattoria.salvatore@email.com', 'TrattoriaDaSalvatore', 'Trattoria da Salvatore', '', '$2y$10$0ka5UiRLLXi8wL/Kpw4tmenzGkq64rSE/f3NVYuIsika./IN2HeSG', 'Siamo una trattoria nel mezzo di un paesaggio mozzafiato', 'default-image.png', 1, 1, 0, 1, 0);
 
 -- Ricerche
