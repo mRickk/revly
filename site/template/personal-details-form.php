@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label class="visually-hidden" for="inputName">Name</label>
-                    <input type="text" class="form-control rounded-pill" id ="inputName" name="name" placeholder="Insert new name..." value="<?php echo $user["name"]; ?>" required/>
+                    <input type="text" class="form-control rounded-pill" id="inputName" name="name" placeholder="Insert new name..." value="<?php echo $user["name"]; ?>" required/>
                 </div>
                 <div class="form-group mb-3">
                     <label class="visually-hidden" for="inputSurname">Surname</label>

@@ -5,7 +5,7 @@ sec_session_start();
 if (isUserLoggedIn()) {
     $templateParams["title"] = "Revly - Add Taggable";
     $templateParams["top-template"] = "subsettings-top.php";
-    $templateParams["main-template"] = "settings-form.php";
+    $templateParams["main-template"] = "taggable-form.php";
 
     if (isset($_POST["taggable"])) {
         if(isset($_POST["address"])) {

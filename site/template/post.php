@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="row text-center m-3 justify-content-center">
-        <div class="toast shadow-lg" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body">
                 <h3 class="roboto-light">Are you sure to delete this post?</h4>
                 <div class="mt-2 pt-2 border-top">
