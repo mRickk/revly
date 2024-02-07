@@ -14,6 +14,7 @@ if (isUserLoggedIn()) {
     $templateParams["top-template"] = "page-top.php";
     $templateParams["main-template"] = "show-posts.php";
     $templateParams["js"] = ["js/like.js"];
+    $templateParams["iconSelected"] = 1;
 
     require("template/base.php");
 } else {
