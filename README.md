@@ -1,8 +1,11 @@
-# Progetto di Tecnologie Web
-Juri Guglielmi, Riccardo Mazzi
+# Revly
+Progetto di Tecnologie Web
+
+**Juri Guglielmi, Riccardo Mazzi**
+
 A.A. 2023/2024
 
-For English version please scroll down.
+_For English version please scroll down._
 
 
 ## Istruzioni per utilizzare Revly:
