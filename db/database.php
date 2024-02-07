@@ -301,7 +301,6 @@ SOLO SE id_taggable è != NULL*/
         $stmt = $this->db->prepare($qry);
         $stmt->bind_param('ssss', $username, $name, $surname, $email);
         $res = $stmt->execute();
-        echo $stmt->errno;
         return $res;
     }
 
